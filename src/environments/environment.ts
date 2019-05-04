@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  ApiOriginUrl: 'localhost:3000',
-  apiUrl: 'http://localhost:3000/api/',
+  ApiOriginUrl: 'http://1dcdc3bd.ngrok.io',
+  apiUrl: 'http://1dcdc3bd.ngrok.io/api/',
   AppName: 'HỆ THỐNG QUẢN LÍ THI ĐUA KHEN THƯỞNG TRƯỜNG ĐẠI HỌC QUẢNG NAM',
   dataTableLanguage: {
     'sProcessing':    'Đang tải...',

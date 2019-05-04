@@ -172,8 +172,8 @@ export function tokenGetter() {
       JwtModule.forRoot({
          config: {
             tokenGetter,
-            whitelistedDomains: ['localhost:3000'],
-            blacklistedRoutes: ['localhost:3000/api/auth']
+            whitelistedDomains: ['http://1dcdc3bd.ngrok.io'],
+            blacklistedRoutes: ['http://1dcdc3bd.ngrok.io/api/auth']
          }
       }),
       SweetAlert2Module.forRoot({
