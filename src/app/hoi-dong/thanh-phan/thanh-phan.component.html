@@ -15,20 +15,11 @@
               <label for="input-select" class="font-bold">Cán bộ:</label>
               <angular2-multiselect [data]="listCanBo" formControlName="can_bo" [settings]="canBoSettings">
               </angular2-multiselect>
-              <!-- <p>{{myForm.get('can_bo').value[0]?.ma_can_bo}}</p> -->
-
-              <div *ngIf="submitted && !!fTTC.can_bo?.errors" class="invalid-feedback">
-                <div *ngIf="!!fTTC.can_bo.errors.required">Thông tin này bắt buộc</div>
-              </div>
             </div>
             <div class="col-md-6">
               <label for="input-select" class="font-bold">Chức danh:</label>
               <angular2-multiselect [data]="listChucDanh" formControlName="chuc_danh" [settings]="chucDanhSettings">
               </angular2-multiselect>
-              <!-- <p>{{myForm.get('chuc_danh').value[0]?.ma_chuc_danh}}</p> -->
-              <div *ngIf="submitted && !!fTTC.chuc_danh?.errors" class="invalid-feedback">
-                <div *ngIf="!!fTTC.chuc_danh.errors.required">Thông tin này bắt buộc</div>
-              </div>
             </div>
           </div>
 
