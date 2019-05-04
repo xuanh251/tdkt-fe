@@ -44,7 +44,7 @@ export class HoiDongComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       // tslint:disable-next-line:object-literal-key-quotes
       this.dataTable.DataTable({ language: environment.dataTableLanguage });
-    }, 1000);
+    }, 3000);
   }
   moHoiDong(maHoiDong) {
     this.spinner.show();

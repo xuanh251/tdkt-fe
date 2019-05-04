@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  ApiOriginUrl: 'http://1dcdc3bd.ngrok.io',
-  apiUrl: 'http://1dcdc3bd.ngrok.io/api/',
+  production: false,
+  ApiOriginUrl: 'localhost:3000',
+  apiUrl: 'http://localhost:3000/api/',
   AppName: 'HỆ THỐNG QUẢN LÍ THI ĐUA KHEN THƯỞNG TRƯỜNG ĐẠI HỌC QUẢNG NAM',
   dataTableLanguage: {
     'sProcessing':    'Đang tải...',
