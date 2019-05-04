@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">{{accountAction}} người dùng </h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/']" class="breadcrumb-link">Trang
+                chủ</a></li>
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/quan-tri/nguoi-dung']"
+                class="breadcrumb-link">Người dùng</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{accountAction}} tài khoản {{accountDetail?.first_name}} {{accountDetail?.last_name}}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- ============================================================== -->
+  <!-- validation form -->
+  <!-- ============================================================== -->
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+      <h5 class="card-header">Nhập thông tin người dùng vào bên dưới</h5>
+      <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.getRawValue())">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Họ và chữ lót</label>
+                <input type="text" formControlName="first_name" [ngModel]="accountDetail?.first_name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+                <div *ngIf="submitted && !!f.first_name?.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.first_name.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Tên</label>
+                <input type="text" formControlName="last_name" [ngModel]="accountDetail?.last_name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+                <div *ngIf="submitted && !!f.last_name.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.last_name.errors.required">Thông tin này bắt buộc/div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Tên đăng nhập</label>
+                <input type="text" [disabled]="id!=='0'" formControlName="user_name" [ngModel]="accountDetail?.user_name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.user_name.errors }" />
+                <div *ngIf="submitted && !!f.user_name.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.user_name.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" formControlName="email" [ngModel]="accountDetail?.email" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && !!f.email.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.email.errors.required">Thông tin này bắt buộc</div>
+                  <div *ngIf="!!f.email.errors.email">Định dạng email không đúng</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" *ngIf="id==='0'">
+            <label>Mật khẩu</label>
+            <input type="password" formControlName="password" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && !!f.password.errors" class="invalid-feedback">
+              <div *ngIf="!!f.password.errors.required">Thông tin này bắt buộc</div>
+              <div *ngIf="!!f.password.errors.minlength">Mật khẩu phải chứa ít nhất 6 kí tự</div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="id==='0'">
+            <label>Xác nhận mật khẩu</label>
+            <input type="password" formControlName="confirm_password" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }" />
+            <div *ngIf="submitted && !!f.confirm_password.errors" class="invalid-feedback">
+              <div *ngIf="!!f.confirm_password.errors.required">Thông tin này bắt buộc</div>
+              <div *ngIf="!!f.confirm_password.errors.mustMatch">Mật khẩu không khớp</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <a class="btn btn-brand mr-1" [routerLink]="['/quan-tri/nguoi-dung']" routerLinkActive="router-link-active" ><i class="fas fa-arrow-circle-left"></i> Quay lại</a>
+            <button class="btn btn-primary"><i class="fas fa-edit"></i> {{accountAction}} tài khoản</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end validation form -->
+  <!-- ============================================================== -->
+</div>

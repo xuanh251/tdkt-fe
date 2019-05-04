@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">{{objectAction}} chức danh </h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/home']" class="breadcrumb-link">Trang
+                chủ</a></li>
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/quan-tri/chuc-danh']"
+                class="breadcrumb-link">Chức danh</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{objectAction}} chức danh này</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- ============================================================== -->
+  <!-- validation form -->
+  <!-- ============================================================== -->
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+      <h5 class="card-header">Nhập thông tin chức danh vào bên dưới</h5>
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.getRawValue())">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Tên Chức danh</label>
+                <input type="text" formControlName="ten_chuc_danh"
+                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ten_chuc_danh.errors }" />
+                <div *ngIf="submitted && !!f.ten_chuc_danh.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.ten_chuc_danh.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group mt-4">
+                  <label class="custom-control custom-checkbox">
+                      <input type="checkbox" formControlName="tham_gia_bo_phieu" class="custom-control-input">
+                      <span class="custom-control-label">Tham gia bỏ phiếu</span>
+                  </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <a class="btn btn-brand mr-1" [routerLink]="['/quan-tri/chuc-danh']"
+              routerLinkActive="router-link-active"><i class="fas fa-arrow-circle-left"></i> Quay lại</a>
+            <button class="btn btn-primary"><i class="fas fa-edit"></i> {{objectAction}} chức danh</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end validation form -->
+  <!-- ============================================================== -->
+</div>

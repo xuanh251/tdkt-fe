@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">Quản trị hội đồng năm học {{hoidong?.NamHoc?.tu_ngay}} - mã hội đồng:
+        {{hoidong?.ma_hoi_dong}}</h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/']" class="breadcrumb-link">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Quản trị hội đồng</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="alert alert-warning" role="alert">
+    Lưu ý! Trong một khoảng thời gian sẽ có 1 phiên bầu chọn được mở, việc bầu chọn sẽ diễn ra tuần tự cho các danh hiệu thi đua và hình thức khen thưởng.
+</div>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <div class="card">
+      <h5 class="card-header"><i class="fas fa-info-circle"></i> Thông tin chung</h5>
+      <div class="card-body">
+        <a href="javascript: void(0)" (click)="open()" class="btn btn-primary mr-2" placement="top"
+          ngbTooltip="Click vào để xem chi tiết">
+          Tổng số thành viên hội đồng <span class="badge badge-light">{{tongthanhvien}}</span>
+        </a>
+        <a href="javascript: void(0)" (click)="open()" class="btn btn-primary" placement="top"
+          ngbTooltip="Click vào để xem chi tiết">
+          Tổng số thành viên đang online <span class="badge badge-light">{{thanhvienonline}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="card">
+      <h5 class="card-header"><i class="fas fa-hand-point-right"></i> Quản lý các phiên bầu chọn Danh hiệu thi đua</h5>
+      <div class="card-body">
+        <ul class="list-group">
+          <li *ngFor="let item of listDanhHieuByHoiDong; let idx = index" class="list-group-item">{{idx+1}}) Bầu chọn cho danh hiệu {{item.ten_danh_hieu}} <span [innerHTML]="item.da_bau_chon|bauchondanhhieu"></span>
+              <span *ngIf="item.trang_thai"> -Thời gian còn lại: </span><countdown *ngIf="item.trang_thai" [config]="{ stopTime: item.thoi_gian_mo + 300000, template: '$!h!:$!m!:$!s!' }" (finished)="onFinish(item.thoi_gian_mo, item.ma_danh_hieu, item.ten_danh_hieu)"></countdown>
+              <button *ngIf="!item.trang_thai && item.da_bau_chon!==2" class="btn btn-sm btn-primary mr-1 float-right" (click)="kichHoat(item.ma_danh_hieu, item.ten_danh_hieu)"
+              placement="top" ngbTooltip="Kích hoạt"><i class="fas fa-lock-open"></i></button>
+              <button *ngIf="item.trang_thai" class="btn btn-sm btn-primary mr-1 float-right"  (click)="ketThuc(item.ma_danh_hieu, item.ten_danh_hieu)"
+              placement="top" ngbTooltip="Đóng"><i class="far fa-stop-circle"></i></button>
+              <a class="btn btn-sm btn-success mr-1 float-right" *ngIf="item.trang_thai" placement="top" (click)="openModalTheoDoi()" 
+            ngbTooltip="Theo dõi phiên bầu chọn"><i class=" fas fa-eye"></i></a>
+            <a class="btn btn-sm btn-success mr-1 float-right" *ngIf="item.da_bau_chon===2" placement="top"
+            ngbTooltip="Xem kết quả"><i class="fas fa-align-justify"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+      <div class="card">
+        <h5 class="card-header"><i class="fas fa-hand-point-right"></i> Quản lý các phiên bầu chọn Hình thức khen thưởng</h5>
+        <div class="card-body">
+          <ul class="list-group">
+            <!-- <li *ngFor="let item of listDanhHieuByHoiDong; let idx = index" class="list-group-item">{{idx+1}}) Bầu chọn danh hiệu {{item.ten_danh_hieu}}</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>

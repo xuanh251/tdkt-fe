@@ -1,0 +1,93 @@
+#print-content {
+    font-family: 'Times New Roman'!important;
+    color: black!important;
+}
+.font-9 {
+    font-size: 13pt;
+}
+.font-10 {
+    font-size: 14pt;
+}
+
+.font-11 {
+    font-size: 15pt;
+}
+
+.font-13 {
+    font-size: 17pt;
+}
+
+.font-12 {
+    font-size: 15pt;
+}
+.canhdeu{
+    text-align:justify;
+}
+.indam {
+    font-weight: bold;
+}
+
+.innghieng {
+    font-style: oblique;
+}
+
+.pageBreak {
+    page-break-before: always;
+}
+
+.font-18 {
+    font-size: 22pt;
+    text-align: center;
+}
+
+.canhgiua {
+    text-align: center;
+}
+.under-line {
+    border-bottom: 1px solid;
+    margin-left: 26%;
+    margin-right: 22%;
+}
+
+.col3 {
+    width: 40%;
+    float: left;
+}
+
+.col7 {
+    width: 60%;
+    float: left;
+}
+
+.container {
+    width: 900px
+}
+
+p {
+    margin: 0px
+}
+
+b {
+    font-size: 17pt;
+}
+.font-spec{
+    font-size:16pt;
+}
+.gachngan {
+    display: inline-block;
+    position: relative;
+}
+.gachngan:before {
+    content: "";
+    position: absolute;
+    width: 32%;
+    height: 1px;
+    bottom: 0;
+    left: 36%;
+    border-bottom: 1px solid black;
+}
+#PrintThisPage{
+    float:right;
+    width:120px;
+    margin-right:28px;
+}

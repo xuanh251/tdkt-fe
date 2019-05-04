@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+button.btn-primary{
+    text-transform: uppercase!important;
+}
+.card{
+    opacity: 0.9;
+    box-shadow: 10px 10px 5px 0px rgba(153,153,153,1);
+}
+.splash-container{
+    margin-top:70px;
+}

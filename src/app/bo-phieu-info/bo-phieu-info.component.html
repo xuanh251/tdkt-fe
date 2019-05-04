@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">Bỏ phiếu hội đồng năm học {{hoiDong?.NamHoc?.tu_ngay}}</h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/home']" class="breadcrumb-link">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Bỏ phiếu</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <p *ngIf="!isOpen">
+    <ngb-alert [dismissible]="false">
+      <strong>Lưu ý!</strong> Không có hội đồng nào đang mở! Vui lòng quay lại sau.
+    </ngb-alert>
+  </p>
+  <p *ngIf="!isPermited">
+      <ngb-alert [dismissible]="false">
+        <strong>Lưu ý!</strong> Bạn không phải là thành viên hội đồng!
+      </ngb-alert>
+    </p>
+  <div class="col-md-12" *ngIf="isOpen&&isPermited">
+      <ngb-tabset>
+          <ngb-tab title="Bầu chọn danh hiệu thi đua">
+            <ng-template ngbTabContent>
+              <app-bau-chon-dhtd [maHoiDong]="maHoiDong"></app-bau-chon-dhtd>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Bầu chọn hình thức khen thưởng">
+            <ng-template ngbTabContent>
+              <app-bau-chon-hdkt></app-bau-chon-hdkt>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+  </div>
+</div>

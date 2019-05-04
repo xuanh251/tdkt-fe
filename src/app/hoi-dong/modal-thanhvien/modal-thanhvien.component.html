@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title">Danh sách thành viên hội đồng</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <ngx-spinner dOpacity = 0
+  bdColor = "rgba(255,255,255,0)" size = "medium" color = "#092bee" type="ball-scale-multiple" [fullScreen]="true">
+    <p style="color: white"> Vui lòng chờ... </p>
+  </ngx-spinner>
+  <ul class="list-group">
+    <li *ngFor="let item of listThanhVien" class="list-group-item">
+      <i [className]="item?.CanBo?.trang_thai?'fas fa-dot-circle active-icon':'fas fa-dot-circle inactive-icon'"></i>
+      {{item?.CanBo?.ho_ten}} - {{item?.ChucDanh?.ten_chuc_danh}}
+    </li>
+  </ul>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Đóng</button>
+</div>

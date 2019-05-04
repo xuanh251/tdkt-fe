@@ -1,0 +1,28 @@
+<div [className]="loggedIn()?'dashboard-main-wrapper':'dashboard-main-wrapper login-background'">
+    <app-top-nav *ngIf="loggedIn()"></app-top-nav>
+    <app-left-nav *ngIf="loggedIn()"></app-left-nav>
+    <!-- nội dung render ra trong router-outlet -->
+    <div [className]="loggedIn()?'dashboard-wrapper':''">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <div *ngIf="loggedIn()" class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                        © 2019 Hệ thống quản lí thi đua khen thưởng trường Đại học Quảng nam. All rights reserved!
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                        <div class="text-md-right footer-links d-none d-sm-block">
+                            <a href="javascript: void(0);">Giới thiệu</a>
+                            <a href="javascript: void(0);">Hỗ trợ</a>
+                            <a href="javascript: void(0);">Liên hệ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

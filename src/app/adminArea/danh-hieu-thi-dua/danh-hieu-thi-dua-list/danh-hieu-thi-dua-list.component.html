@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">Danh sách danh hiệu thi đua </h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/']" class="breadcrumb-link">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">danh hiệu thi đua</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <a class="btn btn-primary" [routerLink]="['/quan-tri/danh-hieu-thi-dua/0']"><i class="fas fa-plus-circle"></i> Thêm mới</a>
+  </div>
+</div>
+<div class="table-responsive">
+    <ngx-spinner
+    bdOpacity = 0.9
+    bdColor = "#333"
+    size = "medium"
+    color = "#fff"
+    type = "ball-scale-multiple"
+    [fullScreen] = "true"
+    >
+    <p style="color: white" > Vui lòng chờ... </p>
+    </ngx-spinner>
+  <table #dataTable class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Loại danh hiệu thi đua</th>
+        <th>Tên danh hiệu thi đua</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dv of listDanhHieuThiDua; let idx = index">
+        <td>{{dv.ma_danh_hieu}}</td>
+        <td>{{dv.doi_tuong_ap_dung}}</td>
+        <td>{{dv.ten_danh_hieu}}</td>
+        <td class="py-1">
+          <a class="btn btn-sm btn-success mr-1" [routerLink]="['/quan-tri/danh-hieu-thi-dua/',dv.ma_danh_hieu]"><i class="fas fa-edit"></i></a>
+          <a class="btn btn-sm btn-danger" [swal]="deleteSwal" (confirm)="deleteDanhHieuThiDua(dv.ma_danh_hieu, idx)" ><i class="fas fa-trash-alt"></i></a>
+          <swal #deleteSwal 
+          title="Xác nhận xoá" 
+          text="Bạn muốn xoá danh hiệu thi đua {{ dv.ten_danh_hieu }}?" 
+          type="question" 
+          [showCancelButton]="true" ></swal>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

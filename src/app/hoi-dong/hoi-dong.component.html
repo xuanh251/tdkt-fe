@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">Danh sách hội đồng </h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/home']" class="breadcrumb-link">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Hội đồng</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <a class="btn btn-primary" [routerLink]="['/hoi-dong/edit', 0]"><i class="fas fa-plus-circle"></i> Thành lập hội
+      đồng</a>
+  </div>
+</div>
+<ngx-spinner bdOpacity=0.9 bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple" [fullScreen]="true">
+  <p style="color: white"> Vui lòng chờ... </p>
+</ngx-spinner>
+<div class="table-responsive">
+  <table #dataTable class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Mã hội đồng</th>
+        <th>Năm học</th>
+        <th>Số QĐ</th>
+        <th>Ngày kí</th>
+        <th>Trạng thái</th>
+        <th>Thời gian mở</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hd of listhoidong; let idx = index"
+        [ngClass]="{'chua-mo':hd?.trang_thai==0,'dang-mo':hd?.trang_thai==2,'da-dong':hd?.trang_thai==1}">
+        <td>{{hd.ma_hoi_dong}}</td>
+        <td>{{hd.NamHoc.tu_ngay|generateSchoolYear}}</td>
+        <td>{{hd.so_quyet_dinh}}</td>
+        <td>{{hd.ngay_ky|date:"dd/MM/yyyy"}} </td>
+        <td>{{hd.trang_thai|trangThaiHoiDong}}</td>
+        <td>{{hd.thoi_gian_mo!==0?(hd.thoi_gian_mo|date:"dd/MM/yyyy HH:mm:ss"):'Chưa có'}}</td>
+        <td class="py-1">
+          <button (click)="moHoiDong(hd.ma_hoi_dong)" *ngIf="hd.trang_thai===0" class="btn btn-sm btn-primary mr-1"
+            placement="top" ngbTooltip="Mở hội đồng"><i class="fas fa-lock-open"></i></button>
+          <a *ngIf="hd.trang_thai===0" class="btn btn-sm btn-success mr-1"
+            [routerLink]="['/quan-tri/can-bo/',hd.soqd]"><i class="fas fa-edit"></i></a>
+          <a *ngIf="hd.trang_thai===0" class="btn btn-sm btn-danger mr-1" [swal]="deleteSwal"><i
+              class="fas fa-trash-alt"></i></a>
+          <a *ngIf="hd.trang_thai===2" class="btn btn-sm btn-success mr-1" placement="top" [routerLink]="['/hoi-dong/admin']" 
+            ngbTooltip="Theo dõi hội đồng"><i class=" fas fa-eye"></i></a>
+          <button (click)="dongHoiDong(hd.ma_hoi_dong)" *ngIf="hd.trang_thai===2" class="btn btn-sm btn-danger mr-1"
+            placement="top" ngbTooltip="Đóng hội đồng"><i class="far fa-stop-circle"></i></button>
+          <a class="btn btn-sm btn-primary" placement="top" ngbTooltip="In quyết định"
+            [routerLink]="['/inqd-hoidong',hd.ma_hoi_dong]"><i class="fas fa-print"></i></a>
+          <swal #deleteSwal title="Xác nhận xoá" text="Bạn muốn xoá hội đồng {{hd.soqd}}?" type="question"
+            [showCancelButton]="true"></swal>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

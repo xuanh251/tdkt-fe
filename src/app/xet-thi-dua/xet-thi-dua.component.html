@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title" *ngIf="haveHoiDong; then HaveHoiDong else NonHoiDong">Thành lập hội đồng</h2>
+      <ng-template #NonHoiDong>
+        <h2 class="pageheader-title">Không có hội đồng nào đang sẵn sàng! </h2>
+      </ng-template>
+      <ng-template #HaveHoiDong>
+        <h2 class="pageheader-title">Danh sách xét danh hiệu thi đua năm học
+          {{hoidong?.NamHoc?.tu_ngay|generateSchoolYear}} - mã hội đồng: {{hoidong?.ma_hoi_dong}}</h2>
+      </ng-template>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/home']" class="breadcrumb-link">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Xét danh hiệu thi đua</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="!haveHoiDong">
+  <p>
+    <ngb-alert [dismissible]="false">
+      <strong>Hiện tại chưa có hội đồng nào sẵn sàng!</strong> Vui lòng <a [routerLink]="['/hoi-dong/edit/0']">thành lập
+        hội đồng</a> trước khi truy cập vào đây.
+    </ngb-alert>
+  </p>
+</div>
+<div class="row" *ngIf="haveHoiDong">
+  <div class="col-md-12">
+    <ngb-tabset>
+      <ngb-tab title="Tập thể">
+        <ng-template ngbTabContent>
+          <app-xet-td-tap-the [maHoiDong]="hoidong?.ma_hoi_dong"></app-xet-td-tap-the>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Cá nhân">
+        <ng-template ngbTabContent>
+          <app-xet-td-ca-nhan [maHoiDong]="hoidong?.ma_hoi_dong"></app-xet-td-ca-nhan>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.appTitle{
+    font-size: 20px;
+    font-weight: 600;
+}
+.dropdown-menu .dropdown-item{
+    cursor: pointer;
+}
+.fixed-top{
+    z-index: 500;
+}

@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">Danh sách căn cứ </h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/']" class="breadcrumb-link">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Căn cứ</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <a class="btn btn-primary" [routerLink]="['/quan-tri/can-cu/0']"><i class="fas fa-plus-circle"></i> Thêm mới</a>
+  </div>
+</div>
+<div class="table-responsive">
+    <ngx-spinner
+    bdOpacity = 0.9
+    bdColor = "#333"
+    size = "medium"
+    color = "#fff"
+    type = "ball-scale-multiple"
+    [fullScreen] = "true"
+    >
+    <p style="color: white" > Vui lòng chờ... </p>
+    </ngx-spinner>
+  <table #dataTable class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Loại CC</th>
+        <th>Số hiệu</th>
+        <th>Ngày ký</th>
+        <th>Nơi ban hành</th>
+        <th>Trích yếu</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cb of listcancu; let idx = index">
+        <td>{{idx+1}}</td>
+        <td>{{cb.loai_can_cu}}</td>
+        <td>{{cb.so_hieu_can_cu}}</td>
+        <td>{{cb.ngay_ky|date:"dd/MM/yyyy"}}</td>
+        <td>{{cb.noi_ban_hanh}}</td>
+        <td>{{cb.trich_yeu}}</td>
+        <td class="py-1">
+          <a class="btn btn-sm btn-success mr-1" [routerLink]="['/quan-tri/can-cu/',cb.ma_can_cu]"><i class="fas fa-edit"></i></a>
+          <a class="btn btn-sm btn-danger" [swal]="deleteSwal" (confirm)="deletecancu(cb.ma_can_cu, idx)" ><i class="fas fa-trash-alt"></i></a>
+          <swal #deleteSwal 
+          title="Xác nhận xoá" 
+          text="Bạn muốn xoá căn cứ {{cb.so_hieu_can_cu}}?" 
+          type="question" 
+          [showCancelButton]="true" ></swal>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

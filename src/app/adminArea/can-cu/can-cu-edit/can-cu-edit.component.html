@@ -1,0 +1,107 @@
+<div class="row" *ngIf="!isCCR">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">{{objectAction}} căn cứ </h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/home']" class="breadcrumb-link">Trang
+                chủ</a></li>
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/quan-tri/can-cu']"
+                class="breadcrumb-link">Căn cứ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{objectAction}} căn cứ
+              {{this.myForm.get('so_hieu_can_cu').value}}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- ============================================================== -->
+  <!-- validation form -->
+  <!-- ============================================================== -->
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+      <h5 class="card-header">Nhập thông tin căn cứ vào bên dưới</h5>
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="input-select">Loại căn cứ</label>
+                <select class="form-control custom-select" id="input-select" formControlName="loai_can_cu"
+                  [ngClass]="{ 'is-invalid': submitted && f.loai_can_cu.errors }">
+                  <option>Quyết định</option>
+                  <option>Nghị định</option>
+                  <option>Quy chế</option>
+                </select>
+                <div *ngIf="submitted && !!f.loai_can_cu?.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.loai_can_cu.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Số hiệu căn cứ</label>
+                <input type="text" formControlName="so_hieu_can_cu" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.so_hieu_can_cu.errors }" />
+                <div *ngIf="submitted && !!f.so_hieu_can_cu.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.so_hieu_can_cu.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Ngày ký</label>
+                <div class="input-group">
+                  <input type="text" formControlName="ngay_ky" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.ngay_ky.errors }" ngbDatepicker #d="ngbDatepicker" />
+                  <div class="input-group-append">
+                    <button class="btn btn-sm btn-primary" (click)="d.toggle()" type="button"><i
+                        class="fas fa-calendar-alt"></i></button>
+                  </div>
+                  <div *ngIf="submitted && !!f.ngay_ky.errors" class="invalid-feedback">
+                    <div *ngIf="!!f.ngay_ky.errors.required">Thông tin này bắt buộc</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Nơi ban hành</label>
+                <input type="text" formControlName="noi_ban_hanh" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.noi_ban_hanh.errors }" />
+                <div *ngIf="submitted && !!f.noi_ban_hanh.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.noi_ban_hanh.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Trích yếu</label>
+                <input type="text" formControlName="trich_yeu" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.trich_yeu.errors }" />
+                <div *ngIf="submitted && !!f.trich_yeu.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.trich_yeu.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <a class="btn btn-brand mr-1" [routerLink]="['/quan-tri/can-cu']" routerLinkActive="router-link-active" *ngIf="!isCCR"><i
+                class="fas fa-arrow-circle-left"></i> Quay lại</a>
+            <button class="btn btn-primary"><i class="fas fa-edit"></i> {{objectAction}} căn cứ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end validation form -->
+  <!-- ============================================================== -->
+</div>

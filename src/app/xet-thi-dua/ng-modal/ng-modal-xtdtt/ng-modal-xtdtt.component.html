@@ -1,0 +1,38 @@
+<div class="modal-header">
+  <h4 class="modal-title">Cập nhật tập thể xét thi đua</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="myForm">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-group">
+          <label for="input-select">Đơn vị</label>
+          <angular2-multiselect  name="donvi" [data]="listDonVi" formControlName="don_vi"
+            [settings]="donViSetings"  (onSelect)="onItemSelect($event)" [(ngModel)]="selectedItemsDonVi">
+          </angular2-multiselect>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="form-group">
+          <label for="input-select">Danh hiệu đăng ký</label>
+          <angular2-multiselect  name="danhhieu" [data]="listDanhHieu" formControlName="danh_hieu" [(ngModel)]="selectedItemsDanhHieu"
+            [settings]="danhHieuSettings">
+          </angular2-multiselect>
+        </div>
+      </div>
+      <div class="col-md-2">
+          <div class="form-group">
+            <label for="input-select">Tỉ lệ đạt (%)</label>
+            <input type="number" formControlName="ti_le_dat" class="form-control" />
+          </div>
+        </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" (click)="capNhat()"><i class="fas fa-edit"></i> Cập nhật</button>
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Đóng</button>
+</div>

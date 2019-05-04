@@ -1,0 +1,45 @@
+<div class="form-group mt-2">
+    <label>Chọn danh hiệu:</label>
+    <angular2-multiselect [data]="listDanhHieu" [settings]="DanhHieuSetting" [(ngModel)]="selectedItemsDanhHieu"
+        (onSelect)="onSelectDanhHieu()">
+    </angular2-multiselect>
+</div>
+<div class="row">
+    <div class="col md-12">
+        <div class="table-responsive">
+            <table #dataTable class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 2%">
+                            <label class="custom-control custom-checkbox ml-2">
+                            <input type="checkbox" [(ngModel)]="selectAll" class="custom-control-input"><span class="custom-control-label"></span>
+                            </label></th>
+                        <th>STT</th>
+                        <th>Tên tập thể/cá nhân</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <ngx-spinner
+                        bdOpacity = 0.9
+                        bdColor = "#333"
+                        size = "medium"
+                        color = "#fff"
+                        type = "ball-scale-multiple"
+                        [fullScreen] = "true"
+                        >
+                        <p style="color: white" > Vui lòng chờ... </p>
+                        </ngx-spinner>
+                    <tr *ngFor="let item of listXetBauChon; let idx = index" [ngClass]="item.checked?'bau-chon':'khong-bau-chon'">
+                        <td><label class="custom-control custom-checkbox ml-2">
+                            <input type="checkbox" [(ngModel)]="item.checked" class="custom-control-input"><span class="custom-control-label"></span>
+                            </label></td>
+                        <td>{{idx+1}}</td>
+                        <td>{{isTapThe? item.don_vi.loai_don_vi + ' ' + item.don_vi.ten_don_vi:item.can_bo.ho_ten}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {{listXetBauChon|json}}
+        </div>
+        <button class="btn btn-primary btn-sm" (click)="bauChon()">Bầu chọn</button>
+    </div>
+</div>

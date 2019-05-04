@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">{{objectAction}} danh hiệu thi đua </h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/home']" class="breadcrumb-link">Trang chủ</a></li>
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/quan-tri/danh-hieu-thi-dua']" class="breadcrumb-link">danh hiệu thi đua</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{objectAction}} danh hiệu thi đua {{DanhHieuThiDuaDetail?.ten_danh_hieu}}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- ============================================================== -->
+  <!-- validation form -->
+  <!-- ============================================================== -->
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+      <h5 class="card-header">Nhập thông tin danh hiệu thi đua vào bên dưới</h5>
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.getRawValue())">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                  <label for="input-select">Loại danh hiệu thi đua</label>
+                  <select class="form-control custom-select" id="input-select" formControlName="doi_tuong_ap_dung" [ngModel]="DanhHieuThiDuaDetail?.doi_tuong_ap_dung" [ngClass]="{ 'is-invalid': submitted && f.doi_tuong_ap_dung.errors }">
+                      <option>Tập thể</option>
+                      <option>Cá nhân</option>
+                  </select>
+                <div *ngIf="submitted && !!f.doi_tuong_ap_dung?.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.doi_tuong_ap_dung.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="form-group">
+                <label>Tên danh hiệu thi đua</label>
+                <input type="text" formControlName="ten_danh_hieu" [ngModel]="DanhHieuThiDuaDetail?.ten_danh_hieu" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.ten_danh_hieu.errors }" />
+                <div *ngIf="submitted && !!f.ten_danh_hieu.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.ten_danh_hieu.errors.required">Thông tin này bắt buộc/div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <a class="btn btn-brand mr-1" [routerLink]="['/quan-tri/danh-hieu-thi-dua']" routerLinkActive="router-link-active" ><i class="fas fa-arrow-circle-left"></i> Quay lại</a>
+            <button class="btn btn-primary"><i class="fas fa-edit"></i> {{objectAction}} danh hiệu thi đua</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end validation form -->
+  <!-- ============================================================== -->
+</div>

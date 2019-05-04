@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="page-header">
+        <h2 class="pageheader-title">Danh sách cán bộ </h2>
+        <div class="page-breadcrumb">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a [routerLink]="['/']" class="breadcrumb-link">Trang chủ</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Cán bộ</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <a class="btn btn-primary" [routerLink]="['/quan-tri/can-bo/0']"><i class="fas fa-plus-circle"></i> Thêm mới</a>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table #dataTable class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th rowspan=2>STT</th>
+          <th rowspan=2>Họ tên</th>
+          <th colspan=2>Ngày sinh</th>
+          <th rowspan=2>Quê quán</th>
+          <th rowspan=2>Đảng viên</th>
+          <th rowspan=2>Đơn vị</th>
+          <th rowspan=2>Chức vụ</th>
+          <th rowspan=2>#</th>
+        </tr>
+        <tr>
+          <th class="fix-arrow">Nam</th>
+          <th class="fix-arrow">Nữ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ngx-spinner bdColor="rgba(51,51,51,0.5)" size="medium" color="#fff" type="ball-fussion">
+          <p style="font-size: 20px; color: white">Đang tải...</p>
+        </ngx-spinner>
+        <tr *ngFor="let cb of listcanbo; let idx = index">
+          <td>{{cb.ma_can_bo}}</td>
+          <td>{{cb.ho_va_chu_lot}} {{cb.ten}}</td>
+          <td><span [innerHTML]="(cb.ngay_sinh | pipeBooleanToHTML:'cb-ns-male':cb.gioi_tinh)|date:'dd/MM/yyyy'"></span></td>
+          <td><span [innerHTML]="(cb.ngay_sinh | pipeBooleanToHTML:'cb-ns-female':cb.gioi_tinh)|date:'dd/MM/yyyy'"></span></td>  
+          <td>{{cb.que_quan}}</td>
+          <td><span [innerHTML]="cb.dang_vien | pipeBooleanToHTML"></span></td>
+          <td>{{cb.don_vi.loai_don_vi}} {{cb.don_vi.ten_don_vi}}</td>
+          <td>{{cb.chuc_vu.ten_chuc_vu}}</td>
+          <td class="py-1">
+            <a class="btn btn-sm btn-success mr-1" [routerLink]="['/quan-tri/can-bo/',cb.ma_can_bo]"><i class="fas fa-edit"></i></a>
+            <a class="btn btn-sm btn-danger" [swal]="deleteSwal" (confirm)="deleteCanBo(cb.ma_can_bo, idx)" ><i class="fas fa-trash-alt"></i></a>
+            <swal #deleteSwal 
+            title="Xác nhận xoá" 
+            text="Bạn muốn xoá người dùng {{cb.ho_va_chu_lot}} {{cb.ten}}?" 
+            type="question" 
+            [showCancelButton]="true" ></swal>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

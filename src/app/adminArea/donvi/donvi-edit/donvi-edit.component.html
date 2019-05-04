@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="page-header">
+      <h2 class="pageheader-title">{{objectAction}} đơn vị </h2>
+      <div class="page-breadcrumb">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/home']" class="breadcrumb-link">Trang
+                chủ</a></li>
+            <li class="breadcrumb-item" routerLinkActive="active"><a [routerLink]="['/quan-tri/don-vi']"
+                class="breadcrumb-link">Đơn vị</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{objectAction}} đơn vị {{donviDetail?.ten_don_vi}}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- ============================================================== -->
+  <!-- validation form -->
+  <!-- ============================================================== -->
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+      <h5 class="card-header">Nhập thông tin đơn vị vào bên dưới</h5>
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.getRawValue())">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="input-select">Loại đơn vị</label>
+                <select class="form-control custom-select" id="input-select" formControlName="loai_don_vi"
+                  [ngModel]="donviDetail?.loai_don_vi" [ngClass]="{ 'is-invalid': submitted && f.loai_don_vi.errors }">
+                  <option>Phòng</option>
+                  <option>Khoa</option>
+                  <option>Trung tâm</option>
+                </select>
+                <div *ngIf="submitted && !!f.loai_don_vi?.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.loai_don_vi.errors.required">Thông tin này bắt buộc</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="form-group">
+                <label>Tên Đơn vị</label>
+                <input type="text" formControlName="ten_don_vi" [ngModel]="donviDetail?.ten_don_vi" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.ten_don_vi.errors }" />
+                <div *ngIf="submitted && !!f.ten_don_vi.errors" class="invalid-feedback">
+                  <div *ngIf="!!f.ten_don_vi.errors.required">Thông tin này bắt buộc/div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <a class="btn btn-brand mr-1" [routerLink]="['/quan-tri/don-vi']" routerLinkActive="router-link-active"><i
+                class="fas fa-arrow-circle-left"></i> Quay lại</a>
+            <button class="btn btn-primary"><i class="fas fa-edit"></i> {{objectAction}} đơn vị</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!-- end validation form -->
+  <!-- ============================================================== -->
+</div>

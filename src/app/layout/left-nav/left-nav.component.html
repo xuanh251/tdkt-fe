@@ -1,0 +1,121 @@
+<div class="nav-left-sidebar sidebar-dark">
+    <div class="menu-list">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-divider">Menu</li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-dhtd" aria-controls="submenu-3">
+                            <i class="fas fa-boxes"></i>Danh hiệu thi đua
+                        </a>
+                        <div id="submenu-dhtd" class="collapse submenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" [routerLink]="['/danh-hieu-thi-dua/tap-the']"><i class="fas fa-users"></i> Tập thể</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" [routerLink]="['/danh-hieu-thi-dua/ca-nhan']" routerLinkActive="router-link-active" ><i class="fas fa-user"></i> Cá nhân</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-htkt" aria-controls="submenu-3">
+                                <i class="far fa-list-alt"></i>Hình thức khen thưởng
+                            </a>
+                            <div id="submenu-htkt" class="collapse submenu">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages/chart-c3.html"><i class="fas fa-users"></i> Tập thể</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages/chart-chartist.html"><i class="fas fa-user"></i> Cá nhân</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3">
+                            <i class="fa fa-fw fa-chart-pie"></i>Bầu chọn
+                        </a>
+                        <div id="submenu-3" class="collapse submenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item" routerLinkActive="router-link-active">
+                                    <a class="nav-link" [routerLink]="['/hoi-dong']" ><i class="fas fa-warehouse"></i> Hội đồng TĐ-KT</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="router-link-active">
+                                    <a class="nav-link" [routerLink]="['/hoi-dong/xet-thi-dua']"><i class="fas fa-list-alt"></i> Danh sách xét TĐ</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="router-link-active">
+                                    <a class="nav-link" [routerLink]="['/hoi-dong/xet-khen-thuong']" ><i class="fas fa-list-alt"></i> Danh sách xét KT</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="router-link-active">
+                                    <a class="nav-link" [routerLink]="['/bo-phieu/check']"><i class=" fas fa-hand-lizard"></i> Bỏ phiếu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/chart-sparkline.html"><i class=" fab fa-autoprefixer"></i> Kết quả</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                            data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-sun"></i>Quản
+                            trị</a>
+                        <div id="submenu-4" class="collapse submenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item" routerLinkActive="active">
+                                    <a class="nav-link" [routerLink]="['/quan-tri/don-vi']">Danh sách Đơn vị</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="active">
+                                    <a class="nav-link" [routerLink]="['/quan-tri/chuc-vu']">Danh sách Chức vụ</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="active">
+                                    <a class="nav-link" [routerLink]="['/quan-tri/can-bo']">Danh sách Cán bộ</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="active">
+                                    <a class="nav-link" [routerLink]="['/quan-tri/danh-hieu-thi-dua']">Danh hiệu thi
+                                        đua</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="active">
+                                    <a class="nav-link" [routerLink]="['/quan-tri/hinh-thuc-khen-thuong']">Hình thức
+                                        khen thưởng</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/bootstrap-select.html">Năm học</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="router-link-active">
+                                    <a class="nav-link" [routerLink]="['/quan-tri/can-cu']">Căn cứ</a>
+                                </li>
+                                <li class="nav-item" routerLinkActive="router-link-active">
+                                        <a class="nav-link" [routerLink]="['/quan-tri/chuc-danh']">Chức danh</a>
+                                    </li>
+                                <!-- <li class="nav-item" routerLinkActive="active">
+                                    <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                        data-target="#submenu-4-1">Hệ thống</a>
+                                    <div id="submenu-4-1" class="collapse submenu">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item" routerLinkActive="active">
+                                                <a class="nav-link" [routerLink]="['/quan-tri/nguoi-dung']">Người
+                                                    dùng</a>
+                                            </li>
+                                            <li class="nav-item" routerLinkActive="active">
+                                                <a class="nav-link" [routerLink]="['/quan-tri/phan-quyen']">Phân
+                                                    quyền</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

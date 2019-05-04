@@ -1,0 +1,42 @@
+<div class="splash-container">
+        <ngx-spinner
+        bdOpacity = 0.9
+        bdColor = "#333"
+        size = "medium"
+        color = "#fff"
+        type = "ball-pulse"
+        [fullScreen] = "true"
+        >
+        <p style="color: white" > Vui lòng chờ... </p>
+        </ngx-spinner>
+    <div class="card ">
+        <div class="card-header text-center"><a href="../index.html"><img class="logo-img"
+                    src="../assets/images/logoqdu.png" alt="logo"></a><span class="splash-description">Đăng nhập để
+                tiếp tục.</span></div>
+        <div class="card-body">
+            <form #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
+                <div class="form-group w-100 mb-3">
+                    <input class="form-control form-control-lg w-100" name="username" type="text" autofocus placeholder="Email"
+                        [(ngModel)]="model.email" autofocus>
+                </div>
+                <div class="form-group w-100 mb-3">
+                    <input class="form-control form-control-lg w-100" name="password" type="password"
+                        placeholder="Mật khẩu" [(ngModel)]="model.password">
+                </div>
+                <div class="form-group mb-3">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Duy
+                            trì đăng nhập</span>
+                    </label>
+                </div>
+                <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary btn-lg btn-block">Đăng
+                    nhập</button>
+            </form>
+        </div>
+        <div class="card-footer bg-white p-0  ">
+            <div class="card-footer-item card-footer-item-bordered">
+                <a href="#" class="footer-link">Quên mật khẩu?</a>
+            </div>
+        </div>
+    </div>
+</div>

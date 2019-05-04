@@ -1,0 +1,71 @@
+<button class="btn btn-brand float-left mt-2 ml-2" id="goBack" (click)="backClicked()"><i class="fas fa-arrow-left"></i> Quay lại</button>
+<button class="btn btn-primary float-right mt-2 mr-2" id="printButton" (click)="printComponent('print-content')"><i class="fas fa-print"></i> In trang này</button><br>
+
+<div class="container" id="print-content">
+  <div class="body-content">
+    <div style="margin:40px 15px 0 60px">
+      <div class="row">
+        <div class="font-spec col3 canhgiua">
+          <p>UBND TỈNH QUẢNG NAM</p>
+          <p class="indam gachngan" style="margin:0 -8px">TRƯỜNG ĐẠI HỌC QUẢNG NAM</p><br />
+          <p style="margin-top:13px">Số: {{hoidong?.so_quyet_dinh}}</p>
+        </div>
+        <div class="col7 canhgiua">
+          <p class="indam font-12">CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+          <p class="under-line indam font-spec" style="margin:3px 116px">Độc lập - Tự do - Hạnh phúc</p><br />
+          <p style="margin-top:-11px" class="innghieng font-spec">Quảng Nam, {{hoidong?.ngay_ky|date:"'ngày' dd 'tháng' MM 'năm' yyyy"}} </p>
+        </div>
+        <div class="font-spec canhgiua indam w-100" style="margin-top:20px!important">
+          <p>QUYẾT ĐỊNH</p>
+          <p class="gachngan" style="margin:0 141px">Về việc thành lập hội đồng thi đua, khen thưởng <br>trường Đại học
+            Quảng Nam <br> Năm học {{hoidong?.NamHoc?.tu_ngay}}</p>
+          <p class="indam" style="margin-top:15px">HIỆU TRƯỞNG TRƯỜNG ĐẠI HỌC QUẢNG NAM</p>
+        </div>
+        <div class="font-spec canhdeu w-100" style="margin-top:30px">
+          <p *ngFor="let item of listCanCu">
+              <span *ngIf="item?.loai_can_cu=='Quy chế';then quyChe else notQuyChe"></span>
+              <ng-template #quyChe>&emsp;Căn cứ {{item?.loai_can_cu}} {{item?.trich_yeu}} ban hành kèm theo Quyết định số {{item?.so_hieu_can_cu}} ngày {{item?.ngay_ky|date:"dd/MM/yyyy"}} của {{item?.noi_ban_hanh}}</ng-template>
+              <ng-template #notQuyChe>&emsp;Căn cứ {{item?.loai_can_cu}} số {{item?.so_hieu_can_cu}} ngày {{item?.ngay_ky|date:"dd/MM/yyyy"}} của {{item?.noi_ban_hanh}} {{item?.trich_yeu}}</ng-template>
+          </p>
+          <p>&emsp;Xét đề nghị của Ông (Bà) Trưởng phòng Hành chính - Tổng hợp,</p>
+        </div>
+        <br>
+        <div class="font-spec canhgiua indam w-100" style="margin:20px 0!important">
+          <p>QUYẾT ĐỊNH:</p>
+        </div>
+        <div class="font-spec canhdeu">
+          <p><span class="indam">&emsp;Điều 1. </span>Thành lập Hội đồng thi đua, khen thưởng Trường Đại học
+            Quảng
+            Nam năm học {{hoidong?.NamHoc?.tu_ngay}} gồm các Ông (Bà) có tên sau:</p>
+          <div *ngFor="let item of listThanhVien; let idx = index" class="row justify-content-center">
+            <div class="col-md-8"><span>{{idx+1}}. &ensp; {{item?.CanBo?.ho_ten}} - {{item?.CanBo?.ChucVu?.ten_chuc_vu}} {{item?.CanBo?.DonVi?.ten_don_vi}}</span></div>
+            <div class="col-md-3"><span>{{item?.ChucDanh?.ten_chuc_danh}}</span></div>
+          </div>
+          <p><span class="indam">&emsp;Điều 2. </span>Hội đồng thi đua, khen thưởng hoạt động theo chế độ
+            kiêm nhiệm và
+            theo điều lệ trường đại học</p>
+          <p><span class="indam">&emsp;Điều 3. </span>Các Ông (Bà) Trưởng phòng HC - TH, TC - TTr, các đơn
+            vị liên quan
+            và các cá nhân có tên ở Điều 1 chịu trách nhiệm thi hành Quyết định này.</p>
+          <p>&emsp;&emsp;&nbsp;Quyết định này có hiệu lực kể từ ngày ký./.</p>
+        </div>
+      </div>
+      <div class="row">
+          <div style="float:left; width:50%">
+              <p class="indam innghieng font-10">Nơi nhận:</p>
+              <div class="font-9">
+                  <p>- Hiệu trưởng;</p>
+                  <p>- Phó hiệu trưởng;</p>
+                  <p>- Như điều 1,3 (Để thực hiện);</p>
+                  <p>- e &ndash; Office;</p>
+                  <p>- Lưu: VT, HC - TH.</p>
+              </div>
+          </div>
+          <div style="width:50%; float:left">
+              <p class="indam canhgiua font-13">HIỆU TRƯỞNG</p>
+              <p class="indam font-13 canhgiua mt-5">PGS.TS. Huỳnh Trọng Dương</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
