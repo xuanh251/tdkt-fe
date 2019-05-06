@@ -43,7 +43,6 @@ export class NgModalXktcnComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       can_bo: [''],
       hinh_thuc: [''],
-      ti_le_dat: [0],
       noi_dung: ['']
     });
     this.canBoSetings = {
@@ -67,7 +66,6 @@ export class NgModalXktcnComponent implements OnInit {
         console.log(data);
         this.selectedItemsCanBo = [data.can_bo];
         this.selectedItemsHinhThuc = [data.hinh_thuc];
-        this.myForm.get('ti_le_dat').setValue(data.ti_le_dat);
         this.myForm.get('noi_dung').setValue(data.noi_dung);
       },
       error => {
@@ -104,7 +102,6 @@ export class NgModalXktcnComponent implements OnInit {
     this.reqData.ma_hoi_dong = this.maHoiDong;
     this.reqData.ma_can_bo = rawData.can_bo[0].ma_can_bo;
     this.reqData.ma_hinh_thuc = rawData.hinh_thuc[0].ma_hinh_thuc;
-    this.reqData.ti_le_dat = rawData.ti_le_dat;
     this.reqData.noi_dung = rawData.noi_dung;
     this.xetKhenThuong.capNhatCaNhan(this.reqData).subscribe(
       next => {

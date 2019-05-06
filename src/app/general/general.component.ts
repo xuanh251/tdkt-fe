@@ -50,12 +50,11 @@ export class GeneralComponent implements OnInit, OnDestroy {
     this.socket.getEventListener().subscribe(event => {
       if (event.type === 'message') {
         const data = event.data.content;
-        if (token !== null) {
-          const decodedToken = this.jwtHelper.decodeToken(token);
+        const token1 = localStorage.getItem('token');
+        if (token1 !== null) {
+          const decodedToken = this.jwtHelper.decodeToken(token1);
           const hoten = decodedToken.info.ho_ten;
-          // const maQuyen = decodedToken.info.ma_quyen;
-          // const findStr = data + '';
-          if (data !== 'Connected' && data !== 'Disconnected' && data !== 'Cán bộ ' + hoten + ' đã online!' && data !== 'Cán bộ ' + hoten + ' đã thoát!') {
+          if (data !== 'Connected' && data !== 'Disconnected' && (data + '').indexOf('Cán bộ ' + hoten) === -1) {
             this.alertify.success(data);
           }
         }
@@ -63,7 +62,7 @@ export class GeneralComponent implements OnInit, OnDestroy {
     });
   }
   public ngOnDestroy() {
-    // this.socket.close();
+    this.socket.close();
   }
 
 }

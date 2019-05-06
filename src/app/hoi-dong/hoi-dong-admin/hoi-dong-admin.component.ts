@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HoiDongService } from 'src/app/_services/hoi-dong.service';
 import { AlertifyService } from 'src/app/_services/ultisService/alertify.service';
 import { SocketService } from 'src/app/_services/socket.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ModalThanhvienComponent } from '../modal-thanhvien/modal-thanhvien.component';
 import { GenerateSchoolYearPipe } from 'src/app/PipeHelper/generateSchoolYear.pipe';
+import { ModalTheoDoiBauChonComponent } from '../modal-theo-doi-bau-chon/modal-theo-doi-bau-chon.component';
 
 @Component({
   selector: 'app-hoi-dong-admin',
@@ -12,13 +13,15 @@ import { GenerateSchoolYearPipe } from 'src/app/PipeHelper/generateSchoolYear.pi
   styleUrls: ['./hoi-dong-admin.component.scss'],
   providers: [GenerateSchoolYearPipe]
 })
-export class HoiDongAdminComponent implements OnInit {
+export class HoiDongAdminComponent implements OnInit, OnDestroy {
   hoidong: any;
   namhoc = 'Đang tải';
   tongthanhvien = 'Đang tải...';
   thanhvienonline = 'Đang tải...';
   listDanhHieuByHoiDong: any[];
-  stoptime = 1556906577000;
+  modalRef: NgbModalRef;
+
+  ListTDTTDatYeuCau: any[];
   constructor(
     private hoiDongService: HoiDongService,
     private alertify: AlertifyService,
@@ -40,6 +43,9 @@ export class HoiDongAdminComponent implements OnInit {
       }
     });
   }
+  ngOnDestroy() {
+    // this.socket.close();
+  }
   getHoiDong() {
     this.hoiDongService.getLastHoiDong().subscribe(
       hoidong => {
@@ -52,6 +58,7 @@ export class HoiDongAdminComponent implements OnInit {
       },
       error => {
         this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+        console.log(error);
       }
     );
   }
@@ -63,12 +70,13 @@ export class HoiDongAdminComponent implements OnInit {
           this.tongthanhvien = listthanhvien.length.toString();
           this.thanhvienonline = listthanhvien
             .filter(
-              rs => rs.CanBo.trang_thai === true && rs.CanBo.ma_quyen !== 2
+              rs => rs.CanBo.trang_thai === true
             )
             .length.toString();
         },
         error => {
           this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+          console.log(error);
         }
       );
   }
@@ -89,6 +97,7 @@ export class HoiDongAdminComponent implements OnInit {
         },
         error => {
           this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+          console.log(error);
         }
       );
   }
@@ -104,6 +113,8 @@ export class HoiDongAdminComponent implements OnInit {
         this.socket.send(
           'Phiên bầu chọn cho danh hiệu ' + tenDanhHieu + ' đã mở!'
         );
+        localStorage.removeItem('danhHieuPush');
+        this.openModalTheoDoi(maDanhHieu, tenDanhHieu, next.thoi_gian_mo);
       },
       error => {
         this.alertify.error('Đã xảy ra lỗi!');
@@ -131,6 +142,7 @@ export class HoiDongAdminComponent implements OnInit {
         this.socket.send(
           'Phiên bầu chọn cho danh hiệu ' + tenDanhHieu + ' đã đóng!'
         );
+        this.openModalTheoDoi(maDanhHieu, tenDanhHieu, 0);
       },
       error => {
         this.alertify.error('Đã xảy ra lỗi!');
@@ -142,7 +154,14 @@ export class HoiDongAdminComponent implements OnInit {
       this.ketThuc(maDanhHieu, tenDanhHieu);
     }
   }
-  openModalTheoDoi() {
-    return;
+  openModalTheoDoi(maDanhHieu, tenDanhHieu, thoiGianMo) {
+    this.modalRef = this.modalService.open(ModalTheoDoiBauChonComponent, {
+      windowClass: 'modal-holder',
+      centered: true,
+    });
+    this.modalRef.componentInstance.tenDanhHieu = tenDanhHieu;
+    this.modalRef.componentInstance.maDanhHieu = maDanhHieu;
+    this.modalRef.componentInstance.thoiGianMo = thoiGianMo;
+    this.modalRef.componentInstance.hoiDong = this.hoidong;
   }
 }

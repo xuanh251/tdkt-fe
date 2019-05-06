@@ -1,10 +1,20 @@
-<div class="form-group mt-2">
-    <label>Chọn danh hiệu:</label>
-    <angular2-multiselect [data]="listDanhHieu" [settings]="DanhHieuSetting" [(ngModel)]="selectedItemsDanhHieu"
-        (onSelect)="onSelectDanhHieu()">
-    </angular2-multiselect>
+<div class="alert alert-warning" role="alert" *ngIf="!PhienBCDaMo">
+    Hiện tại chưa có phiên bầu chọn nào được mở!
 </div>
-<div class="row">
+<div class="alert alert-warning" role="alert" *ngIf="DaBauChon && PhienBCDaMo">
+    Bạn đã thực hiện bầu chọn cho danh hiệu {{DanhHieuInfo.ten_danh_hieu}}, vui lòng chờ phiên bầu chọn tiếp theo!
+    <a class="xem-ket-qua" (click)="xemKetQua()">Xem kết quả bầu chọn</a>
+</div>
+<ngx-spinner bdOpacity=0.9 bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple" [fullScreen]="true">
+    <p style="color: white"> Vui lòng chờ... </p>
+</ngx-spinner>
+<div class="row" *ngIf="PhienBCDaMo && !DaBauChon">
+    <div class="col-md-12">
+        <h2 class="pageheader-title text-center">Bầu chọn danh hiệu thi đua {{DanhHieuInfo.ten_danh_hieu}} </h2>
+        <h2 class="pageheader-title text-center">Thời gian còn lại <countdown
+                [config]="{ stopTime: DanhHieuInfo.thoi_gian_mo + 300000, template: '$!h!:$!m!:$!s!' }"></countdown>
+        </h2>
+    </div>
     <div class="col md-12">
         <div class="table-responsive">
             <table #dataTable class="table table-bordered">
@@ -12,34 +22,54 @@
                     <tr>
                         <th style="width: 2%">
                             <label class="custom-control custom-checkbox ml-2">
-                            <input type="checkbox" [(ngModel)]="selectAll" class="custom-control-input"><span class="custom-control-label"></span>
+                                <input type="checkbox" [(ngModel)]="selectAll" class="custom-control-input"><span
+                                    class="custom-control-label"></span>
                             </label></th>
                         <th>STT</th>
                         <th>Tên tập thể/cá nhân</th>
                     </tr>
                 </thead>
                 <tbody>
-                        <ngx-spinner
-                        bdOpacity = 0.9
-                        bdColor = "#333"
-                        size = "medium"
-                        color = "#fff"
-                        type = "ball-scale-multiple"
-                        [fullScreen] = "true"
-                        >
-                        <p style="color: white" > Vui lòng chờ... </p>
-                        </ngx-spinner>
-                    <tr *ngFor="let item of listXetBauChon; let idx = index" [ngClass]="item.checked?'bau-chon':'khong-bau-chon'">
+                    <ngx-spinner bdOpacity=0.9 bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple"
+                        [fullScreen]="true">
+                        <p style="color: white"> Vui lòng chờ... </p>
+                    </ngx-spinner>
+                    <tr *ngFor="let item of listXetBauChon; let idx = index"
+                        [ngClass]="item.checked?'bau-chon':'khong-bau-chon'">
                         <td><label class="custom-control custom-checkbox ml-2">
-                            <input type="checkbox" [(ngModel)]="item.checked" class="custom-control-input"><span class="custom-control-label"></span>
+                                <input type="checkbox" [(ngModel)]="item.checked" class="custom-control-input"><span
+                                    class="custom-control-label"></span>
                             </label></td>
                         <td>{{idx+1}}</td>
                         <td>{{isTapThe? item.don_vi.loai_don_vi + ' ' + item.don_vi.ten_don_vi:item.can_bo.ho_ten}}</td>
                     </tr>
                 </tbody>
             </table>
-            {{listXetBauChon|json}}
         </div>
-        <button class="btn btn-primary btn-sm" (click)="bauChon()">Bầu chọn</button>
+        <div class='item-center'>
+            <button [disabled]="DaBauChon" class="btn btn-primary my-2" mwlConfirmationPopover
+                [popoverTitle]="'Xác nhận bầu chọn'"
+                [popoverMessage]="'Việc bầu chọn sẽ không thể thực hiện lại. Bạn chắc chắn với kết quả bầu chọn của mình?'"
+                placement="top" (confirm)="bauChon()">
+                <i class="fas fa-check-circle"></i> Bầu chọn
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" *ngIf="XemKetQua">
+        <div class="card">
+            <h5 class="card-header"><i class="fas fa-hand-point-right"></i> Kết quả bầu chọn cho danh hiệu
+                {{DanhHieuInfo.ten_danh_hieu}}
+            </h5>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li *ngFor="let item of listDaBauChon; let idx = index" class="list-group-item">
+                        <span *ngIf="item.trang_thai_bau_chon" class="badge badge-primary">{{idx+1}}) {{item.XetThiDuaTapThe.don_vi.loai_don_vi + " " + item.XetThiDuaTapThe.don_vi.ten_don_vi}} - Đồng ý</span>
+                        <span *ngIf="!item.trang_thai_bau_chon" class="badge badge-warning">{{idx+1}}) {{item.XetThiDuaTapThe.don_vi.loai_don_vi + " " + item.XetThiDuaTapThe.don_vi.ten_don_vi}} - Không đồng ý</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>

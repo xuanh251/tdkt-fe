@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HoiDongService } from '../_services/hoi-dong.service';
 import { AlertifyService } from '../_services/ultisService/alertify.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-xet-khen-thuong',
@@ -10,12 +11,15 @@ import { AlertifyService } from '../_services/ultisService/alertify.service';
 export class XetKhenThuongComponent implements OnInit {
   hoidong: any;
   haveHoiDong: boolean;
+  isAdmin = false;
   constructor(
     private hoiDongService: HoiDongService,
     private alertify: AlertifyService,
+    private jwtHelper: JwtHelperService
   ) { }
 
   ngOnInit() {
+    this.isAdmin = this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ma_quyen === '2';
     this.haveHoiDong = false;
     this.getHoiDong();
   }

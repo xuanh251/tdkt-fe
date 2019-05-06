@@ -34,19 +34,21 @@
       <tr>
         <th>ID</th>
         <th>Tên hình thức khen thưởng</th>
+        <th>Tỉ lệ đạt</th>
         <th>#</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cv of listHinhThucKhenThuong; let idx = index">
-        <td>{{cv.ma_hinh_thuc}}</td>
-        <td>{{cv.ten_hinh_thuc}}</td>
+      <tr *ngFor="let ht of listHinhThucKhenThuong; let idx = index">
+        <td>{{ht.ma_hinh_thuc}}</td>
+        <td>{{ht.ten_hinh_thuc}}</td>
+        <td>{{ht.ti_le_dat}}</td>
         <td class="py-1">
-          <a class="btn btn-sm btn-success mr-1" [routerLink]="['/quan-tri/hinh-thuc-khen-thuong',cv.ma_hinh_thuc]"><i class="fas fa-edit"></i></a>
-          <a class="btn btn-sm btn-danger" [swal]="deleteSwal" (confirm)="deleteHinhThucKhenThuong(cv.ma_hinh_thuc, idx)" ><i class="fas fa-trash-alt"></i></a>
+          <a class="btn btn-sm btn-success mr-1" [routerLink]="['/quan-tri/hinh-thuc-khen-thuong',ht.ma_hinh_thuc]"><i class="fas fa-edit"></i></a>
+          <a class="btn btn-sm btn-danger" [swal]="deleteSwal" (confirm)="deleteHinhThucKhenThuong(ht.ma_hinh_thuc, idx)" ><i class="fas fa-trash-alt"></i></a>
           <swal #deleteSwal 
           title="Xác nhận xoá" 
-          text="Bạn muốn xoá hình thức khen thưởng {{ cv.ten_hinh_thuc }}?" 
+          text="Bạn muốn xoá hình thức khen thưởng {{ ht.ten_hinh_thuc }}?" 
           type="question" 
           [showCancelButton]="true" ></swal>
         </td>

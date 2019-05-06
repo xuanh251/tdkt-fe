@@ -28,12 +28,12 @@ export class ModalThanhvienComponent implements OnInit {
     this.hoiDongService.getListThanhVienByHoiDong(this.maHoiDong).subscribe(
       (listthanhvien: any) => {
         this.listThanhVien = listthanhvien;
-        console.log(listthanhvien);
         this.spinner.hide();
       },
       error => {
         this.spinner.hide();
         this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+        console.log(error);
       }
     );
   }

@@ -17,6 +17,7 @@ import { ErrorInterceptorProvider } from './_services/ultisService/error.interce
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import {NgbModule, NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 import { AuthGuard } from './_guard/auth.guard';
 
@@ -94,6 +95,10 @@ import { HoiDongAdminComponent } from './hoi-dong/hoi-dong-admin/hoi-dong-admin.
 import { ModalThanhvienComponent } from './hoi-dong/modal-thanhvien/modal-thanhvien.component';
 import { BauchondanhhieuPipe } from './PipeHelper/bauchondanhhieu.pipe';
 import { ModalTheoDoiBauChonComponent } from './hoi-dong/modal-theo-doi-bau-chon/modal-theo-doi-bau-chon.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { environment } from 'src/environments/environment';
+import { NumOfBauChonPipe } from './PipeHelper/numOfBauChon.pipe';
+import { ModalDiemdanhComponent } from './hoi-dong/modal-diemdanh/modal-diemdanh.component';
 export function tokenGetter() {
    return localStorage.getItem('token');
 }
@@ -119,6 +124,7 @@ export function tokenGetter() {
       YesnoPipe,
       TrangThaiHoiDongPipe,
       BauchondanhhieuPipe,
+      NumOfBauChonPipe,
 
       HinhThucKhenThuongListComponent,
       HinhThucKhenThuongEditComponent,
@@ -158,6 +164,7 @@ export function tokenGetter() {
       HoiDongAdminComponent,
       ModalThanhvienComponent,
       ModalTheoDoiBauChonComponent,
+      ModalDiemdanhComponent,
    ],
    imports: [
       BrowserModule,
@@ -168,12 +175,12 @@ export function tokenGetter() {
       NgxSpinnerModule,
       ReactiveFormsModule,
       NgbModule,
-      RouterModule.forRoot(appRoutes),
+      RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'}),
       JwtModule.forRoot({
          config: {
             tokenGetter,
-            whitelistedDomains: ['localhost:3000'],
-            blacklistedRoutes: ['localhost:3000/api/auth']
+            whitelistedDomains: [environment.ApiOriginUrl],
+            blacklistedRoutes: [environment.ApiOriginUrl + '/api/auth']
          }
       }),
       SweetAlert2Module.forRoot({
@@ -190,7 +197,12 @@ export function tokenGetter() {
       NgMultiSelectDropDownModule.forRoot(),
       AngularMultiSelectModule,
       CountdownModule,
-      // MaterialModule
+      ConfirmationPopoverModule.forRoot({
+         confirmButtonType: 'success',
+         cancelButtonType: 'danger',
+         confirmText: '<i class="fas fa-check"></i> Xác nhận',
+         cancelText: '<i class="far fa-window-close"></i> Huỷ' // set defaults here
+       })
    ],
    providers: [
       AuthService,
@@ -214,7 +226,9 @@ export function tokenGetter() {
       NgModalXtdcnComponent,
       NgModalXktcnComponent,
       NgModalXktttComponent,
-      ModalThanhvienComponent
+      ModalThanhvienComponent,
+      ModalTheoDoiBauChonComponent,
+      ModalDiemdanhComponent
    ]
 })
 export class AppModule { }

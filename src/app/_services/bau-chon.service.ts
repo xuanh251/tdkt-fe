@@ -16,8 +16,38 @@ export class BauChonService {
       }
     ));
   }
+  getListObjCNByDanhHieu(Request) {
+    return this.http.post(environment.apiUrl + 'bauchon/getlistobjcnbydanhhieu', Request).pipe(map(
+      (res) => {
+        return res;
+      }
+    ));
+  }
   bauChonThiDuaTT(Request) {
-    return this.http.post(environment.apiUrl + 'bauchon/thiduatapthe', Request).pipe(map(
+    const a = {
+      Request
+    };
+    return this.http.post(environment.apiUrl + 'bauchon/thiduatapthe', a).pipe(map(
+      (res) => {
+        return res;
+      }
+    ));
+  }
+  bauChonThiDuaCN(Request) {
+    const a = {
+      Request
+    };
+    return this.http.post(environment.apiUrl + 'bauchon/thiduacanhan', a).pipe(map(
+      (res) => {
+        return res;
+      }
+    ));
+  }
+  GetListDaBauChonTDTTByTVHD(maThanhPhan) {
+    return this.http.get(environment.apiUrl + 'bauchon/listbcbytvhd/' + maThanhPhan);
+  }
+  PushListTDTTDatYeuCau(data) {
+    return this.http.post(environment.apiUrl + 'bauchon/addlisttdttdatyeucau', data).pipe(map(
       (res) => {
         return res;
       }

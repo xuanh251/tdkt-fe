@@ -31,7 +31,7 @@
         <td>{{item.can_bo.ho_ten}}</td>
         <td>{{item.can_bo.DonVi.ten_don_vi}}</td>
         <td>{{item.danh_hieu.ten_danh_hieu}}</td>
-        <td>{{item.ti_le_dat}} %</td>
+        <td>{{item.danh_hieu.ti_le_dat}} %</td>
         <td class="py-1">
           <a class="btn btn-sm btn-success mr-1" (click)="open(item.id)"><i class="fas fa-edit"></i></a>
           <a class="btn btn-sm btn-danger mr-1" [swal]="deleteSwal" (confirm)="deleteObj(item.id, idx)"><i class="fas fa-trash-alt"></i></a>

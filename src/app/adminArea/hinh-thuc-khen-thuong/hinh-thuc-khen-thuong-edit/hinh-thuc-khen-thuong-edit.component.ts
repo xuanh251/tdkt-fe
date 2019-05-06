@@ -28,7 +28,10 @@ export class HinhThucKhenThuongEditComponent implements OnInit {
       this.getHinhThucKhenThuongInfo(this.id);
     }
     this.myForm = this.formBuilder.group(
-      {ten_hinh_thuc: ['', Validators.required]}
+      {
+        ten_hinh_thuc: ['', Validators.required],
+        ti_le_dat: ['', Validators.required]
+      }
     );
   }
 

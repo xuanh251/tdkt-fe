@@ -1,3 +1,13 @@
 .bau-chon{
     background-color: cornflowerblue;
 }
+.item-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.xem-ket-qua{
+    font-weight: 600;
+    color: blue;
+    cursor: pointer;
+}

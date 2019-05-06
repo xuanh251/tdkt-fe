@@ -35,20 +35,22 @@
         <th>ID</th>
         <th>Loại danh hiệu thi đua</th>
         <th>Tên danh hiệu thi đua</th>
+        <th>Tỉ lệ đạt</th>
         <th>#</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let dv of listDanhHieuThiDua; let idx = index">
-        <td>{{dv.ma_danh_hieu}}</td>
-        <td>{{dv.doi_tuong_ap_dung}}</td>
-        <td>{{dv.ten_danh_hieu}}</td>
+      <tr *ngFor="let dh of listDanhHieuThiDua; let idx = index">
+        <td>{{dh.ma_danh_hieu}}</td>
+        <td>{{dh.doi_tuong_ap_dung}}</td>
+        <td>{{dh.ten_danh_hieu}}</td>
+        <td>{{dh.ti_le_dat}}</td>
         <td class="py-1">
-          <a class="btn btn-sm btn-success mr-1" [routerLink]="['/quan-tri/danh-hieu-thi-dua/',dv.ma_danh_hieu]"><i class="fas fa-edit"></i></a>
-          <a class="btn btn-sm btn-danger" [swal]="deleteSwal" (confirm)="deleteDanhHieuThiDua(dv.ma_danh_hieu, idx)" ><i class="fas fa-trash-alt"></i></a>
+          <a class="btn btn-sm btn-success mr-1" [routerLink]="['/quan-tri/danh-hieu-thi-dua/',dh.ma_danh_hieu]"><i class="fas fa-edit"></i></a>
+          <a class="btn btn-sm btn-danger" [swal]="deleteSwal" (confirm)="deleteDanhHieuThiDua(dh.ma_danh_hieu, idx)" ><i class="fas fa-trash-alt"></i></a>
           <swal #deleteSwal 
           title="Xác nhận xoá" 
-          text="Bạn muốn xoá danh hiệu thi đua {{ dv.ten_danh_hieu }}?" 
+          text="Bạn muốn xoá danh hiệu thi đua {{ dh.ten_danh_hieu }}?" 
           type="question" 
           [showCancelButton]="true" ></swal>
         </td>

@@ -7,7 +7,7 @@
 <div class="modal-body">
   <form [formGroup]="myForm">
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-6">
         <div class="form-group">
           <label for="input-select">Cán bộ</label>
           <angular2-multiselect  name="canbo" [data]="listCanBo" formControlName="can_bo"
@@ -15,7 +15,7 @@
           </angular2-multiselect>
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-6">
         <div class="form-group">
           <label for="input-select">Hình thức khen thưởng</label>
           <angular2-multiselect  name="hinhthuc" [data]="listHinhThuc" formControlName="hinh_thuc" [(ngModel)]="selectedItemsHinhThuc"
@@ -23,12 +23,6 @@
           </angular2-multiselect>
         </div>
       </div>
-      <div class="col-md-2">
-          <div class="form-group">
-            <label for="input-select">Tỉ lệ đạt (%)</label>
-            <input type="number" formControlName="ti_le_dat" class="form-control" />
-          </div>
-        </div>
     </div>
 
     <div class="row">

@@ -29,6 +29,7 @@
     "@types/jquery": "^3.3.29",
     "alertifyjs": "^1.11.2",
     "angular-archwizard": "^4.0.0",
+    "angular-confirmation-popover": "^4.2.0",
     "angular-datatables": "^7.0.0",
     "angular-file-uploader": "^5.0.2",
     "angular-jwt": "^0.1.11",

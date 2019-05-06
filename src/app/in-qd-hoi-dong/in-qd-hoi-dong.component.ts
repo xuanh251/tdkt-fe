@@ -61,6 +61,7 @@ export class InQDHoiDongComponent implements OnInit {
       },
       error => {
         this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+        console.log(error);
       }
     );
   }

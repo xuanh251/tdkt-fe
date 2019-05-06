@@ -35,6 +35,7 @@ export const appRoutes: Routes = [
     children: [
       { path: 'dang-nhap', component: LoginComponent },
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+      
       {
         path: 'quan-tri',
         canActivate: [AuthGuard],
@@ -115,9 +116,9 @@ export const appRoutes: Routes = [
         path: 'bo-phieu/check',
         canActivate: [AuthGuard],
         component: BoPhieuInfoComponent
-      }
+      },
     ]
   },
   { path: 'inqd-hoidong/:id', component: InQDHoiDongComponent, canActivate: [AuthGuard] },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

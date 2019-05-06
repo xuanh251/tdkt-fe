@@ -43,7 +43,6 @@ export class NgModalXktttComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       don_vi: [''],
       hinh_thuc: [''],
-      ti_le_dat: [0],
       noi_dung: ['']
     });
     this.donViSetings = {
@@ -66,7 +65,6 @@ export class NgModalXktttComponent implements OnInit {
       data => {
         this.selectedItemsDonVi = [data.don_vi];
         this.selectedItemsHinhThuc = [data.hinh_thuc];
-        this.myForm.get('ti_le_dat').setValue(data.ti_le_dat);
         this.myForm.get('noi_dung').setValue(data.noi_dung);
       },
       error => {
@@ -104,7 +102,6 @@ export class NgModalXktttComponent implements OnInit {
     this.reqData.ma_hoi_dong = this.maHoiDong;
     this.reqData.ma_don_vi = rawData.don_vi[0].ma_don_vi;
     this.reqData.ma_hinh_thuc = rawData.hinh_thuc[0].ma_hinh_thuc;
-    this.reqData.ti_le_dat = rawData.ti_le_dat;
     this.reqData.noi_dung = rawData.noi_dung;
     this.xetKhenThuong.capNhatTapThe(this.reqData).subscribe(
       next => {

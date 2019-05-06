@@ -21,7 +21,7 @@
   </p>
   <p *ngIf="!isPermited">
       <ngb-alert [dismissible]="false">
-        <strong>Lưu ý!</strong> Bạn không phải là thành viên hội đồng!
+        <strong>Lưu ý!</strong> Bạn không phải là thành viên hội đồng hoặc không có quyền bỏ phiếu!
       </ngb-alert>
     </p>
   <div class="col-md-12" *ngIf="isOpen&&isPermited">

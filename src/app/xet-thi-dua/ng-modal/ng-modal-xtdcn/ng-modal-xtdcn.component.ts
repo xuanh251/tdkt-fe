@@ -43,7 +43,6 @@ export class NgModalXtdcnComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       can_bo: [''],
       danh_hieu: [''],
-      ti_le_dat: [0]
     });
     this.canBoSetings = {
       singleSelection: true,
@@ -65,7 +64,6 @@ export class NgModalXtdcnComponent implements OnInit {
       data => {
         this.selectedItemsCanBo = [data.can_bo];
         this.selectedItemsDanhHieu = [data.danh_hieu];
-        this.myForm.get('ti_le_dat').setValue(data.ti_le_dat);
       },
       error => {
         this.alertify.error('Đã xảy ra lỗi khi nạp dữ liệu!');
@@ -105,7 +103,6 @@ export class NgModalXtdcnComponent implements OnInit {
     this.reqData.ma_hoi_dong = this.maHoiDong;
     this.reqData.ma_can_bo = rawData.can_bo[0].ma_can_bo;
     this.reqData.ma_danh_hieu = rawData.danh_hieu[0].ma_danh_hieu;
-    this.reqData.ti_le_dat = rawData.ti_le_dat;
     this.xetThiDua.capNhatCaNhan(this.reqData).subscribe(
       next => {
         this.alertify.success(next);

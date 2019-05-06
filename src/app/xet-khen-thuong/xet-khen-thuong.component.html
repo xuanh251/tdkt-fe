@@ -20,7 +20,7 @@
     </div>
   </div>
 </div>
-<div class="row" *ngIf="!haveHoiDong">
+<div class="row" *ngIf="!haveHoiDong && isAdmin">
   <p>
     <ngb-alert [dismissible]="false">
       <strong>Hiện tại chưa có hội đồng nào sẵn sàng!</strong> Vui lòng <a [routerLink]="['/hoi-dong/edit/0']">thành lập
@@ -28,7 +28,14 @@
     </ngb-alert>
   </p>
 </div>
-<div class="row" *ngIf="haveHoiDong">
+<div class="row" *ngIf="!isAdmin">
+    <p>
+      <ngb-alert [dismissible]="false">
+        <strong>Bạn không có quyền truy cập ở trang này!</strong>
+      </ngb-alert>
+    </p>
+  </div>
+<div class="row" *ngIf="haveHoiDong && isAdmin">
   <div class="col-md-12">
     <ngb-tabset>
       <ngb-tab title="Tập thể">

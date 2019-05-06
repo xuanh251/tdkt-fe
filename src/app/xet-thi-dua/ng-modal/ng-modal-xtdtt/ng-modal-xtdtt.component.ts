@@ -42,8 +42,7 @@ export class NgModalXtdttComponent implements OnInit {
     }
     this.myForm = this.formBuilder.group({
       don_vi: [''],
-      danh_hieu: [''],
-      ti_le_dat: [0]
+      danh_hieu: ['']
     });
     this.donViSetings = {
       singleSelection: true,
@@ -68,7 +67,6 @@ export class NgModalXtdttComponent implements OnInit {
       data => {
         this.selectedItemsDonVi = [data.don_vi];
         this.selectedItemsDanhHieu = [data.danh_hieu];
-        this.myForm.get('ti_le_dat').setValue(data.ti_le_dat);
       },
       error => {
         this.alertify.error('Đã xảy ra lỗi khi nạp dữ liệu!');
@@ -109,7 +107,6 @@ export class NgModalXtdttComponent implements OnInit {
     this.reqData.ma_hoi_dong = this.maHoiDong;
     this.reqData.ma_don_vi = rawData.don_vi[0].ma_don_vi;
     this.reqData.ma_danh_hieu = rawData.danh_hieu[0].ma_danh_hieu;
-    this.reqData.ti_le_dat = rawData.ti_le_dat;
     this.xetThiDua.capNhatTapThe(this.reqData).subscribe(
       next => {
         this.alertify.success(next);

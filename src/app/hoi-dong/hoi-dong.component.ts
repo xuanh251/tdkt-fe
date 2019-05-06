@@ -4,6 +4,9 @@ import { AlertifyService } from '../_services/ultisService/alertify.service';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { SocketService } from '../_services/socket.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDiemdanhComponent } from './modal-diemdanh/modal-diemdanh.component';
 
 @Component({
   selector: 'app-hoi-dong',
@@ -16,14 +19,18 @@ export class HoiDongComponent implements OnInit, AfterViewInit {
   baseUrl = window.origin + '/inqd-hoidong/';
   @ViewChild('dataTable') table: ElementRef;
   dataTable: any;
+  isAdmin = false;
   constructor(
     private hoiDongService: HoiDongService,
     private alertify: AlertifyService,
     private spinner: NgxSpinnerService,
-    private socket: SocketService
+    private socket: SocketService,
+    private jwtHelper: JwtHelperService,
+    private modalService: NgbModal
     ) { }
 
   ngOnInit() {
+    this.isAdmin = this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ma_quyen === '2';
     this.spinner.show();
     this.GetListHoiDong();
   }
@@ -44,13 +51,12 @@ export class HoiDongComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       // tslint:disable-next-line:object-literal-key-quotes
       this.dataTable.DataTable({ language: environment.dataTableLanguage });
-    }, 3000);
+    }, 1000);
   }
   moHoiDong(maHoiDong) {
     this.spinner.show();
     this.hoiDongService.moHoiDong(maHoiDong).subscribe(
       next => {
-        this.alertify.success(next);
         this.GetListHoiDong();
         this.socket.send('Hội đồng ' + maHoiDong + ' đã mở');
       },
@@ -73,5 +79,12 @@ export class HoiDongComponent implements OnInit, AfterViewInit {
         this.alertify.error('Đã xảy ra lỗi!');
       }
     );
+  }
+  showModalDiemDanh(maHoiDong) {
+    const modalRef = this.modalService.open(ModalDiemdanhComponent, {
+      windowClass: 'modal-holder',
+      centered: true
+    });
+    modalRef.componentInstance.maHoiDong = maHoiDong;
   }
 }

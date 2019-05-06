@@ -30,7 +30,8 @@ export class DanhHieuThiDuaEditComponent implements OnInit {
     this.myForm = this.formBuilder.group(
       {
         ten_danh_hieu: ['', Validators.required],
-        doi_tuong_ap_dung: ['', Validators.required]
+        doi_tuong_ap_dung: ['', Validators.required],
+        ti_le_dat: ['', Validators.required]
       }
     );
   }
