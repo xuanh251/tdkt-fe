@@ -1,0 +1,44 @@
+<div class="modal-header">
+  <h4 class="modal-title text-uppercase text-center">Kết quả bầu chọn danh hiệu thi đua {{tenDanhHieu}} ngày {{today|date:'dd/MM/yyyy'}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <ngx-spinner dOpacity=0 bdColor="rgba(255,255,255,0)" size="medium" color="#092bee" type="ball-scale-multiple"
+    [fullScreen]="true">
+    <p style="color: white"> Vui lòng chờ... </p>
+  </ngx-spinner>
+  <h2 class="pageheader-title text-center">
+    Thời gian mở: {{thoiGianMo|date:'dd/MM/yyyy hh:mm:ss'}}
+  </h2>
+  <h3 class="text-center">Tổng số thành viên hội đồng: {{TongTVHD}} - Số thành viên có mặt: {{SoTVCoMat}} - Số vắng mặt: {{TongTVHD - SoTVCoMat}} - Số thành viên đã bầu chọn: {{SoTVDaBauChon}}</h3>
+  <div class="card">
+    <h5 class="card-header"><i class="fas fa-hand-point-right"></i> Thông tin kết quả bầu chọn</h5>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Họ tên/Tên đơn vị</th>
+              <th>Số phiếu đồng ý</th>
+              <th>Số phiếu không đồng ý</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of listXetBauChon; let idx = index" [ngClass]="item.dat_yeu_cau?'dat-yeu-cau':'khong-dat'">
+              <td>{{idx+1}}</td>
+              <td>{{item?.don_vi?.loai_don_vi}} {{item?.don_vi?.ten_don_vi}}</td>
+              <td>{{item?.dongy}} ({{item?.tile_dy}}%)</td>
+              <td>{{item?.khongdongy}} ({{item?.tile_kdy}}%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Đóng</button>
+</div>

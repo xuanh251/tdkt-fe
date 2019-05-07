@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Thông tin phiên bầu chọn cho danh hiệu thi đua {{tenDanhHieu}}</h4>
+  <h4 class="modal-title text-uppercase text-center">Thông tin bầu chọn danh hiệu thi đua {{tenDanhHieu}} ngày {{today|date:'dd/MM/yyyy'}}</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -9,15 +9,16 @@
     [fullScreen]="true">
     <p style="color: white"> Vui lòng chờ... </p>
   </ngx-spinner>
-  <h2 *ngIf="!ketThuc" class="pageheader-title text-center">Thời gian còn lại <countdown
-      [config]="{ stopTime: thoiGianMo + 300000, template: '$!h!:$!m!:$!s!' }" (finished)="onFinish(thoiGianMo)"></countdown>
+  <h2 *ngIf="!ketThuc" class="pageheader-title text-center">
+    Thời gian mở: {{thoiGianMo|date:'dd/MM/yyyy hh:mm:ss'}} - Thời gian còn lại: <countdown [config]="{ stopTime: (thoiGianMo + soPhut*60000), template: '$!h!:$!m!:$!s!' }"></countdown>
   </h2>
+  <h3>Tổng số thành viên hội đồng: {{TongTVHD}} - Số thành viên có mặt: {{SoTVCoMat}} - Số vắng mặt: {{TongTVHD - SoTVCoMat}} - Số thành viên đang bầu chọn: {{SoTVDangBauChon}} - Số thành viên đã bầu chọn: {{SoTVDaBauChon}}</h3>
   <div class="card">
     <h5 class="card-header"><i class="fas fa-hand-point-right"></i> Thông tin kết quả bầu chọn hiện tại</h5>
     <div class="card-body">
       <ul class="list-group">
         <li *ngFor="let item of listXetBauChon" class="list-group-item">
-            {{item?.don_vi?.loai_don_vi}} {{item?.don_vi?.ten_don_vi}} - Tỉ lệ đạt {{item.ti_le_dat}}% : <span class="badge badge-light">{{item?.BauChonThiDuaTapThe|numOfBauChon}}/{{total}}</span> <span *ngIf="item?.dat_yeu_cau === true"> - Đạt yêu cầu</span> <span *ngIf="item?.dat_yeu_cau === false"> - Không đạt yêu cầu</span>
+            {{item?.don_vi?.loai_don_vi}} {{item?.don_vi?.ten_don_vi}} - Tỉ lệ đạt {{item?.danh_hieu?.ti_le_dat}}% : <span class="badge badge-light">{{item?.BauChonThiDuaTapThe|numOfBauChon}}/{{SoTVCoMat}}</span> <span *ngIf="item?.dat_yeu_cau === true"> - Đạt yêu cầu</span> <span *ngIf="item?.dat_yeu_cau === false"> - Không đạt yêu cầu</span>
         </li>
       </ul>
     </div>

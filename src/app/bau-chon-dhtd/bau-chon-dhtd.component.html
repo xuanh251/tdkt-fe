@@ -12,7 +12,7 @@
     <div class="col-md-12">
         <h2 class="pageheader-title text-center">Bầu chọn danh hiệu thi đua {{DanhHieuInfo.ten_danh_hieu}} </h2>
         <h2 class="pageheader-title text-center">Thời gian còn lại <countdown
-                [config]="{ stopTime: DanhHieuInfo.thoi_gian_mo + 300000, template: '$!h!:$!m!:$!s!' }"></countdown>
+                [config]="{ stopTime: DanhHieuInfo.thoi_gian_mo + (DanhHieuInfo.so_phut*60000), template: '$!h!:$!m!:$!s!' }"></countdown>
         </h2>
     </div>
     <div class="col md-12">

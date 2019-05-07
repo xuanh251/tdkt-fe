@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   ) {}
   ngOnInit() {
     if (this.authService.loggedIn()) {
-      this.router.navigate(['']);
+      this.router.navigate(['/home']);
     } else {
       this.titleService.setTitle('Đăng nhập hệ thống');
     }
@@ -39,7 +39,11 @@ export class LoginComponent implements OnInit {
           this.spinner.hide();
         } else {
           this.alertify.success('Đăng nhập thành công!');
-          this.router.navigate(['/home']);
+          if (this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ma_quyen === '3') {
+            this.router.navigate(['/bo-phieu/check']);
+          } else {
+            this.router.navigate(['/home']);
+          }
           this.spinner.hide();
         }
       },

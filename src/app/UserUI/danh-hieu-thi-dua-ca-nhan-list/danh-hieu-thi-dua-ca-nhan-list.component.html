@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
       <div class="page-header">
-        <h2 class="pageheader-title">Danh sách quá trình thi đua tập thể </h2>
+        <h2 class="pageheader-title">Danh sách quá trình thi đua cá nhân </h2>
         <div class="page-breadcrumb">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a [routerLink]="['/']" class="breadcrumb-link">Trang chủ</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Thi đua</li>
+              <li class="breadcrumb-item active" aria-current="page">Thi đua cá nhân</li>
             </ol>
           </nav>
         </div>
@@ -19,7 +19,9 @@
         <tr>
           <th>STT</th>
           <th>Năm học</th>
-          <th>Tên đơn vị</th>
+          <th>Họ tên</th>
+          <th>Đơn vị</th>
+          <th>Chức vụ</th>
           <th>Danh hiệu đã đạt</th>
         </tr>
       </thead>
@@ -27,7 +29,9 @@
         <tr *ngFor="let obj of myList; let idx = index">
           <td>{{idx+1}}</td>
           <td>{{obj?.NamHoc?.tu_ngay|generateSchoolYear}}</td>
-          <td>{{obj?.DonVi?.loai_don_vi}} {{obj?.DonVi?.ten_don_vi}}</td>
+          <td>{{obj?.CanBo?.ho_ten}}</td>
+          <td>{{obj?.CanBo?.DonVi?.ten_don_vi}}</td>
+          <td>{{obj?.CanBo?.ChucVu?.ten_chuc_vu}}</td>
           <td>{{obj?.DanhHieuThiDua | listDanhHieuThiDua}}</td>
         </tr>
       </tbody>

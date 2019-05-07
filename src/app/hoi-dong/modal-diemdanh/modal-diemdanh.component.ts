@@ -11,7 +11,8 @@ import { AlertifyService } from 'src/app/_services/ultisService/alertify.service
 })
 export class ModalDiemdanhComponent implements OnInit {
   @Input() maHoiDong;
-  listThanhVien: any;
+  listThanhVien: any[];
+  listDiemDanh: any[];
   constructor(
     public activeModal: NgbActiveModal,
     private spinner: NgxSpinnerService,
@@ -26,6 +27,7 @@ export class ModalDiemdanhComponent implements OnInit {
     this.spinner.show();
     this.hoiDongService.getListThanhVienByHoiDong(this.maHoiDong).subscribe(
       (listthanhvien: any) => {
+        console.log(listthanhvien);
         this.listThanhVien = listthanhvien;
         this.spinner.hide();
       },
@@ -35,6 +37,17 @@ export class ModalDiemdanhComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+  CapNhatDiemDanh() {
+    this.listDiemDanh = [];
+    this.listThanhVien.forEach(element => {
+      const obj = {
+        ma_thanh_phan: element.ma_thanh_phan,
+        co_mat: element.co_mat
+      };
+      this.listDiemDanh.push(obj);
+    });
+    this.hoiDongService.CapNhatDiemDanh(this.listDiemDanh).subscribe(next => {this.alertify.success(next); }, error => {this.alertify.error('Đã xảy ra lỗi!'); });
   }
 
 }

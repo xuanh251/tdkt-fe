@@ -99,6 +99,13 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { environment } from 'src/environments/environment';
 import { NumOfBauChonPipe } from './PipeHelper/numOfBauChon.pipe';
 import { ModalDiemdanhComponent } from './hoi-dong/modal-diemdanh/modal-diemdanh.component';
+import { NgmodalThoigianmoComponent } from './hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component';
+import { ModalKetQuaBauChonTdComponent } from './modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component';
+import { ListDanhHieuThiDuaPipe } from './PipeHelper/listDanhHieuThiDua.pipe';
+import { DanhHieuThiDuaCaNhanListComponent } from './UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component';
+import { HinhThucKhenThuongCaNhanListComponent } from './UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component';
+import { HinhThucKhenThuongTapTheListComponent } from './UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component';
+import { ListHinhThucKhenThuongPipe } from './PipeHelper/listHinhThucKhenThuong.pipe';
 export function tokenGetter() {
    return localStorage.getItem('token');
 }
@@ -125,6 +132,8 @@ export function tokenGetter() {
       TrangThaiHoiDongPipe,
       BauchondanhhieuPipe,
       NumOfBauChonPipe,
+      ListDanhHieuThiDuaPipe,
+      ListHinhThucKhenThuongPipe,
 
       HinhThucKhenThuongListComponent,
       HinhThucKhenThuongEditComponent,
@@ -165,6 +174,11 @@ export function tokenGetter() {
       ModalThanhvienComponent,
       ModalTheoDoiBauChonComponent,
       ModalDiemdanhComponent,
+      NgmodalThoigianmoComponent,
+      ModalKetQuaBauChonTdComponent,
+      DanhHieuThiDuaCaNhanListComponent,
+      HinhThucKhenThuongCaNhanListComponent,
+      HinhThucKhenThuongTapTheListComponent,
    ],
    imports: [
       BrowserModule,
@@ -228,7 +242,9 @@ export function tokenGetter() {
       NgModalXktttComponent,
       ModalThanhvienComponent,
       ModalTheoDoiBauChonComponent,
-      ModalDiemdanhComponent
+      ModalDiemdanhComponent,
+      NgmodalThoigianmoComponent,
+      ModalKetQuaBauChonTdComponent
    ]
 })
 export class AppModule { }

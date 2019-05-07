@@ -27,6 +27,9 @@ import { XetThiDuaComponent } from './xet-thi-dua/xet-thi-dua.component';
 import { XetKhenThuongComponent } from './xet-khen-thuong/xet-khen-thuong.component';
 import { BoPhieuInfoComponent } from './bo-phieu-info/bo-phieu-info.component';
 import { HoiDongAdminComponent } from './hoi-dong/hoi-dong-admin/hoi-dong-admin.component';
+import { DanhHieuThiDuaCaNhanListComponent } from './UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component';
+import { HinhThucKhenThuongTapTheListComponent } from './UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component';
+import { HinhThucKhenThuongCaNhanListComponent } from './UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component';
 
 export const appRoutes: Routes = [
   {
@@ -35,7 +38,6 @@ export const appRoutes: Routes = [
     children: [
       { path: 'dang-nhap', component: LoginComponent },
       { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-      
       {
         path: 'quan-tri',
         canActivate: [AuthGuard],
@@ -86,6 +88,21 @@ export const appRoutes: Routes = [
         path: 'danh-hieu-thi-dua/tap-the',
         canActivate: [AuthGuard],
         component: DanhHieuThiDuaTapTheListComponent
+      },
+      {
+        path: 'danh-hieu-thi-dua/ca-nhan',
+        canActivate: [AuthGuard],
+        component: DanhHieuThiDuaCaNhanListComponent
+      },
+      {
+        path: 'hinh-thuc-khen-thuong/tap-the',
+        canActivate: [AuthGuard],
+        component: HinhThucKhenThuongTapTheListComponent
+      },
+      {
+        path: 'hinh-thuc-khen-thuong/ca-nhan',
+        canActivate: [AuthGuard],
+        component: HinhThucKhenThuongCaNhanListComponent
       },
       {
         path: 'hoi-dong',

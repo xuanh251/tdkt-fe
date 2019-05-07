@@ -1,33 +1,27 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AlertifyService } from 'src/app/_services/ultisService/alertify.service';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { HoiDongService } from 'src/app/_services/hoi-dong.service';
-import { BauChonService } from 'src/app/_services/bau-chon.service';
-import { SocketService } from 'src/app/_services/socket.service';
+import { AlertifyService } from '../_services/ultisService/alertify.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { HoiDongService } from '../_services/hoi-dong.service';
+import { SocketService } from '../_services/socket.service';
+import { BauChonService } from '../_services/bau-chon.service';
 
 @Component({
-  selector: 'app-modal-theo-doi-bau-chon',
-  templateUrl: './modal-theo-doi-bau-chon.component.html',
-  styleUrls: ['./modal-theo-doi-bau-chon.component.scss']
+  selector: 'app-modal-ket-qua-bau-chon-td',
+  templateUrl: './modal-ket-qua-bau-chon-td.component.html',
+  styleUrls: ['./modal-ket-qua-bau-chon-td.component.scss']
 })
-export class ModalTheoDoiBauChonComponent implements OnInit {
+export class ModalKetQuaBauChonTdComponent implements OnInit {
   @Input() tenDanhHieu;
   @Input() maDanhHieu;
   @Input() thoiGianMo: number;
-  @Input() soPhut: number;
   @Input() hoiDong;
-  ListThanhVien: any[];
-  ListDatYeuCau: any[];
-  listXetBauChon: any[];
   today: number = Date.now();
-
   TongTVHD: number;
   SoTVCoMat: number;
   SoTVVangMat: number;
-  SoTVDangBauChon: number;
   SoTVDaBauChon: number;
-
+  listXetBauChon: any;
   constructor(
     public activeModal: NgbActiveModal,
     private alertify: AlertifyService,
@@ -38,18 +32,9 @@ export class ModalTheoDoiBauChonComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.spinner.show();
-    this.getListObjTTByDanhHieu(this.maDanhHieu);
-    this.socket.getEventListener().subscribe(event => {
-      if (event.type === 'message') {
-        const data = event.data.content;
-        const pbc = data + ''.indexOf('đã bầu chọn xong');
-        if (pbc !== -1) {
-          this.getListObjTTByDanhHieu(this.maDanhHieu);
-        }
-      }
-    });
+    this.getListThanhVien();
   }
+
   getListThanhVien() {
     this.hoiDongService
       .getListThanhVienByHoiDong(this.hoiDong.ma_hoi_dong)
@@ -61,14 +46,11 @@ export class ModalTheoDoiBauChonComponent implements OnInit {
             .filter(
               rs => rs.co_mat
             ).length;
-          this.SoTVDangBauChon = listthanhvien
-            .filter(
-              rs => rs.co_mat && rs.CanBo.trang_thai && !rs.bau_chon
-            ).length;
           this.SoTVDaBauChon = listthanhvien.filter(
             rs => rs.co_mat && rs.bau_chon
           ).length;
           this.spinner.hide();
+          this.getListObjTTByDanhHieu(this.maDanhHieu);
         },
         error => {
           this.alertify.error('Đã xảy ra lỗi khi nạp thông tin thành viên!');
@@ -83,8 +65,23 @@ export class ModalTheoDoiBauChonComponent implements OnInit {
     };
     this.bauChonService.getListObjTTByDanhHieu(a).subscribe(
       (res: any[]) => {
+        console.log(res);
         this.listXetBauChon = res;
-        this.getListThanhVien();
+        this.listXetBauChon.forEach(elem => {
+          const numOfBC = elem.BauChonThiDuaTapThe.filter(rs => rs.trang_thai_bau_chon).length;
+          const numOfKBC = elem.BauChonThiDuaTapThe.filter(rs => !rs.trang_thai_bau_chon).length;
+          elem.dongy = numOfBC;
+          elem.tile_dy = (+numOfBC / this.SoTVCoMat) * 100;
+          console.log(this.SoTVCoMat);
+          elem.khongdongy = numOfKBC;
+          elem.tile_kdy = (+numOfKBC / this.SoTVCoMat) * 100;
+          if ((+numOfBC / this.SoTVCoMat * 100) >= elem.danh_hieu.ti_le_dat) {
+            elem.dat_yeu_cau = true;
+          } else {
+            elem.dat_yeu_cau = false;
+          }
+        });
+        console.log(this.listXetBauChon);
       }
     );
   }

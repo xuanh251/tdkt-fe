@@ -5,17 +5,38 @@
   </button>
 </div>
 <div class="modal-body">
-  <ngx-spinner dOpacity = 0
-  bdColor = "rgba(255,255,255,0)" size = "medium" color = "#092bee" type="ball-scale-multiple" [fullScreen]="true">
-    <p style="color: white"> Vui lòng chờ... </p>
-  </ngx-spinner>
-  <!-- <ul class="list-group">
-    <li *ngFor="let item of listThanhVien" class="list-group-item">
-      <i [className]="item?.CanBo?.trang_thai?'fas fa-dot-circle active-icon':'fas fa-dot-circle inactive-icon'"></i>
-      {{item?.CanBo?.ho_ten}} - {{item?.ChucDanh?.ten_chuc_danh}}
-    </li>
-  </ul> -->
+  <div class="table-responsive">
+    <ngx-spinner dOpacity=0 bdColor="rgba(255,255,255,0)" size="medium" color="#092bee" type="ball-scale-multiple"
+      [fullScreen]="false">
+      <p style="color: white"> Vui lòng chờ... </p>
+    </ngx-spinner>
+    <table #dataTable class="table table-bordered">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Họ tên</th>
+          <th>Chức vụ</th>
+          <th>Chức danh</th>
+          <th>Có mặt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listThanhVien; let idx = index" [ngClass]="item.co_mat?'':'khong-co-mat'">
+          <td>{{idx+1}}</td>
+          <td>{{item?.CanBo?.ho_ten}}</td>
+          <td>{{item?.CanBo?.ChucVu?.ten_chuc_vu}}</td>
+          <td>{{item?.ChucDanh?.ten_chuc_danh}}</td>
+          <td>
+            <label class="custom-control custom-checkbox ml-2">
+              <input type="checkbox" [(ngModel)]="item.co_mat" class="custom-control-input">
+              <span class="custom-control-label"></span>
+            </label></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="modal-footer">
+  <button type="button" class="btn btn-primary mr-1" (click)="CapNhatDiemDanh()">Cập nhật</button>
   <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Đóng</button>
 </div>

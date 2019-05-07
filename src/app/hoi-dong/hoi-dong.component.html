@@ -51,8 +51,8 @@
             ngbTooltip="Theo dõi hội đồng"><i class=" fas fa-eye"></i></a>
           <button (click)="dongHoiDong(hd.ma_hoi_dong)" *ngIf="hd.trang_thai===2 && isAdmin" class="btn btn-sm btn-danger mr-1"
             placement="top" ngbTooltip="Đóng hội đồng"><i class="far fa-stop-circle"></i></button>
-          <button *ngIf="isAdmin" (click)="showModalDiemDanh(hd.ma_hoi_dongs)" class="btn btn-sm btn-primary" placement="top" ngbTooltip="Điểm danh"><i class="fas fa-clipboard-check"></i></button> 
-          <a class="btn btn-sm btn-primary" placement="top" ngbTooltip="In quyết định"
+          <button *ngIf="isAdmin && hd.trang_thai !== 1" (click)="showModalDiemDanh(hd.ma_hoi_dong)" class="btn btn-sm btn-primary mr-1" placement="top" ngbTooltip="Điểm danh"><i class="fas fa-clipboard-check"></i></button> 
+          <a class="btn btn-sm btn-primary mr-1" placement="top" ngbTooltip="In quyết định"
             [routerLink]="['/inqd-hoidong',hd.ma_hoi_dong]"><i class="fas fa-print"></i></a>
         </td>
       </tr>
