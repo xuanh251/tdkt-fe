@@ -89,8 +89,12 @@ export class ThanhPhanComponent implements OnInit, AfterViewInit {
     this.IdChucDanh = this.myForm.get('chuc_danh').value[0].ma_chuc_danh;
     this.hoiDongService.updateThanhVienHoiDong(this.idHoiDong, this.IdCanBo, this.IdChucDanh).subscribe(
       data => {
-        this.alertify.success(data);
-        this.getListThanhVienHoiDong();
+        if (data) {
+          this.alertify.success('Đã cập nhật thành viên hội đồng!');
+          this.getListThanhVienHoiDong();
+        } else {
+          this.alertify.error('Chức danh này đã tồn tại!');
+        }
       },
       error => {
         this.alertify.error('Đã xảy ra lỗi!');

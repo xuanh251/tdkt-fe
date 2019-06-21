@@ -71,7 +71,7 @@ export class BauChonDhtdComponent implements OnInit {
       },
       err => {
         this.spinner.hide();
-        this.alertify.error('Đã xảy ra lỗi!');
+        // this.alertify.error('Đã xảy ra lỗi!');
       }
     );
   }
@@ -83,7 +83,7 @@ export class BauChonDhtdComponent implements OnInit {
         this.checkDaBauChon(this.maThanhPhan);
       },
       err => {
-        this.alertify.error('Đã xảy ra lỗi!');
+        // this.alertify.error('Đã xảy ra lỗi!');
         console.log(err);
       }
     );
@@ -109,7 +109,7 @@ export class BauChonDhtdComponent implements OnInit {
           }
         },
         error => {
-          this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+          // this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
         }
       );
   }

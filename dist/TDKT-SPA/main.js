@@ -397,6 +397,119 @@ var GenerateSchoolYearPipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/PipeHelper/listDanhHieuThiDua.pipe.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/PipeHelper/listDanhHieuThiDua.pipe.ts ***!
+  \*******************************************************/
+/*! exports provided: ListDanhHieuThiDuaPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListDanhHieuThiDuaPipe", function() { return ListDanhHieuThiDuaPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ListDanhHieuThiDuaPipe = /** @class */ (function () {
+    function ListDanhHieuThiDuaPipe() {
+    }
+    ListDanhHieuThiDuaPipe.prototype.transform = function (value, args) {
+        var a = '';
+        if (value !== undefined) {
+            value.forEach(function (element) {
+                a += element.ten_danh_hieu + ', ';
+            });
+            return a;
+        }
+        return '';
+    };
+    ListDanhHieuThiDuaPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'listDanhHieuThiDua'
+        })
+    ], ListDanhHieuThiDuaPipe);
+    return ListDanhHieuThiDuaPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/PipeHelper/listHinhThucKhenThuong.pipe.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/PipeHelper/listHinhThucKhenThuong.pipe.ts ***!
+  \***********************************************************/
+/*! exports provided: ListHinhThucKhenThuongPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListHinhThucKhenThuongPipe", function() { return ListHinhThucKhenThuongPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ListHinhThucKhenThuongPipe = /** @class */ (function () {
+    function ListHinhThucKhenThuongPipe() {
+    }
+    ListHinhThucKhenThuongPipe.prototype.transform = function (value, args) {
+        var a = '';
+        if (value !== undefined) {
+            value.forEach(function (element) {
+                a += element.ten_hinh_thuc + ', ';
+            });
+            return a;
+        }
+        return '';
+    };
+    ListHinhThucKhenThuongPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'listHinhThucKhenThuong'
+        })
+    ], ListHinhThucKhenThuongPipe);
+    return ListHinhThucKhenThuongPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/PipeHelper/numOfBauChon.pipe.ts":
+/*!*************************************************!*\
+  !*** ./src/app/PipeHelper/numOfBauChon.pipe.ts ***!
+  \*************************************************/
+/*! exports provided: NumOfBauChonPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NumOfBauChonPipe", function() { return NumOfBauChonPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var NumOfBauChonPipe = /** @class */ (function () {
+    function NumOfBauChonPipe() {
+    }
+    NumOfBauChonPipe.prototype.transform = function (value, args) {
+        if (value === undefined) {
+            return 0;
+        }
+        return value.filter(function (rs) { return rs.trang_thai_bau_chon; }).length;
+    };
+    NumOfBauChonPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'numOfBauChon'
+        })
+    ], NumOfBauChonPipe);
+    return NumOfBauChonPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/PipeHelper/pipeBooleanToHTML.pipe.ts":
 /*!******************************************************!*\
   !*** ./src/app/PipeHelper/pipeBooleanToHTML.pipe.ts ***!
@@ -518,6 +631,79 @@ var YesnoPipe = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.html":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.html ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n      <div class=\"page-header\">\n        <h2 class=\"pageheader-title\">Danh sách quá trình thi đua cá nhân </h2>\n        <div class=\"page-breadcrumb\">\n          <nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\">\n              <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n              <li class=\"breadcrumb-item active\" aria-current=\"page\">Thi đua cá nhân</li>\n            </ol>\n          </nav>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"table-responsive\">\n    <table #dataTable class=\"table table-striped table-bordered table-hover\">\n      <thead>\n        <tr>\n          <th>STT</th>\n          <th>Năm học</th>\n          <th>Họ tên</th>\n          <th>Đơn vị</th>\n          <th>Chức vụ</th>\n          <th>Danh hiệu đã đạt</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let obj of myList; let idx = index\">\n          <td>{{idx+1}}</td>\n          <td>{{obj?.NamHoc?.tu_ngay|generateSchoolYear}}</td>\n          <td>{{obj?.CanBo?.ho_ten}}</td>\n          <td>{{obj?.CanBo?.DonVi?.ten_don_vi}}</td>\n          <td>{{obj?.CanBo?.ChucVu?.ten_chuc_vu}}</td>\n          <td>{{obj?.DanhHieuThiDua | listDanhHieuThiDua}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.scss":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.scss ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL1VzZXJVSS9kYW5oLWhpZXUtdGhpLWR1YS1jYS1uaGFuLWxpc3QvZGFuaC1oaWV1LXRoaS1kdWEtY2Etbmhhbi1saXN0LmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.ts":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.ts ***!
+  \***************************************************************************************************/
+/*! exports provided: DanhHieuThiDuaCaNhanListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DanhHieuThiDuaCaNhanListComponent", function() { return DanhHieuThiDuaCaNhanListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_thi_dua_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/_services/thi-dua.service */ "./src/app/_services/thi-dua.service.ts");
+
+
+
+var DanhHieuThiDuaCaNhanListComponent = /** @class */ (function () {
+    function DanhHieuThiDuaCaNhanListComponent(thiduaService) {
+        this.thiduaService = thiduaService;
+    }
+    DanhHieuThiDuaCaNhanListComponent.prototype.ngOnInit = function () {
+        this.NapDanhSach();
+    };
+    DanhHieuThiDuaCaNhanListComponent.prototype.NapDanhSach = function () {
+        var _this = this;
+        this.thiduaService.GetAllCaNhan().subscribe(function (next) {
+            var list = [];
+            next.forEach(function (element) {
+                if (element.DanhHieuThiDua.length !== 0) {
+                    list.push(element);
+                }
+            });
+            _this.myList = list;
+            console.log(next);
+        });
+    };
+    DanhHieuThiDuaCaNhanListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-danh-hieu-thi-dua-ca-nhan-list',
+            template: __webpack_require__(/*! ./danh-hieu-thi-dua-ca-nhan-list.component.html */ "./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.html"),
+            styles: [__webpack_require__(/*! ./danh-hieu-thi-dua-ca-nhan-list.component.scss */ "./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_thi_dua_service__WEBPACK_IMPORTED_MODULE_2__["ThiDuaService"]])
+    ], DanhHieuThiDuaCaNhanListComponent);
+    return DanhHieuThiDuaCaNhanListComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/UserUI/danh-hieu-thi-dua-tap-the-list/danh-hieu-thi-dua-tap-the-list.component.html":
 /*!*****************************************************************************************************!*\
   !*** ./src/app/UserUI/danh-hieu-thi-dua-tap-the-list/danh-hieu-thi-dua-tap-the-list.component.html ***!
@@ -525,7 +711,7 @@ var YesnoPipe = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n      <div class=\"page-header\">\n        <h2 class=\"pageheader-title\">Danh sách cán bộ </h2>\n        <div class=\"page-breadcrumb\">\n          <nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\">\n              <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n              <li class=\"breadcrumb-item active\" aria-current=\"page\">Cán bộ</li>\n            </ol>\n          </nav>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row mb-3\">\n    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n      <a class=\"btn btn-primary\" [routerLink]=\"['/quan-tri/can-bo/0']\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</a>\n    </div>\n  </div>\n  <div class=\"table-responsive\">\n    <table #dataTable class=\"table table-striped table-bordered table-hover\">\n      <thead>\n        <tr>\n          <th rowspan=2>STT</th>\n          <th rowspan=2>Họ tên</th>\n          <th colspan=2>Ngày sinh</th>\n          <th rowspan=2>Quê quán</th>\n          <th rowspan=2>Đảng viên</th>\n          <th rowspan=2>Đơn vị</th>\n          <th rowspan=2>Chức vụ</th>\n          <th rowspan=2>#</th>\n        </tr>\n        <tr>\n          <th class=\"fix-arrow\">Nam</th>\n          <th class=\"fix-arrow\">Nữ</th>\n        </tr>\n      </thead>\n      <tbody>\n        <ngx-spinner bdColor=\"rgba(51,51,51,0.5)\" size=\"medium\" color=\"#fff\" type=\"ball-fussion\">\n          <p style=\"font-size: 20px; color: white\">Đang tải...</p>\n        </ngx-spinner>\n        <!-- <tr *ngFor=\"let cb of listcanbo; let idx = index\">\n          <td>{{cb.ma_can_bo}}</td>\n          <td>{{cb.ho_va_chu_lot}} {{cb.ten}}</td>\n          <td><span [innerHTML]=\"(cb.ngay_sinh | pipeBooleanToHTML:'cb-ns-male':cb.gioi_tinh)|date:'dd/MM/yyyy'\"></span></td>\n          <td><span [innerHTML]=\"(cb.ngay_sinh | pipeBooleanToHTML:'cb-ns-female':cb.gioi_tinh)|date:'dd/MM/yyyy'\"></span></td>  \n          <td>{{cb.que_quan}}</td>\n          <td><span [innerHTML]=\"cb.dang_vien | pipeBooleanToHTML\"></span></td>\n          <td>{{cb.don_vi.loai_don_vi}} {{cb.don_vi.ten_don_vi}}</td>\n          <td>{{cb.chuc_vu.ten_chuc_vu}}</td>\n          <td class=\"py-1\">\n            <a class=\"btn btn-sm btn-success mr-1\" [routerLink]=\"['/quan-tri/can-bo/',cb.ma_can_bo]\"><i class=\"fas fa-edit\"></i></a>\n            <a class=\"btn btn-sm btn-danger\" [swal]=\"deleteSwal\" (confirm)=\"deleteCanBo(cb.ma_can_bo, idx)\" ><i class=\"fas fa-trash-alt\"></i></a>\n            <swal #deleteSwal \n            title=\"Xác nhận xoá\" \n            text=\"Bạn muốn xoá người dùng {{cb.ho_va_chu_lot}} {{cb.ten}}?\" \n            type=\"question\" \n            [showCancelButton]=\"true\" ></swal>\n          </td>\n        </tr> -->\n      </tbody>\n    </table>\n  </div>"
+module.exports = "<div class=\"row\">\n    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n      <div class=\"page-header\">\n        <h2 class=\"pageheader-title\">Danh sách quá trình thi đua tập thể </h2>\n        <div class=\"page-breadcrumb\">\n          <nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\">\n              <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n              <li class=\"breadcrumb-item active\" aria-current=\"page\">Thi đua</li>\n            </ol>\n          </nav>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"table-responsive\">\n    <table #dataTable class=\"table table-striped table-bordered table-hover\">\n      <thead>\n        <tr>\n          <th>STT</th>\n          <th>Năm học</th>\n          <th>Tên đơn vị</th>\n          <th>Danh hiệu đã đạt</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let obj of myList; let idx = index\">\n          <td>{{idx+1}}</td>\n          <td>{{obj?.NamHoc?.tu_ngay|generateSchoolYear}}</td>\n          <td>{{obj?.DonVi?.loai_don_vi}} {{obj?.DonVi?.ten_don_vi}}</td>\n          <td>{{obj?.DanhHieuThiDua | listDanhHieuThiDua}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>"
 
 /***/ }),
 
@@ -552,12 +738,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DanhHieuThiDuaTapTheListComponent", function() { return DanhHieuThiDuaTapTheListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_thi_dua_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/_services/thi-dua.service */ "./src/app/_services/thi-dua.service.ts");
+
 
 
 var DanhHieuThiDuaTapTheListComponent = /** @class */ (function () {
-    function DanhHieuThiDuaTapTheListComponent() {
+    function DanhHieuThiDuaTapTheListComponent(thiduaService) {
+        this.thiduaService = thiduaService;
     }
     DanhHieuThiDuaTapTheListComponent.prototype.ngOnInit = function () {
+        this.NapDanhSach();
+    };
+    DanhHieuThiDuaTapTheListComponent.prototype.NapDanhSach = function () {
+        var _this = this;
+        this.thiduaService.GetAllTapThe().subscribe(function (next) {
+            var list = [];
+            next.forEach(function (element) {
+                if (element.DanhHieuThiDua.length !== 0) {
+                    list.push(element);
+                }
+            });
+            _this.myList = list;
+            console.log(next);
+        });
     };
     DanhHieuThiDuaTapTheListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -565,9 +768,155 @@ var DanhHieuThiDuaTapTheListComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./danh-hieu-thi-dua-tap-the-list.component.html */ "./src/app/UserUI/danh-hieu-thi-dua-tap-the-list/danh-hieu-thi-dua-tap-the-list.component.html"),
             styles: [__webpack_require__(/*! ./danh-hieu-thi-dua-tap-the-list.component.scss */ "./src/app/UserUI/danh-hieu-thi-dua-tap-the-list/danh-hieu-thi-dua-tap-the-list.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_thi_dua_service__WEBPACK_IMPORTED_MODULE_2__["ThiDuaService"]])
     ], DanhHieuThiDuaTapTheListComponent);
     return DanhHieuThiDuaTapTheListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.html ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n      <div class=\"page-header\">\n        <h2 class=\"pageheader-title\">Danh sách quá trình khen thưởng cá nhân </h2>\n        <div class=\"page-breadcrumb\">\n          <nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\">\n              <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n              <li class=\"breadcrumb-item active\" aria-current=\"page\">Khen thưởng cá nhân</li>\n            </ol>\n          </nav>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"table-responsive\">\n    <table #dataTable class=\"table table-striped table-bordered table-hover\">\n      <thead>\n        <tr>\n          <th>STT</th>\n          <th>Năm học</th>\n          <th>Họ tên</th>\n          <th>Đơn vị</th>\n          <th>Chức vụ</th>\n          <th>Khen thưởng đã đạt</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let obj of myList; let idx = index\">\n          <td>{{idx+1}}</td>\n          <td>{{obj?.NamHoc?.tu_ngay|generateSchoolYear}}</td>\n          <td>{{obj?.CanBo?.ho_ten}}</td>\n          <td>{{obj?.CanBo?.DonVi?.ten_don_vi}}</td>\n          <td>{{obj?.CanBo?.ChucVu?.ten_chuc_vu}}</td>\n          <td>{{obj?.HinhThucKhenThuong | listHinhThucKhenThuong}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.scss":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.scss ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL1VzZXJVSS9oaW5oLXRodWMta2hlbi10aHVvbmctY2Etbmhhbi1saXN0L2hpbmgtdGh1Yy1raGVuLXRodW9uZy1jYS1uaGFuLWxpc3QuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.ts":
+/*!***********************************************************************************************************!*\
+  !*** ./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.ts ***!
+  \***********************************************************************************************************/
+/*! exports provided: HinhThucKhenThuongCaNhanListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HinhThucKhenThuongCaNhanListComponent", function() { return HinhThucKhenThuongCaNhanListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_khen_thuong_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/_services/khen-thuong.service */ "./src/app/_services/khen-thuong.service.ts");
+
+
+
+var HinhThucKhenThuongCaNhanListComponent = /** @class */ (function () {
+    function HinhThucKhenThuongCaNhanListComponent(khenThuongService) {
+        this.khenThuongService = khenThuongService;
+    }
+    HinhThucKhenThuongCaNhanListComponent.prototype.ngOnInit = function () {
+        this.NapDanhSach();
+    };
+    HinhThucKhenThuongCaNhanListComponent.prototype.NapDanhSach = function () {
+        var _this = this;
+        this.khenThuongService.GetAllCaNhan().subscribe(function (next) {
+            var list = [];
+            next.forEach(function (element) {
+                if (element.HinhThucKhenThuong.length !== 0) {
+                    list.push(element);
+                }
+            });
+            _this.myList = list;
+            console.log(next);
+        });
+    };
+    HinhThucKhenThuongCaNhanListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-hinh-thuc-khen-thuong-ca-nhan-list',
+            template: __webpack_require__(/*! ./hinh-thuc-khen-thuong-ca-nhan-list.component.html */ "./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.html"),
+            styles: [__webpack_require__(/*! ./hinh-thuc-khen-thuong-ca-nhan-list.component.scss */ "./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_khen_thuong_service__WEBPACK_IMPORTED_MODULE_2__["KhenThuongService"]])
+    ], HinhThucKhenThuongCaNhanListComponent);
+    return HinhThucKhenThuongCaNhanListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.html ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\n    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n      <div class=\"page-header\">\n        <h2 class=\"pageheader-title\">Danh sách quá trình khen thưởng tập thể </h2>\n        <div class=\"page-breadcrumb\">\n          <nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\">\n              <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n              <li class=\"breadcrumb-item active\" aria-current=\"page\">Khen thưởng</li>\n            </ol>\n          </nav>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"table-responsive\">\n    <table #dataTable class=\"table table-striped table-bordered table-hover\">\n      <thead>\n        <tr>\n          <th>STT</th>\n          <th>Năm học</th>\n          <th>Tên đơn vị</th>\n          <th>Khen thưởng đã đạt</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let obj of myList; let idx = index\">\n          <td>{{idx+1}}</td>\n          <td>{{obj?.NamHoc?.tu_ngay|generateSchoolYear}}</td>\n          <td>{{obj?.DonVi?.loai_don_vi}} {{obj?.DonVi?.ten_don_vi}}</td>\n          <td>{{obj?.DanhHieuThiDua | listDanhHieuThiDua}}</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.scss":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.scss ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL1VzZXJVSS9oaW5oLXRodWMta2hlbi10aHVvbmctdGFwLXRoZS1saXN0L2hpbmgtdGh1Yy1raGVuLXRodW9uZy10YXAtdGhlLWxpc3QuY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.ts":
+/*!***********************************************************************************************************!*\
+  !*** ./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.ts ***!
+  \***********************************************************************************************************/
+/*! exports provided: HinhThucKhenThuongTapTheListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HinhThucKhenThuongTapTheListComponent", function() { return HinhThucKhenThuongTapTheListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_khen_thuong_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/_services/khen-thuong.service */ "./src/app/_services/khen-thuong.service.ts");
+
+
+
+var HinhThucKhenThuongTapTheListComponent = /** @class */ (function () {
+    function HinhThucKhenThuongTapTheListComponent(khenThuongService) {
+        this.khenThuongService = khenThuongService;
+    }
+    HinhThucKhenThuongTapTheListComponent.prototype.ngOnInit = function () {
+        this.NapDanhSach();
+    };
+    HinhThucKhenThuongTapTheListComponent.prototype.NapDanhSach = function () {
+        var _this = this;
+        this.khenThuongService.GetAllTapThe().subscribe(function (next) {
+            var list = [];
+            next.forEach(function (element) {
+                if (element.HinhThucKhenThuong.length !== 0) {
+                    list.push(element);
+                }
+            });
+            _this.myList = list;
+            console.log(next);
+        });
+    };
+    HinhThucKhenThuongTapTheListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-hinh-thuc-khen-thuong-tap-the-list',
+            template: __webpack_require__(/*! ./hinh-thuc-khen-thuong-tap-the-list.component.html */ "./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.html"),
+            styles: [__webpack_require__(/*! ./hinh-thuc-khen-thuong-tap-the-list.component.scss */ "./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_khen_thuong_service__WEBPACK_IMPORTED_MODULE_2__["KhenThuongService"]])
+    ], HinhThucKhenThuongTapTheListComponent);
+    return HinhThucKhenThuongTapTheListComponent;
 }());
 
 
@@ -788,6 +1137,11 @@ var BauChonService = /** @class */ (function () {
     };
     BauChonService.prototype.GetListDaBauChonTDTTByTVHD = function (maThanhPhan) {
         return this.http.get(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'bauchon/listbcbytvhd/' + maThanhPhan);
+    };
+    BauChonService.prototype.PushListTDTTDatYeuCau = function (data) {
+        return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'bauchon/addlisttdttdatyeucau', data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) {
+            return res;
+        }));
     };
     BauChonService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -1320,6 +1674,19 @@ var HoiDongService = /** @class */ (function () {
     HoiDongService.prototype.DeactivePhienBauChon = function (maDanhHieu) {
         return this.http.get(this.baseUrl + 'hoidong/bauchon/deactive/' + maDanhHieu);
     };
+    HoiDongService.prototype.CapNhatDiemDanh = function (request) {
+        var data = {
+            request: request
+        };
+        return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'hoidong/capnhatdiemdanh', data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) {
+            return res;
+        }));
+    };
+    HoiDongService.prototype.CapNhatThoiGianBauChon = function (req) {
+        return this.http.post(src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl + 'hoidong/capnhatthoigianbauchon', req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) {
+            return res;
+        }));
+    };
     HoiDongService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
@@ -1327,6 +1694,48 @@ var HoiDongService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]])
     ], HoiDongService);
     return HoiDongService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/_services/khen-thuong.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/_services/khen-thuong.service.ts ***!
+  \**************************************************/
+/*! exports provided: KhenThuongService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KhenThuongService", function() { return KhenThuongService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+var KhenThuongService = /** @class */ (function () {
+    function KhenThuongService(http) {
+        this.http = http;
+        this.baseUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl;
+    }
+    KhenThuongService.prototype.GetAllTapThe = function () {
+        return this.http.get(this.baseUrl + 'tapthekt/napdanhsach');
+    };
+    KhenThuongService.prototype.GetAllCaNhan = function () {
+        return this.http.get(this.baseUrl + 'canhankt/napdanhsach');
+    };
+    KhenThuongService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], KhenThuongService);
+    return KhenThuongService;
 }());
 
 
@@ -1446,13 +1855,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocketService", function() { return SocketService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment.prod */ "./src/environments/environment.prod.ts");
+
 
 
 var SocketService = /** @class */ (function () {
     function SocketService() {
         var _this = this;
         this.listener = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.socket = new WebSocket('ws://192.168.0.100:3000/ws');
+        this.socket = new WebSocket('ws://' + src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_2__["environment"].ApiOriginUrl + '/ws');
         this.socket.onopen = function (event) {
             _this.listener.emit({ type: 'open', data: event });
         };
@@ -1479,6 +1890,48 @@ var SocketService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], SocketService);
     return SocketService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/_services/thi-dua.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/_services/thi-dua.service.ts ***!
+  \**********************************************/
+/*! exports provided: ThiDuaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ThiDuaService", function() { return ThiDuaService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+var ThiDuaService = /** @class */ (function () {
+    function ThiDuaService(http) {
+        this.http = http;
+        this.baseUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl;
+    }
+    ThiDuaService.prototype.GetAllTapThe = function () {
+        return this.http.get(this.baseUrl + 'tapthetd/napdanhsach');
+    };
+    ThiDuaService.prototype.GetAllCaNhan = function () {
+        return this.http.get(this.baseUrl + 'canhantd/napdanhsach');
+    };
+    ThiDuaService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], ThiDuaService);
+    return ThiDuaService;
 }());
 
 
@@ -2349,7 +2802,7 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "thead tr th {\n  padding: 0 !important;\n  text-align: center;\n  vertical-align: middle; }\n\n.fix-arrow::before, .fix-arrow::after {\n  top: -2px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW5BcmVhL2NhbmJvL2NhbmJvLWxpc3QvRDpcXGhvYW5nXFxLTFxcVERLVC1TUEEvc3JjXFxhcHBcXGFkbWluQXJlYVxcY2FuYm9cXGNhbmJvLWxpc3RcXGNhbmJvLWxpc3QuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBb0I7RUFDcEIsa0JBQWtCO0VBQ2xCLHNCQUFzQixFQUFBOztBQUUxQjtFQUNJLFNBQ0osRUFBQSIsImZpbGUiOiJzcmMvYXBwL2FkbWluQXJlYS9jYW5iby9jYW5iby1saXN0L2NhbmJvLWxpc3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0aGVhZCB0ciB0aHtcclxuICAgIHBhZGRpbmc6IDAhaW1wb3J0YW50O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG4uZml4LWFycm93OjpiZWZvcmUsIC5maXgtYXJyb3c6OmFmdGVye1xyXG4gICAgdG9wOi0ycHhcclxufSJdfQ== */"
+module.exports = "thead tr th {\n  padding: 0 !important;\n  text-align: center;\n  vertical-align: middle; }\n\n.fix-arrow::before, .fix-arrow::after {\n  top: -2px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW5BcmVhL2NhbmJvL2NhbmJvLWxpc3QvRDpcXGhvYW5nXFxLaG9hTHVhblxcRFFVLVRES1RcXFRES1QtU1BBL3NyY1xcYXBwXFxhZG1pbkFyZWFcXGNhbmJvXFxjYW5iby1saXN0XFxjYW5iby1saXN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQW9CO0VBQ3BCLGtCQUFrQjtFQUNsQixzQkFBc0IsRUFBQTs7QUFFMUI7RUFDSSxTQUNKLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9hZG1pbkFyZWEvY2FuYm8vY2FuYm8tbGlzdC9jYW5iby1saXN0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGhlYWQgdHIgdGh7XHJcbiAgICBwYWRkaW5nOiAwIWltcG9ydGFudDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuLmZpeC1hcnJvdzo6YmVmb3JlLCAuZml4LWFycm93OjphZnRlcntcclxuICAgIHRvcDotMnB4XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -2908,7 +3361,7 @@ var ChucvuListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">{{objectAction}} danh hiệu thi đua </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\" routerLinkActive=\"active\"><a [routerLink]=\"['/home']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item\" routerLinkActive=\"active\"><a [routerLink]=\"['/quan-tri/danh-hieu-thi-dua']\" class=\"breadcrumb-link\">danh hiệu thi đua</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">{{objectAction}} danh hiệu thi đua {{DanhHieuThiDuaDetail?.ten_danh_hieu}}</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\">\n  <!-- ============================================================== -->\n  <!-- validation form -->\n  <!-- ============================================================== -->\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"card\">\n      <h5 class=\"card-header\">Nhập thông tin danh hiệu thi đua vào bên dưới</h5>\n      <div class=\"card-body\">\n        <form [formGroup]=\"myForm\" (ngSubmit)=\"onSubmit(myForm.getRawValue())\">\n          <div class=\"row\">\n            <div class=\"col-md-3\">\n              <div class=\"form-group\">\n                  <label for=\"input-select\">Loại danh hiệu thi đua</label>\n                  <select class=\"form-control custom-select\" id=\"input-select\" formControlName=\"doi_tuong_ap_dung\" [ngModel]=\"DanhHieuThiDuaDetail?.doi_tuong_ap_dung\" [ngClass]=\"{ 'is-invalid': submitted && f.doi_tuong_ap_dung.errors }\">\n                      <option>Tập thể</option>\n                      <option>Cá nhân</option>\n                  </select>\n                <div *ngIf=\"submitted && !!f.doi_tuong_ap_dung?.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"!!f.doi_tuong_ap_dung.errors.required\">Thông tin này bắt buộc</div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-9\">\n              <div class=\"form-group\">\n                <label>Tên danh hiệu thi đua</label>\n                <input type=\"text\" formControlName=\"ten_danh_hieu\" [ngModel]=\"DanhHieuThiDuaDetail?.ten_danh_hieu\" class=\"form-control\"\n                  [ngClass]=\"{ 'is-invalid': submitted && f.ten_danh_hieu.errors }\" />\n                <div *ngIf=\"submitted && !!f.ten_danh_hieu.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"!!f.ten_danh_hieu.errors.required\">Thông tin này bắt buộc/div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <a class=\"btn btn-brand mr-1\" [routerLink]=\"['/quan-tri/danh-hieu-thi-dua']\" routerLinkActive=\"router-link-active\" ><i class=\"fas fa-arrow-circle-left\"></i> Quay lại</a>\n            <button class=\"btn btn-primary\"><i class=\"fas fa-edit\"></i> {{objectAction}} danh hiệu thi đua</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <!-- ============================================================== -->\n  <!-- end validation form -->\n  <!-- ============================================================== -->\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">{{objectAction}} danh hiệu thi đua </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\" routerLinkActive=\"active\"><a [routerLink]=\"['/home']\"\n                class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item\" routerLinkActive=\"active\"><a [routerLink]=\"['/quan-tri/danh-hieu-thi-dua']\"\n                class=\"breadcrumb-link\">danh hiệu thi đua</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">{{objectAction}} danh hiệu thi đua\n              {{DanhHieuThiDuaDetail?.ten_danh_hieu}}</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\">\n  <!-- ============================================================== -->\n  <!-- validation form -->\n  <!-- ============================================================== -->\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"card\">\n      <h5 class=\"card-header\">Nhập thông tin danh hiệu thi đua vào bên dưới</h5>\n      <div class=\"card-body\">\n        <form [formGroup]=\"myForm\" (ngSubmit)=\"onSubmit(myForm.getRawValue())\">\n          <div class=\"row\">\n            <div class=\"col-md-3\">\n              <div class=\"form-group\">\n                <label for=\"input-select\">Loại danh hiệu thi đua</label>\n                <select class=\"form-control custom-select\" id=\"input-select\" formControlName=\"doi_tuong_ap_dung\"\n                  [ngModel]=\"DanhHieuThiDuaDetail?.doi_tuong_ap_dung\"\n                  [ngClass]=\"{ 'is-invalid': submitted && f.doi_tuong_ap_dung.errors }\">\n                  <option>Tập thể</option>\n                  <option>Cá nhân</option>\n                </select>\n                <div *ngIf=\"submitted && !!f.doi_tuong_ap_dung?.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"!!f.doi_tuong_ap_dung.errors.required\">Thông tin này bắt buộc</div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-6\">\n              <div class=\"form-group\">\n                <label>Tên danh hiệu thi đua</label>\n                <input type=\"text\" formControlName=\"ten_danh_hieu\" [ngModel]=\"DanhHieuThiDuaDetail?.ten_danh_hieu\"\n                  class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.ten_danh_hieu.errors }\" />\n                <div *ngIf=\"submitted && !!f.ten_danh_hieu.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"!!f.ten_danh_hieu.errors.required\">Thông tin này bắt buộc/div>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-3\">\n              <div class=\"form-group\">\n                <label>Tỉ lệ đạt</label>\n                <input type=\"number\" formControlName=\"ti_le_dat\" [ngModel]=\"DanhHieuThiDuaDetail?.ti_le_dat\"\n                  class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.ti_le_dat.errors }\" />\n                <div *ngIf=\"submitted && !!f.ti_le_dat.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"!!f.ti_le_dat.errors.required\">Thông tin này bắt buộc/div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <a class=\"btn btn-brand mr-1\" [routerLink]=\"['/quan-tri/danh-hieu-thi-dua']\"\n              routerLinkActive=\"router-link-active\"><i class=\"fas fa-arrow-circle-left\"></i> Quay lại</a>\n            <button class=\"btn btn-primary\"><i class=\"fas fa-edit\"></i> {{objectAction}} danh hiệu thi đua</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <!-- ============================================================== -->\n  <!-- end validation form -->\n  <!-- ============================================================== -->\n</div>"
 
 /***/ }),
 
@@ -2960,7 +3413,8 @@ var DanhHieuThiDuaEditComponent = /** @class */ (function () {
         }
         this.myForm = this.formBuilder.group({
             ten_danh_hieu: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
-            doi_tuong_ap_dung: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+            doi_tuong_ap_dung: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            ti_le_dat: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
         });
     }
     DanhHieuThiDuaEditComponent.prototype.ngOnInit = function () {
@@ -3038,7 +3492,7 @@ var DanhHieuThiDuaEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">Danh sách danh hiệu thi đua </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">danh hiệu thi đua</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row mb-3\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <a class=\"btn btn-primary\" [routerLink]=\"['/quan-tri/danh-hieu-thi-dua/0']\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</a>\n  </div>\n</div>\n<div class=\"table-responsive\">\n    <ngx-spinner\n    bdOpacity = 0.9\n    bdColor = \"#333\"\n    size = \"medium\"\n    color = \"#fff\"\n    type = \"ball-scale-multiple\"\n    [fullScreen] = \"true\"\n    >\n    <p style=\"color: white\" > Vui lòng chờ... </p>\n    </ngx-spinner>\n  <table #dataTable class=\"table table-striped table-bordered table-hover\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Loại danh hiệu thi đua</th>\n        <th>Tên danh hiệu thi đua</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let dv of listDanhHieuThiDua; let idx = index\">\n        <td>{{dv.ma_danh_hieu}}</td>\n        <td>{{dv.doi_tuong_ap_dung}}</td>\n        <td>{{dv.ten_danh_hieu}}</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" [routerLink]=\"['/quan-tri/danh-hieu-thi-dua/',dv.ma_danh_hieu]\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger\" [swal]=\"deleteSwal\" (confirm)=\"deleteDanhHieuThiDua(dv.ma_danh_hieu, idx)\" ><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá danh hiệu thi đua {{ dv.ten_danh_hieu }}?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">Danh sách danh hiệu thi đua </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">danh hiệu thi đua</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row mb-3\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <a class=\"btn btn-primary\" [routerLink]=\"['/quan-tri/danh-hieu-thi-dua/0']\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</a>\n  </div>\n</div>\n<div class=\"table-responsive\">\n    <ngx-spinner\n    bdOpacity = 0.9\n    bdColor = \"#333\"\n    size = \"medium\"\n    color = \"#fff\"\n    type = \"ball-scale-multiple\"\n    [fullScreen] = \"true\"\n    >\n    <p style=\"color: white\" > Vui lòng chờ... </p>\n    </ngx-spinner>\n  <table #dataTable class=\"table table-striped table-bordered table-hover\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Loại danh hiệu thi đua</th>\n        <th>Tên danh hiệu thi đua</th>\n        <th>Tỉ lệ đạt</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let dh of listDanhHieuThiDua; let idx = index\">\n        <td>{{dh.ma_danh_hieu}}</td>\n        <td>{{dh.doi_tuong_ap_dung}}</td>\n        <td>{{dh.ten_danh_hieu}}</td>\n        <td>{{dh.ti_le_dat}}</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" [routerLink]=\"['/quan-tri/danh-hieu-thi-dua/',dh.ma_danh_hieu]\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger\" [swal]=\"deleteSwal\" (confirm)=\"deleteDanhHieuThiDua(dh.ma_danh_hieu, idx)\" ><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá danh hiệu thi đua {{ dh.ten_danh_hieu }}?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -3376,7 +3830,7 @@ var DonviListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">{{objectAction}} hình thức khen thưởng </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\" routerLinkActive=\"active\"><a [routerLink]=\"['/home']\" class=\"breadcrumb-link\">Trang\n                chủ</a></li>\n            <li class=\"breadcrumb-item\" routerLinkActive=\"active\"><a [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong']\"\n                class=\"breadcrumb-link\">Hình thức khen thưởng</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">{{objectAction}} hình thức khen thưởng\n              {{HinhThucKhenThuongDetail?.ten_hinh_thuc}}</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\">\n  <!-- ============================================================== -->\n  <!-- validation form -->\n  <!-- ============================================================== -->\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"card\">\n      <h5 class=\"card-header\">Nhập thông tin hình thức khen thưởng vào bên dưới</h5>\n      <div class=\"card-body\">\n        <form [formGroup]=\"myForm\" (ngSubmit)=\"onSubmit(myForm.getRawValue())\">\n          <div class=\"form-group\">\n            <label>Tên hình thức khen thưởng</label>\n            <input type=\"text\" formControlName=\"ten_hinh_thuc\" [ngModel]=\"HinhThucKhenThuongDetail?.ten_hinh_thuc\" class=\"form-control\"\n              [ngClass]=\"{ 'is-invalid': submitted && f.ten_hinh_thuc.errors }\" />\n            <div *ngIf=\"submitted && !!f.ten_hinh_thuc.errors\" class=\"invalid-feedback\">\n              <div *ngIf=\"!!f.ten_hinh_thuc.errors.required\">Thông tin này bắt buộc</div>\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <a class=\"btn btn-brand mr-1\" [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong']\" routerLinkActive=\"router-link-active\"><i\n                class=\"fas fa-arrow-circle-left\"></i> Quay lại</a>\n            <button class=\"btn btn-primary\"><i class=\"fas fa-edit\"></i> {{objectAction}} hình thức khen thưởng</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <!-- ============================================================== -->\n  <!-- end validation form -->\n  <!-- ============================================================== -->\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">{{objectAction}} hình thức khen thưởng </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\" routerLinkActive=\"active\"><a [routerLink]=\"['/home']\"\n                class=\"breadcrumb-link\">Trang\n                chủ</a></li>\n            <li class=\"breadcrumb-item\" routerLinkActive=\"active\"><a [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong']\"\n                class=\"breadcrumb-link\">Hình thức khen thưởng</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">{{objectAction}} hình thức khen thưởng\n              {{HinhThucKhenThuongDetail?.ten_hinh_thuc}}</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\">\n  <!-- ============================================================== -->\n  <!-- validation form -->\n  <!-- ============================================================== -->\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"card\">\n      <h5 class=\"card-header\">Nhập thông tin hình thức khen thưởng vào bên dưới</h5>\n      <div class=\"card-body\">\n        <form [formGroup]=\"myForm\" (ngSubmit)=\"onSubmit(myForm.getRawValue())\">\n          <div class=\"row\">\n            <div class=\"col-md-9\">\n              <div class=\"form-group\">\n                <label>Tên hình thức khen thưởng</label>\n                <input type=\"text\" formControlName=\"ten_hinh_thuc\" [ngModel]=\"HinhThucKhenThuongDetail?.ten_hinh_thuc\"\n                  class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.ten_hinh_thuc.errors }\" />\n                <div *ngIf=\"submitted && !!f.ten_hinh_thuc.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"!!f.ten_hinh_thuc.errors.required\">Thông tin này bắt buộc</div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-3\">\n              <div class=\"form-group\">\n                <label>Tỉ lệ đạt</label>\n                <input type=\"number\" formControlName=\"ti_le_dat\" [ngModel]=\"HinhThucKhenThuongDetail?.ti_le_dat\"\n                  class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.ti_le_dat.errors }\" />\n                <div *ngIf=\"submitted && !!f.ti_le_dat.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"!!f.ti_le_dat.errors.required\">Thông tin này bắt buộc/div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <a class=\"btn btn-brand mr-1\" [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong']\"\n              routerLinkActive=\"router-link-active\"><i class=\"fas fa-arrow-circle-left\"></i> Quay lại</a>\n            <button class=\"btn btn-primary\"><i class=\"fas fa-edit\"></i> {{objectAction}} hình thức khen thưởng</button>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <!-- ============================================================== -->\n  <!-- end validation form -->\n  <!-- ============================================================== -->\n</div>"
 
 /***/ }),
 
@@ -3426,7 +3880,10 @@ var HinhThucKhenThuongEditComponent = /** @class */ (function () {
         if (this.id !== '0') {
             this.getHinhThucKhenThuongInfo(this.id);
         }
-        this.myForm = this.formBuilder.group({ ten_hinh_thuc: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required] });
+        this.myForm = this.formBuilder.group({
+            ten_hinh_thuc: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
+            ti_le_dat: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]
+        });
     }
     HinhThucKhenThuongEditComponent.prototype.ngOnInit = function () {
         this.objectAction = this.id === '0' ? 'Thêm mới' : 'Cập nhật';
@@ -3503,7 +3960,7 @@ var HinhThucKhenThuongEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">Danh sách hình thức khen thưởng </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Hình thức khen thưởng</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row mb-3\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <a class=\"btn btn-primary\" [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong/0']\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</a>\n  </div>\n</div>\n<div class=\"table-responsive\">\n    <ngx-spinner\n    bdOpacity = 0.9\n    bdColor = \"#333\"\n    size = \"medium\"\n    color = \"#fff\"\n    type = \"ball-scale-multiple\"\n    [fullScreen] = \"true\"\n    >\n    <p style=\"color: white\" > Vui lòng chờ... </p>\n    </ngx-spinner>\n  <table #dataTable class=\"table table-striped table-bordered table-hover\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Tên hình thức khen thưởng</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let cv of listHinhThucKhenThuong; let idx = index\">\n        <td>{{cv.ma_hinh_thuc}}</td>\n        <td>{{cv.ten_hinh_thuc}}</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong',cv.ma_hinh_thuc]\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger\" [swal]=\"deleteSwal\" (confirm)=\"deleteHinhThucKhenThuong(cv.ma_hinh_thuc, idx)\" ><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá hình thức khen thưởng {{ cv.ten_hinh_thuc }}?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">Danh sách hình thức khen thưởng </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Hình thức khen thưởng</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row mb-3\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <a class=\"btn btn-primary\" [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong/0']\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</a>\n  </div>\n</div>\n<div class=\"table-responsive\">\n    <ngx-spinner\n    bdOpacity = 0.9\n    bdColor = \"#333\"\n    size = \"medium\"\n    color = \"#fff\"\n    type = \"ball-scale-multiple\"\n    [fullScreen] = \"true\"\n    >\n    <p style=\"color: white\" > Vui lòng chờ... </p>\n    </ngx-spinner>\n  <table #dataTable class=\"table table-striped table-bordered table-hover\">\n    <thead>\n      <tr>\n        <th>ID</th>\n        <th>Tên hình thức khen thưởng</th>\n        <th>Tỉ lệ đạt</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let ht of listHinhThucKhenThuong; let idx = index\">\n        <td>{{ht.ma_hinh_thuc}}</td>\n        <td>{{ht.ten_hinh_thuc}}</td>\n        <td>{{ht.ti_le_dat}}</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong',ht.ma_hinh_thuc]\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger\" [swal]=\"deleteSwal\" (confirm)=\"deleteHinhThucKhenThuong(ht.ma_hinh_thuc, idx)\" ><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá hình thức khen thưởng {{ ht.ten_hinh_thuc }}?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -3983,6 +4440,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hoi_dong_modal_thanhvien_modal_thanhvien_component__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(/*! ./hoi-dong/modal-thanhvien/modal-thanhvien.component */ "./src/app/hoi-dong/modal-thanhvien/modal-thanhvien.component.ts");
 /* harmony import */ var _PipeHelper_bauchondanhhieu_pipe__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(/*! ./PipeHelper/bauchondanhhieu.pipe */ "./src/app/PipeHelper/bauchondanhhieu.pipe.ts");
 /* harmony import */ var _hoi_dong_modal_theo_doi_bau_chon_modal_theo_doi_bau_chon_component__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(/*! ./hoi-dong/modal-theo-doi-bau-chon/modal-theo-doi-bau-chon.component */ "./src/app/hoi-dong/modal-theo-doi-bau-chon/modal-theo-doi-bau-chon.component.ts");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _PipeHelper_numOfBauChon_pipe__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(/*! ./PipeHelper/numOfBauChon.pipe */ "./src/app/PipeHelper/numOfBauChon.pipe.ts");
+/* harmony import */ var _hoi_dong_modal_diemdanh_modal_diemdanh_component__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(/*! ./hoi-dong/modal-diemdanh/modal-diemdanh.component */ "./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.ts");
+/* harmony import */ var _hoi_dong_ngmodal_thoigianmo_ngmodal_thoigianmo_component__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(/*! ./hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component */ "./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.ts");
+/* harmony import */ var _modal_ket_qua_bau_chon_td_modal_ket_qua_bau_chon_td_component__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(/*! ./modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component */ "./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.ts");
+/* harmony import */ var _PipeHelper_listDanhHieuThiDua_pipe__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(/*! ./PipeHelper/listDanhHieuThiDua.pipe */ "./src/app/PipeHelper/listDanhHieuThiDua.pipe.ts");
+/* harmony import */ var _UserUI_danh_hieu_thi_dua_ca_nhan_list_danh_hieu_thi_dua_ca_nhan_list_component__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(/*! ./UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component */ "./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.ts");
+/* harmony import */ var _UserUI_hinh_thuc_khen_thuong_ca_nhan_list_hinh_thuc_khen_thuong_ca_nhan_list_component__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(/*! ./UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component */ "./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.ts");
+/* harmony import */ var _UserUI_hinh_thuc_khen_thuong_tap_the_list_hinh_thuc_khen_thuong_tap_the_list_component__WEBPACK_IMPORTED_MODULE_99__ = __webpack_require__(/*! ./UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component */ "./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.ts");
+/* harmony import */ var _PipeHelper_listHinhThucKhenThuong_pipe__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(/*! ./PipeHelper/listHinhThucKhenThuong.pipe */ "./src/app/PipeHelper/listHinhThucKhenThuong.pipe.ts");
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4101,6 +4578,9 @@ var AppModule = /** @class */ (function () {
                 _PipeHelper_yesno_pipe__WEBPACK_IMPORTED_MODULE_66__["YesnoPipe"],
                 _PipeHelper_trangThaiHoiDong_pipe__WEBPACK_IMPORTED_MODULE_71__["TrangThaiHoiDongPipe"],
                 _PipeHelper_bauchondanhhieu_pipe__WEBPACK_IMPORTED_MODULE_89__["BauchondanhhieuPipe"],
+                _PipeHelper_numOfBauChon_pipe__WEBPACK_IMPORTED_MODULE_92__["NumOfBauChonPipe"],
+                _PipeHelper_listDanhHieuThiDua_pipe__WEBPACK_IMPORTED_MODULE_96__["ListDanhHieuThiDuaPipe"],
+                _PipeHelper_listHinhThucKhenThuong_pipe__WEBPACK_IMPORTED_MODULE_100__["ListHinhThucKhenThuongPipe"],
                 _adminArea_hinh_thuc_khen_thuong_hinh_thuc_khen_thuong_list_hinh_thuc_khen_thuong_list_component__WEBPACK_IMPORTED_MODULE_38__["HinhThucKhenThuongListComponent"],
                 _adminArea_hinh_thuc_khen_thuong_hinh_thuc_khen_thuong_edit_hinh_thuc_khen_thuong_edit_component__WEBPACK_IMPORTED_MODULE_39__["HinhThucKhenThuongEditComponent"],
                 _adminArea_danh_hieu_thi_dua_danh_hieu_thi_dua_edit_danh_hieu_thi_dua_edit_component__WEBPACK_IMPORTED_MODULE_40__["DanhHieuThiDuaEditComponent"],
@@ -4139,6 +4619,12 @@ var AppModule = /** @class */ (function () {
                 _hoi_dong_hoi_dong_admin_hoi_dong_admin_component__WEBPACK_IMPORTED_MODULE_87__["HoiDongAdminComponent"],
                 _hoi_dong_modal_thanhvien_modal_thanhvien_component__WEBPACK_IMPORTED_MODULE_88__["ModalThanhvienComponent"],
                 _hoi_dong_modal_theo_doi_bau_chon_modal_theo_doi_bau_chon_component__WEBPACK_IMPORTED_MODULE_90__["ModalTheoDoiBauChonComponent"],
+                _hoi_dong_modal_diemdanh_modal_diemdanh_component__WEBPACK_IMPORTED_MODULE_93__["ModalDiemdanhComponent"],
+                _hoi_dong_ngmodal_thoigianmo_ngmodal_thoigianmo_component__WEBPACK_IMPORTED_MODULE_94__["NgmodalThoigianmoComponent"],
+                _modal_ket_qua_bau_chon_td_modal_ket_qua_bau_chon_td_component__WEBPACK_IMPORTED_MODULE_95__["ModalKetQuaBauChonTdComponent"],
+                _UserUI_danh_hieu_thi_dua_ca_nhan_list_danh_hieu_thi_dua_ca_nhan_list_component__WEBPACK_IMPORTED_MODULE_97__["DanhHieuThiDuaCaNhanListComponent"],
+                _UserUI_hinh_thuc_khen_thuong_ca_nhan_list_hinh_thuc_khen_thuong_ca_nhan_list_component__WEBPACK_IMPORTED_MODULE_98__["HinhThucKhenThuongCaNhanListComponent"],
+                _UserUI_hinh_thuc_khen_thuong_tap_the_list_hinh_thuc_khen_thuong_tap_the_list_component__WEBPACK_IMPORTED_MODULE_99__["HinhThucKhenThuongTapTheListComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -4153,8 +4639,8 @@ var AppModule = /** @class */ (function () {
                 _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_6__["JwtModule"].forRoot({
                     config: {
                         tokenGetter: tokenGetter,
-                        whitelistedDomains: ['192.168.0.100:3000'],
-                        blacklistedRoutes: ['192.168.0.100:3000/api/auth']
+                        whitelistedDomains: [src_environments_environment__WEBPACK_IMPORTED_MODULE_91__["environment"].ApiOriginUrl],
+                        blacklistedRoutes: [src_environments_environment__WEBPACK_IMPORTED_MODULE_91__["environment"].ApiOriginUrl + '/api/auth']
                     }
                 }),
                 _sweetalert2_ngx_sweetalert2__WEBPACK_IMPORTED_MODULE_15__["SweetAlert2Module"].forRoot({
@@ -4200,7 +4686,11 @@ var AppModule = /** @class */ (function () {
                 _xet_thi_dua_ng_modal_ng_modal_xtdcn_ng_modal_xtdcn_component__WEBPACK_IMPORTED_MODULE_79__["NgModalXtdcnComponent"],
                 _xet_thi_dua_ng_modal_ng_modal_xktcn_ng_modal_xktcn_component__WEBPACK_IMPORTED_MODULE_80__["NgModalXktcnComponent"],
                 _xet_thi_dua_ng_modal_ng_modal_xkttt_ng_modal_xkttt_component__WEBPACK_IMPORTED_MODULE_81__["NgModalXktttComponent"],
-                _hoi_dong_modal_thanhvien_modal_thanhvien_component__WEBPACK_IMPORTED_MODULE_88__["ModalThanhvienComponent"]
+                _hoi_dong_modal_thanhvien_modal_thanhvien_component__WEBPACK_IMPORTED_MODULE_88__["ModalThanhvienComponent"],
+                _hoi_dong_modal_theo_doi_bau_chon_modal_theo_doi_bau_chon_component__WEBPACK_IMPORTED_MODULE_90__["ModalTheoDoiBauChonComponent"],
+                _hoi_dong_modal_diemdanh_modal_diemdanh_component__WEBPACK_IMPORTED_MODULE_93__["ModalDiemdanhComponent"],
+                _hoi_dong_ngmodal_thoigianmo_ngmodal_thoigianmo_component__WEBPACK_IMPORTED_MODULE_94__["NgmodalThoigianmoComponent"],
+                _modal_ket_qua_bau_chon_td_modal_ket_qua_bau_chon_td_component__WEBPACK_IMPORTED_MODULE_95__["ModalKetQuaBauChonTdComponent"]
             ]
         })
     ], AppModule);
@@ -4218,7 +4708,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"alert alert-warning\" role=\"alert\" *ngIf=\"!PhienBCDaMo\">\n    Hiện tại chưa có phiên bầu chọn nào được mở!\n</div>\n<div class=\"alert alert-warning\" role=\"alert\" *ngIf=\"DaBauChon && PhienBCDaMo\">\n    Bạn đã thực hiện bầu chọn cho danh hiệu {{DanhHieuInfo.ten_danh_hieu}}, vui lòng chờ phiên bầu chọn tiếp theo!\n    <a class=\"xem-ket-qua\" (click)=\"xemKetQua()\">Xem kết quả bầu chọn</a>\n</div>\n<ngx-spinner bdOpacity=0.9 bdColor=\"#333\" size=\"medium\" color=\"#fff\" type=\"ball-scale-multiple\" [fullScreen]=\"true\">\n    <p style=\"color: white\"> Vui lòng chờ... </p>\n</ngx-spinner>\n<div class=\"row\" *ngIf=\"PhienBCDaMo && !DaBauChon\">\n    <div class=\"col-md-12\">\n        <h2 class=\"pageheader-title text-center\">Bầu chọn danh hiệu thi đua {{DanhHieuInfo.ten_danh_hieu}} </h2>\n        <h2 class=\"pageheader-title text-center\">Thời gian còn lại <countdown\n                [config]=\"{ stopTime: DanhHieuInfo.thoi_gian_mo + 300000, template: '$!h!:$!m!:$!s!' }\"></countdown>\n        </h2>\n    </div>\n    <div class=\"col md-12\">\n        <div class=\"table-responsive\">\n            <table #dataTable class=\"table table-bordered\">\n                <thead>\n                    <tr>\n                        <th style=\"width: 2%\">\n                            <label class=\"custom-control custom-checkbox ml-2\">\n                                <input type=\"checkbox\" [(ngModel)]=\"selectAll\" class=\"custom-control-input\"><span\n                                    class=\"custom-control-label\"></span>\n                            </label></th>\n                        <th>STT</th>\n                        <th>Tên tập thể/cá nhân</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <ngx-spinner bdOpacity=0.9 bdColor=\"#333\" size=\"medium\" color=\"#fff\" type=\"ball-scale-multiple\"\n                        [fullScreen]=\"true\">\n                        <p style=\"color: white\"> Vui lòng chờ... </p>\n                    </ngx-spinner>\n                    <tr *ngFor=\"let item of listXetBauChon; let idx = index\"\n                        [ngClass]=\"item.checked?'bau-chon':'khong-bau-chon'\">\n                        <td><label class=\"custom-control custom-checkbox ml-2\">\n                                <input type=\"checkbox\" [(ngModel)]=\"item.checked\" class=\"custom-control-input\"><span\n                                    class=\"custom-control-label\"></span>\n                            </label></td>\n                        <td>{{idx+1}}</td>\n                        <td>{{isTapThe? item.don_vi.loai_don_vi + ' ' + item.don_vi.ten_don_vi:item.can_bo.ho_ten}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n        <div class='item-center'>\n            <button [disabled]=\"DaBauChon\" class=\"btn btn-primary my-2\" mwlConfirmationPopover\n                [popoverTitle]=\"'Xác nhận bầu chọn'\"\n                [popoverMessage]=\"'Việc bầu chọn sẽ không thể thực hiện lại. Bạn chắc chắn với kết quả bầu chọn của mình?'\"\n                placement=\"top\" (confirm)=\"bauChon()\">\n                <i class=\"fas fa-check-circle\"></i> Bầu chọn\n            </button>\n        </div>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"col-md-12\" *ngIf=\"XemKetQua\">\n        <div class=\"card\">\n            <h5 class=\"card-header\"><i class=\"fas fa-hand-point-right\"></i> Kết quả bầu chọn cho danh hiệu\n                {{DanhHieuInfo.ten_danh_hieu}}\n            </h5>\n            <div class=\"card-body\">\n                <ul class=\"list-group\">\n                    <li *ngFor=\"let item of listDaBauChon; let idx = index\" class=\"list-group-item\">\n                        <span *ngIf=\"item.trang_thai_bau_chon\" class=\"badge badge-primary\">{{idx+1}}) {{item.XetThiDuaTapThe.don_vi.loai_don_vi + \" \" + item.XetThiDuaTapThe.don_vi.ten_don_vi}} - Đồng ý</span>\n                        <span *ngIf=\"!item.trang_thai_bau_chon\" class=\"badge badge-warning\">{{idx+1}}) {{item.XetThiDuaTapThe.don_vi.loai_don_vi + \" \" + item.XetThiDuaTapThe.don_vi.ten_don_vi}} - Không đồng ý</span>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"alert alert-warning\" role=\"alert\" *ngIf=\"!PhienBCDaMo\">\n    Hiện tại chưa có phiên bầu chọn nào được mở!\n</div>\n<div class=\"alert alert-warning\" role=\"alert\" *ngIf=\"DaBauChon && PhienBCDaMo\">\n    Bạn đã thực hiện bầu chọn cho danh hiệu {{DanhHieuInfo.ten_danh_hieu}}, vui lòng chờ phiên bầu chọn tiếp theo!\n    <a class=\"xem-ket-qua\" (click)=\"xemKetQua()\">Xem kết quả bầu chọn</a>\n</div>\n<ngx-spinner bdOpacity=0.9 bdColor=\"#333\" size=\"medium\" color=\"#fff\" type=\"ball-scale-multiple\" [fullScreen]=\"true\">\n    <p style=\"color: white\"> Vui lòng chờ... </p>\n</ngx-spinner>\n<div class=\"row\" *ngIf=\"PhienBCDaMo && !DaBauChon\">\n    <div class=\"col-md-12\">\n        <h2 class=\"pageheader-title text-center\">Bầu chọn danh hiệu thi đua {{DanhHieuInfo.ten_danh_hieu}} </h2>\n        <h2 class=\"pageheader-title text-center\">Thời gian còn lại <countdown\n                [config]=\"{ stopTime: DanhHieuInfo.thoi_gian_mo + (DanhHieuInfo.so_phut*60000), template: '$!h!:$!m!:$!s!' }\"></countdown>\n        </h2>\n    </div>\n    <div class=\"col md-12\">\n        <div class=\"table-responsive\">\n            <table #dataTable class=\"table table-bordered\">\n                <thead>\n                    <tr>\n                        <th style=\"width: 2%\">\n                            <label class=\"custom-control custom-checkbox ml-2\">\n                                <input type=\"checkbox\" [(ngModel)]=\"selectAll\" class=\"custom-control-input\"><span\n                                    class=\"custom-control-label\"></span>\n                            </label></th>\n                        <th>STT</th>\n                        <th>Tên tập thể/cá nhân</th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <ngx-spinner bdOpacity=0.9 bdColor=\"#333\" size=\"medium\" color=\"#fff\" type=\"ball-scale-multiple\"\n                        [fullScreen]=\"true\">\n                        <p style=\"color: white\"> Vui lòng chờ... </p>\n                    </ngx-spinner>\n                    <tr *ngFor=\"let item of listXetBauChon; let idx = index\"\n                        [ngClass]=\"item.checked?'bau-chon':'khong-bau-chon'\">\n                        <td><label class=\"custom-control custom-checkbox ml-2\">\n                                <input type=\"checkbox\" [(ngModel)]=\"item.checked\" class=\"custom-control-input\"><span\n                                    class=\"custom-control-label\"></span>\n                            </label></td>\n                        <td>{{idx+1}}</td>\n                        <td>{{isTapThe? item.don_vi.loai_don_vi + ' ' + item.don_vi.ten_don_vi:item.can_bo.ho_ten}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n        <div class='item-center'>\n            <button [disabled]=\"DaBauChon\" class=\"btn btn-primary my-2\" mwlConfirmationPopover\n                [popoverTitle]=\"'Xác nhận bầu chọn'\"\n                [popoverMessage]=\"'Việc bầu chọn sẽ không thể thực hiện lại. Bạn chắc chắn với kết quả bầu chọn của mình?'\"\n                placement=\"top\" (confirm)=\"bauChon()\">\n                <i class=\"fas fa-check-circle\"></i> Bầu chọn\n            </button>\n        </div>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"col-md-12\" *ngIf=\"XemKetQua\">\n        <div class=\"card\">\n            <h5 class=\"card-header\"><i class=\"fas fa-hand-point-right\"></i> Kết quả bầu chọn cho danh hiệu\n                {{DanhHieuInfo.ten_danh_hieu}}\n            </h5>\n            <div class=\"card-body\">\n                <ul class=\"list-group\">\n                    <li *ngFor=\"let item of listDaBauChon; let idx = index\" class=\"list-group-item\">\n                        <span *ngIf=\"item.trang_thai_bau_chon\" class=\"badge badge-primary\">{{idx+1}}) {{item.XetThiDuaTapThe.don_vi.loai_don_vi + \" \" + item.XetThiDuaTapThe.don_vi.ten_don_vi}} - Đồng ý</span>\n                        <span *ngIf=\"!item.trang_thai_bau_chon\" class=\"badge badge-warning\">{{idx+1}}) {{item.XetThiDuaTapThe.don_vi.loai_don_vi + \" \" + item.XetThiDuaTapThe.don_vi.ten_don_vi}} - Không đồng ý</span>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -4229,7 +4719,7 @@ module.exports = "<div class=\"alert alert-warning\" role=\"alert\" *ngIf=\"!Phi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".bau-chon {\n  background-color: cornflowerblue; }\n\n.item-center {\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.xem-ket-qua {\n  font-weight: 600;\n  color: blue;\n  cursor: pointer; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYmF1LWNob24tZGh0ZC9EOlxcaG9hbmdcXEtMXFxUREtULVNQQS9zcmNcXGFwcFxcYmF1LWNob24tZGh0ZFxcYmF1LWNob24tZGh0ZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdDQUFnQyxFQUFBOztBQUVwQztFQUNJLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsdUJBQXVCLEVBQUE7O0FBRTNCO0VBQ0ksZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxlQUFlLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9iYXUtY2hvbi1kaHRkL2JhdS1jaG9uLWRodGQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYmF1LWNob257XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBjb3JuZmxvd2VyYmx1ZTtcclxufVxyXG4uaXRlbS1jZW50ZXJ7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG59XHJcbi54ZW0ta2V0LXF1YXtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICBjb2xvcjogYmx1ZTtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxufSJdfQ== */"
+module.exports = ".bau-chon {\n  background-color: cornflowerblue; }\n\n.item-center {\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.xem-ket-qua {\n  font-weight: 600;\n  color: blue;\n  cursor: pointer; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYmF1LWNob24tZGh0ZC9EOlxcaG9hbmdcXEtob2FMdWFuXFxEUVUtVERLVFxcVERLVC1TUEEvc3JjXFxhcHBcXGJhdS1jaG9uLWRodGRcXGJhdS1jaG9uLWRodGQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQ0FBZ0MsRUFBQTs7QUFFcEM7RUFDSSxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QixFQUFBOztBQUUzQjtFQUNJLGdCQUFnQjtFQUNoQixXQUFXO0VBQ1gsZUFBZSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvYmF1LWNob24tZGh0ZC9iYXUtY2hvbi1kaHRkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJhdS1jaG9ue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogY29ybmZsb3dlcmJsdWU7XHJcbn1cclxuLml0ZW0tY2VudGVye1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxufVxyXG4ueGVtLWtldC1xdWF7XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgY29sb3I6IGJsdWU7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -4283,8 +4773,7 @@ var BauChonDhtdComponent = /** @class */ (function () {
         this.socket.getEventListener().subscribe(function (event) {
             if (event.type === 'message') {
                 var data = event.data.content;
-                var findStr = data + '';
-                var pbc = findStr.indexOf('Phiên bầu chọn');
+                var pbc = data + ''.indexOf('Phiên bầu chọn');
                 if (pbc !== -1) {
                     _this.checkMoPhienBC();
                     _this.checkDaBauChon(_this.maThanhPhan);
@@ -4310,7 +4799,7 @@ var BauChonDhtdComponent = /** @class */ (function () {
             _this.spinner.hide();
         }, function (err) {
             _this.spinner.hide();
-            _this.alertify.error('Đã xảy ra lỗi!');
+            // this.alertify.error('Đã xảy ra lỗi!');
         });
     };
     BauChonDhtdComponent.prototype.getMaThanhPhan = function () {
@@ -4320,7 +4809,7 @@ var BauChonDhtdComponent = /** @class */ (function () {
             _this.maThanhPhan = _this.thanhVienHDInfo.ma_thanh_phan;
             _this.checkDaBauChon(_this.maThanhPhan);
         }, function (err) {
-            _this.alertify.error('Đã xảy ra lỗi!');
+            // this.alertify.error('Đã xảy ra lỗi!');
             console.log(err);
         });
     };
@@ -4346,7 +4835,7 @@ var BauChonDhtdComponent = /** @class */ (function () {
                 _this.PhienBCDaMo = false;
             }
         }, function (error) {
-            _this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+            // this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
         });
     };
     BauChonDhtdComponent.prototype.bauChon = function () {
@@ -4365,6 +4854,7 @@ var BauChonDhtdComponent = /** @class */ (function () {
             this.bauChonService.bauChonThiDuaTT(this.listBauChon).subscribe(function (res) {
                 _this.alertify.success('Bầu chọn thành công! Vui lòng chờ phiên bầu chọn tiếp theo.');
                 _this.checkDaBauChon(_this.maThanhPhan);
+                _this.socket.send('Cán bộ ' + _this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ho_ten + ' đã bầu chọn xong!');
             }, function (err) {
                 _this.alertify.error('Đã xảy ra lỗi!');
             });
@@ -4593,7 +5083,7 @@ module.exports = "<div [className]=\"loggedIn()?'dashboard-main-wrapper':'dashbo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".dashboard-main-wrapper.login-background {\n  background-image: url('login-background.png');\n  background-size: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhbC9EOlxcaG9hbmdcXEtMXFxUREtULVNQQS9zcmNcXGFwcFxcZ2VuZXJhbFxcZ2VuZXJhbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDZDQUFpRTtFQUNqRSxxQkFBcUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2dlbmVyYWwvZ2VuZXJhbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kYXNoYm9hcmQtbWFpbi13cmFwcGVyLmxvZ2luLWJhY2tncm91bmR7XHJcbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uLy4uL2Fzc2V0cy9pbWFnZXMvbG9naW4tYmFja2dyb3VuZC5wbmcnKTtcclxuICAgIGJhY2tncm91bmQtc2l6ZTogMTAwJTtcclxufSJdfQ== */"
+module.exports = ".dashboard-main-wrapper.login-background {\n  background-image: url('login-background.png');\n  background-size: 100%; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2VuZXJhbC9EOlxcaG9hbmdcXEtob2FMdWFuXFxEUVUtVERLVFxcVERLVC1TUEEvc3JjXFxhcHBcXGdlbmVyYWxcXGdlbmVyYWwuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSw2Q0FBaUU7RUFDakUscUJBQXFCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9nZW5lcmFsL2dlbmVyYWwuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGFzaGJvYXJkLW1haW4td3JhcHBlci5sb2dpbi1iYWNrZ3JvdW5ke1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcuLi8uLi9hc3NldHMvaW1hZ2VzL2xvZ2luLWJhY2tncm91bmQucG5nJyk7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6IDEwMCU7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -4659,9 +5149,7 @@ var GeneralComponent = /** @class */ (function () {
                 if (token1 !== null) {
                     var decodedToken = _this.jwtHelper.decodeToken(token1);
                     var hoten = decodedToken.info.ho_ten;
-                    // const maQuyen = decodedToken.info.ma_quyen;
-                    // const findStr = data + '';
-                    if (data !== 'Connected' && data !== 'Disconnected' && data !== 'Cán bộ ' + hoten + ' đã online!' && data !== 'Cán bộ ' + hoten + ' đã thoát!') {
+                    if (data !== 'Connected' && data !== 'Disconnected' && (data + '').indexOf('Cán bộ ' + hoten) === -1) {
                         _this.alertify.success(data);
                     }
                 }
@@ -4696,7 +5184,7 @@ var GeneralComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">Quản trị hội đồng năm học {{hoidong?.NamHoc?.tu_ngay}} - mã hội đồng:\n        {{hoidong?.ma_hoi_dong}}</h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Quản trị hội đồng</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"alert alert-warning\" role=\"alert\">\n    Lưu ý! Trong một khoảng thời gian sẽ có 1 phiên bầu chọn được mở, việc bầu chọn sẽ diễn ra tuần tự cho các danh hiệu thi đua và hình thức khen thưởng.\n</div>\n<div class=\"row mb-3\">\n  <div class=\"col-md-12\">\n    <div class=\"card\">\n      <h5 class=\"card-header\"><i class=\"fas fa-info-circle\"></i> Thông tin chung</h5>\n      <div class=\"card-body\">\n        <a href=\"javascript: void(0)\" (click)=\"open()\" class=\"btn btn-primary mr-2\" placement=\"top\"\n          ngbTooltip=\"Click vào để xem chi tiết\">\n          Tổng số thành viên hội đồng <span class=\"badge badge-light\">{{tongthanhvien}}</span>\n        </a>\n        <a href=\"javascript: void(0)\" (click)=\"open()\" class=\"btn btn-primary\" placement=\"top\"\n          ngbTooltip=\"Click vào để xem chi tiết\">\n          Tổng số thành viên đang online <span class=\"badge badge-light\">{{thanhvienonline}}</span>\n        </a>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-md-12\">\n    <div class=\"card\">\n      <h5 class=\"card-header\"><i class=\"fas fa-hand-point-right\"></i> Quản lý các phiên bầu chọn Danh hiệu thi đua</h5>\n      <div class=\"card-body\">\n        <ul class=\"list-group\">\n          <li *ngFor=\"let item of listDanhHieuByHoiDong; let idx = index\" class=\"list-group-item\">{{idx+1}}) Bầu chọn cho danh hiệu {{item.ten_danh_hieu}} <span [innerHTML]=\"item.da_bau_chon|bauchondanhhieu\"></span>\n              <span *ngIf=\"item.trang_thai\"> -Thời gian còn lại: </span><countdown *ngIf=\"item.trang_thai\" [config]=\"{ stopTime: item.thoi_gian_mo + 300000, template: '$!h!:$!m!:$!s!' }\" (finished)=\"onFinish(item.thoi_gian_mo, item.ma_danh_hieu, item.ten_danh_hieu)\"></countdown>\n              <button *ngIf=\"!item.trang_thai && item.da_bau_chon!==2\" class=\"btn btn-sm btn-primary mr-1 float-right\" (click)=\"kichHoat(item.ma_danh_hieu, item.ten_danh_hieu)\"\n              placement=\"top\" ngbTooltip=\"Kích hoạt\"><i class=\"fas fa-lock-open\"></i></button>\n              <button *ngIf=\"item.trang_thai\" class=\"btn btn-sm btn-primary mr-1 float-right\"  (click)=\"ketThuc(item.ma_danh_hieu, item.ten_danh_hieu)\"\n              placement=\"top\" ngbTooltip=\"Đóng\"><i class=\"far fa-stop-circle\"></i></button>\n              <a class=\"btn btn-sm btn-success mr-1 float-right\" *ngIf=\"item.trang_thai\" placement=\"top\" (click)=\"openModalTheoDoi()\" \n            ngbTooltip=\"Theo dõi phiên bầu chọn\"><i class=\" fas fa-eye\"></i></a>\n            <a class=\"btn btn-sm btn-success mr-1 float-right\" *ngIf=\"item.da_bau_chon===2\" placement=\"top\"\n            ngbTooltip=\"Xem kết quả\"><i class=\"fas fa-align-justify\"></i></a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-md-12\">\n      <div class=\"card\">\n        <h5 class=\"card-header\"><i class=\"fas fa-hand-point-right\"></i> Quản lý các phiên bầu chọn Hình thức khen thưởng</h5>\n        <div class=\"card-body\">\n          <ul class=\"list-group\">\n            <!-- <li *ngFor=\"let item of listDanhHieuByHoiDong; let idx = index\" class=\"list-group-item\">{{idx+1}}) Bầu chọn danh hiệu {{item.ten_danh_hieu}}</li> -->\n          </ul>\n        </div>\n      </div>\n    </div>\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">Quản trị hội đồng năm học {{hoidong?.NamHoc?.tu_ngay}} - mã hội đồng:\n        {{hoidong?.ma_hoi_dong}}</h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Quản trị hội đồng</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"alert alert-warning\" role=\"alert\">\n    Lưu ý! Trong một khoảng thời gian sẽ có 1 phiên bầu chọn được mở, việc bầu chọn sẽ diễn ra tuần tự cho các danh hiệu thi đua và hình thức khen thưởng.\n</div>\n<div class=\"row mb-3\">\n  <div class=\"col-md-12\">\n    <div class=\"card\">\n      <h5 class=\"card-header\"><i class=\"fas fa-info-circle\"></i> Thông tin chung</h5>\n      <div class=\"card-body\">\n        <a href=\"javascript: void(0)\" (click)=\"open()\" class=\"btn btn-primary mr-2\" placement=\"top\"\n          ngbTooltip=\"Click vào để xem chi tiết\">\n          Tổng số thành viên hội đồng: <span class=\"badge badge-light\">{{tongthanhvien}}</span>\n        </a>\n        <a href=\"javascript: void(0)\" (click)=\"open()\" class=\"btn btn-primary mr-2\" placement=\"top\"\n          ngbTooltip=\"Click vào để xem chi tiết\">\n          Tổng số thành viên có mặt: <span class=\"badge badge-light\">{{thanhvienCoMat}}</span>\n        </a>\n        <a href=\"javascript: void(0)\" (click)=\"open()\" class=\"btn btn-primary\" placement=\"top\"\n          ngbTooltip=\"Click vào để xem chi tiết\">\n          Tổng số thành viên vắng mặt: <span class=\"badge badge-light\">{{tongthanhvien - thanhvienCoMat}}</span>\n        </a>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-md-12\">\n    <div class=\"card\">\n      <h5 class=\"card-header\"><i class=\"fas fa-hand-point-right\"></i> Quản lý các phiên bầu chọn Danh hiệu thi đua</h5>\n      <div class=\"card-body\">\n        <ul class=\"list-group\">\n          <li *ngFor=\"let item of listDanhHieuByHoiDong; let idx = index\" class=\"list-group-item\">{{idx+1}}) Bầu chọn cho danh hiệu {{item.ten_danh_hieu}} <span [innerHTML]=\"item.da_bau_chon|bauchondanhhieu\"></span>\n            <span *ngIf=\"item.da_bau_chon === 2\"> - Có <span class=\"in-dam\">{{item.sl_bo_phieu}}</span> thành viên tham gia bỏ phiếu.</span>\n              <span *ngIf=\"item.trang_thai\"> - Thời gian còn lại: <countdown [config]=\"{ stopTime: item.thoi_gian_mo + (item.so_phut*60000), template: '$!h!:$!m!:$!s!' }\" (finished)=\"onFinish(item.thoi_gian_mo, item.ma_danh_hieu, item.ten_danh_hieu)\" class=\"in-dam\"></countdown> - Đang bầu chọn: <span class=\"in-dam\">{{thanhVienDangBauChon}}</span>  - Đã bầu chọn: <span class=\"in-dam\">{{thanhVienDaBauChon}}</span></span>\n              <button *ngIf=\"!item.trang_thai && item.da_bau_chon!==2\" class=\"btn btn-sm btn-primary mr-1 float-right\" (click)=\"openUpdateTimeModal(item.ma_danh_hieu, item.ten_danh_hieu)\"\n              placement=\"top\" ngbTooltip=\"Kích hoạt\"><i class=\"fas fa-lock-open\"></i></button>\n              <button *ngIf=\"item.trang_thai\" class=\"btn btn-sm btn-primary mr-1 float-right\"  (click)=\"ketThuc(item.ma_danh_hieu, item.ten_danh_hieu, item.thoi_gian_mo)\"\n              placement=\"top\" ngbTooltip=\"Đóng\"><i class=\"far fa-stop-circle\"></i></button>\n              <a class=\"btn btn-sm btn-success mr-1 float-right\" *ngIf=\"item.trang_thai\" placement=\"top\" (click)=\"openModalTheoDoi(item.ma_danh_hieu,item.ten_danh_hieu, item.thoi_gian_mo, item.so_phut)\" \n            ngbTooltip=\"Theo dõi phiên bầu chọn\"><i class=\" fas fa-eye\"></i></a>\n            <a class=\"btn btn-sm btn-success mr-1 float-right\" *ngIf=\"item.da_bau_chon===2\" placement=\"top\" (click)=\"openModalKetQua(item.ma_danh_hieu,item.ten_danh_hieu, item.thoi_gian_mo)\"\n            ngbTooltip=\"Xem kết quả\"><i class=\"fas fa-align-justify\"></i></a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-md-12\">\n      <div class=\"card\">\n        <h5 class=\"card-header\"><i class=\"fas fa-hand-point-right\"></i> Quản lý các phiên bầu chọn Hình thức khen thưởng</h5>\n        <div class=\"card-body\">\n          <ul class=\"list-group\">\n            <!-- <li *ngFor=\"let item of listDanhHieuByHoiDong; let idx = index\" class=\"list-group-item\">{{idx+1}}) Bầu chọn danh hiệu {{item.ten_danh_hieu}}</li> -->\n          </ul>\n        </div>\n      </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -4707,7 +5195,7 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvaS1kb25nL2hvaS1kb25nLWFkbWluL2hvaS1kb25nLWFkbWluLmNvbXBvbmVudC5zY3NzIn0= */"
+module.exports = ".in-dam {\n  font-weight: 600; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvaG9pLWRvbmctYWRtaW4vRDpcXGhvYW5nXFxLaG9hTHVhblxcRFFVLVRES1RcXFRES1QtU1BBL3NyY1xcYXBwXFxob2ktZG9uZ1xcaG9pLWRvbmctYWRtaW5cXGhvaS1kb25nLWFkbWluLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQWdCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9ob2ktZG9uZy9ob2ktZG9uZy1hZG1pbi9ob2ktZG9uZy1hZG1pbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbi1kYW17XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -4729,6 +5217,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
 /* harmony import */ var _modal_thanhvien_modal_thanhvien_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modal-thanhvien/modal-thanhvien.component */ "./src/app/hoi-dong/modal-thanhvien/modal-thanhvien.component.ts");
 /* harmony import */ var src_app_PipeHelper_generateSchoolYear_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/PipeHelper/generateSchoolYear.pipe */ "./src/app/PipeHelper/generateSchoolYear.pipe.ts");
+/* harmony import */ var _modal_theo_doi_bau_chon_modal_theo_doi_bau_chon_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modal-theo-doi-bau-chon/modal-theo-doi-bau-chon.component */ "./src/app/hoi-dong/modal-theo-doi-bau-chon/modal-theo-doi-bau-chon.component.ts");
+/* harmony import */ var _ngmodal_thoigianmo_ngmodal_thoigianmo_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../ngmodal-thoigianmo/ngmodal-thoigianmo.component */ "./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.ts");
+/* harmony import */ var src_app_modal_ket_qua_bau_chon_td_modal_ket_qua_bau_chon_td_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component */ "./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.ts");
+/* harmony import */ var src_app_services_bau_chon_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/_services/bau-chon.service */ "./src/app/_services/bau-chon.service.ts");
+
+
+
+
 
 
 
@@ -4738,16 +5234,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var HoiDongAdminComponent = /** @class */ (function () {
-    function HoiDongAdminComponent(hoiDongService, alertify, socket, modalService, yearPipe) {
+    function HoiDongAdminComponent(hoiDongService, alertify, socket, modalService, yearPipe, bauChonService) {
         this.hoiDongService = hoiDongService;
         this.alertify = alertify;
         this.socket = socket;
         this.modalService = modalService;
         this.yearPipe = yearPipe;
+        this.bauChonService = bauChonService;
         this.namhoc = 'Đang tải';
-        this.tongthanhvien = 'Đang tải...';
-        this.thanhvienonline = 'Đang tải...';
-        this.stoptime = 1556906577000;
+        this.tongthanhvien = 0;
+        this.thanhvienCoMat = 0;
+        this.thanhVienDangBauChon = 0;
+        this.thanhVienDaBauChon = 0;
     }
     HoiDongAdminComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -4758,7 +5256,8 @@ var HoiDongAdminComponent = /** @class */ (function () {
                 var findStr = data + '';
                 var off = findStr.indexOf('thoát');
                 var on = findStr.indexOf('online');
-                if (off !== -1 || on !== -1) {
+                var bcxong = findStr.indexOf('đã bầu chọn xong');
+                if (off !== -1 || on !== -1 || bcxong !== -1) {
                     _this.getListThanhVien();
                 }
             }
@@ -4773,9 +5272,8 @@ var HoiDongAdminComponent = /** @class */ (function () {
             hoidong.NamHoc.tu_ngay = _this.yearPipe.transform(hoidong.NamHoc.tu_ngay);
             _this.hoidong = hoidong;
             _this.getListThanhVien();
-            _this.getlistDanhHieuByHoiDong();
         }, function (error) {
-            _this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+            // this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
             console.log(error);
         });
     };
@@ -4784,12 +5282,17 @@ var HoiDongAdminComponent = /** @class */ (function () {
         this.hoiDongService
             .getListThanhVienByHoiDong(this.hoidong.ma_hoi_dong)
             .subscribe(function (listthanhvien) {
-            _this.tongthanhvien = listthanhvien.length.toString();
-            _this.thanhvienonline = listthanhvien
-                .filter(function (rs) { return rs.CanBo.trang_thai === true && rs.CanBo.ma_quyen !== 2; })
-                .length.toString();
+            if (_this.tongthanhvien === 0 || _this.thanhvienCoMat === 0) {
+                _this.tongthanhvien = listthanhvien.length;
+                _this.thanhvienCoMat = listthanhvien
+                    .filter(function (rs) { return rs.co_mat; }).length;
+            }
+            _this.thanhVienDangBauChon = listthanhvien
+                .filter(function (rs) { return rs.co_mat && rs.CanBo.trang_thai && !rs.bau_chon; }).length;
+            _this.thanhVienDaBauChon = listthanhvien.filter(function (rs) { return rs.co_mat && rs.bau_chon; }).length;
+            _this.getlistDanhHieuByHoiDong();
         }, function (error) {
-            _this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+            // this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
             console.log(error);
         });
     };
@@ -4806,53 +5309,129 @@ var HoiDongAdminComponent = /** @class */ (function () {
             .getListDHTDByHoiDong(this.hoidong.ma_hoi_dong)
             .subscribe(function (listdanhhieu) {
             _this.listDanhHieuByHoiDong = listdanhhieu;
-            _this.listDanhHieuByHoiDong.sort(function (a, b) { return (a.ten_danh_hieu > b.ten_danh_hieu) ? 1 : -1; });
+            console.log(_this.listDanhHieuByHoiDong);
+            _this.listDanhHieuByHoiDong.sort(function (a, b) { return (a.ten_danh_hieu < b.ten_danh_hieu) ? 1 : -1; });
         }, function (error) {
-            _this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+            // this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
             console.log(error);
         });
     };
-    HoiDongAdminComponent.prototype.kichHoat = function (maDanhHieu, tenDanhHieu) {
+    HoiDongAdminComponent.prototype.openUpdateTimeModal = function (maDanhHieu, tenDanhHieu) {
         var _this = this;
         var dem = this.listDanhHieuByHoiDong.filter(function (rs) { return rs.trang_thai; });
         if (dem.length > 0) {
             this.alertify.error('Không thể mở vì phiên bầu chọn trước đó chưa kết thúc!');
             return;
         }
+        else {
+            var modalRef = this.modalService.open(_ngmodal_thoigianmo_ngmodal_thoigianmo_component__WEBPACK_IMPORTED_MODULE_9__["NgmodalThoigianmoComponent"], {
+                windowClass: 'modal-holder',
+                centered: true,
+                size: 'sm'
+            });
+            modalRef.componentInstance.maDanhHieu = maDanhHieu;
+            modalRef.componentInstance.updateTime.subscribe(function ($e) {
+                _this.modalService.dismissAll();
+                _this.KichHoat(maDanhHieu, tenDanhHieu, $e);
+            });
+        }
+    };
+    HoiDongAdminComponent.prototype.KichHoat = function (maDanhHieu, tenDanhHieu, soPhut) {
+        var _this = this;
+        this.thanhVienDangBauChon = 0;
         this.hoiDongService.activePhienBauChon(maDanhHieu).subscribe(function (next) {
-            _this.updateItemDanhHieu(maDanhHieu, true, 1, next.thoi_gian_mo);
+            _this.updateItemDanhHieu(maDanhHieu, true, 1, next.thoi_gian_mo, soPhut);
             _this.socket.send('Phiên bầu chọn cho danh hiệu ' + tenDanhHieu + ' đã mở!');
+            // localStorage.removeItem('danhHieuPush');
+            _this.openModalTheoDoi(maDanhHieu, tenDanhHieu, next.thoi_gian_mo, soPhut);
         }, function (error) {
-            _this.alertify.error('Đã xảy ra lỗi!');
+            // this.alertify.error('Đã xảy ra lỗi!');
         });
     };
-    HoiDongAdminComponent.prototype.updateItemDanhHieu = function (maDanhHieu, trangThai, daBauChon, time) {
+    HoiDongAdminComponent.prototype.updateItemDanhHieu = function (maDanhHieu, trangThai, daBauChon, time, soPhut) {
         var updateItem = this.listDanhHieuByHoiDong.find(this.findMaDanhHieuToUpdate, maDanhHieu);
         var index = this.listDanhHieuByHoiDong.indexOf(updateItem);
         this.listDanhHieuByHoiDong[index].trang_thai = trangThai;
         this.listDanhHieuByHoiDong[index].da_bau_chon = daBauChon;
         this.listDanhHieuByHoiDong[index].thoi_gian_mo = time;
+        this.listDanhHieuByHoiDong[index].so_phut = soPhut;
         console.log(this.listDanhHieuByHoiDong);
     };
     HoiDongAdminComponent.prototype.findMaDanhHieuToUpdate = function (newItem) {
         return newItem.ma_danh_hieu === this;
     };
-    HoiDongAdminComponent.prototype.ketThuc = function (maDanhHieu, tenDanhHieu) {
+    HoiDongAdminComponent.prototype.ketThuc = function (maDanhHieu, tenDanhHieu, thoiGianMo) {
         var _this = this;
         this.hoiDongService.DeactivePhienBauChon(maDanhHieu).subscribe(function (next) {
-            _this.updateItemDanhHieu(maDanhHieu, false, 2, 0);
+            _this.updateItemDanhHieu(maDanhHieu, false, 2, 0, 0);
             _this.socket.send('Phiên bầu chọn cho danh hiệu ' + tenDanhHieu + ' đã đóng!');
+            _this.openModalKetQua(maDanhHieu, tenDanhHieu, thoiGianMo);
+            _this.PushListBauChonTDTT(maDanhHieu);
         }, function (error) {
-            _this.alertify.error('Đã xảy ra lỗi!');
+            // this.alertify.error('Đã xảy ra lỗi!');
+        });
+    };
+    HoiDongAdminComponent.prototype.PushListBauChonTDTT = function (maDanhHieu) {
+        var _this = this;
+        var a = {
+            maDanhHieu: maDanhHieu,
+            maHoiDong: this.hoidong.ma_hoi_dong
+        };
+        this.bauChonService.getListObjTTByDanhHieu(a).subscribe(function (res) {
+            var listpush = [];
+            res.forEach(function (elem) {
+                var numOfBC = elem.BauChonThiDuaTapThe.filter(function (rs) { return rs.trang_thai_bau_chon; }).length;
+                if ((numOfBC / _this.thanhvienCoMat * 100) >= elem.danh_hieu.ti_le_dat) {
+                    elem.dat_yeu_cau = true;
+                    var obj = {
+                        ma_don_vi: elem.ma_don_vi
+                    };
+                    listpush.push(obj);
+                }
+                else {
+                    elem.dat_yeu_cau = false;
+                }
+            });
+            var data = {
+                ma_nam_hoc: _this.hoidong.ma_nam_hoc,
+                ma_hoi_dong: _this.hoidong.ma_hoi_dong,
+                ma_danh_hieu: maDanhHieu,
+                list: listpush
+            };
+            console.log(data);
+            // localStorage.setItem('danhHieuPush', this.maDanhHieu);
+            _this.bauChonService.PushListTDTTDatYeuCau(data).subscribe(function (resp) {
+                console.log(resp);
+            });
         });
     };
     HoiDongAdminComponent.prototype.onFinish = function (thoiGianMo, maDanhHieu, tenDanhHieu) {
         if (thoiGianMo !== 0) {
-            this.ketThuc(maDanhHieu, tenDanhHieu);
+            this.ketThuc(maDanhHieu, tenDanhHieu, thoiGianMo);
         }
     };
-    HoiDongAdminComponent.prototype.openModalTheoDoi = function () {
-        return;
+    HoiDongAdminComponent.prototype.openModalTheoDoi = function (maDanhHieu, tenDanhHieu, thoiGianMo, soPhut) {
+        this.modalRef = this.modalService.open(_modal_theo_doi_bau_chon_modal_theo_doi_bau_chon_component__WEBPACK_IMPORTED_MODULE_8__["ModalTheoDoiBauChonComponent"], {
+            windowClass: 'modal-holder modal-fullsize',
+            centered: true,
+            backdropClass: 'light-blue-backdrop'
+        });
+        this.modalRef.componentInstance.tenDanhHieu = tenDanhHieu;
+        this.modalRef.componentInstance.maDanhHieu = maDanhHieu;
+        this.modalRef.componentInstance.thoiGianMo = thoiGianMo;
+        this.modalRef.componentInstance.soPhut = soPhut;
+        this.modalRef.componentInstance.hoiDong = this.hoidong;
+    };
+    HoiDongAdminComponent.prototype.openModalKetQua = function (maDanhHieu, tenDanhHieu, thoiGianMo) {
+        var modalRef = this.modalService.open(src_app_modal_ket_qua_bau_chon_td_modal_ket_qua_bau_chon_td_component__WEBPACK_IMPORTED_MODULE_10__["ModalKetQuaBauChonTdComponent"], {
+            windowClass: 'modal-holder modal-fullsize',
+            centered: true,
+            backdropClass: 'light-blue-backdrop'
+        });
+        modalRef.componentInstance.tenDanhHieu = tenDanhHieu;
+        modalRef.componentInstance.maDanhHieu = maDanhHieu;
+        modalRef.componentInstance.thoiGianMo = thoiGianMo;
+        modalRef.componentInstance.hoiDong = this.hoidong;
     };
     HoiDongAdminComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -4865,7 +5444,8 @@ var HoiDongAdminComponent = /** @class */ (function () {
             src_app_services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__["AlertifyService"],
             src_app_services_socket_service__WEBPACK_IMPORTED_MODULE_4__["SocketService"],
             _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbModal"],
-            src_app_PipeHelper_generateSchoolYear_pipe__WEBPACK_IMPORTED_MODULE_7__["GenerateSchoolYearPipe"]])
+            src_app_PipeHelper_generateSchoolYear_pipe__WEBPACK_IMPORTED_MODULE_7__["GenerateSchoolYearPipe"],
+            src_app_services_bau_chon_service__WEBPACK_IMPORTED_MODULE_11__["BauChonService"]])
     ], HoiDongAdminComponent);
     return HoiDongAdminComponent;
 }());
@@ -4892,7 +5472,7 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#btnThemNamHoc {\n  margin-top: 27px;\n  margin-left: -20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvaG9pLWRvbmctZWRpdC9EOlxcaG9hbmdcXEtMXFxUREtULVNQQS9zcmNcXGFwcFxcaG9pLWRvbmdcXGhvaS1kb25nLWVkaXRcXGhvaS1kb25nLWVkaXQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBZTtFQUNmLGtCQUFrQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvaG9pLWRvbmcvaG9pLWRvbmctZWRpdC9ob2ktZG9uZy1lZGl0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2J0blRoZW1OYW1Ib2N7XHJcbiAgICBtYXJnaW4tdG9wOjI3cHg7XHJcbiAgICBtYXJnaW4tbGVmdDogLTIwcHg7XHJcbn1cclxuIl19 */"
+module.exports = "#btnThemNamHoc {\n  margin-top: 27px;\n  margin-left: -20px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvaG9pLWRvbmctZWRpdC9EOlxcaG9hbmdcXEtob2FMdWFuXFxEUVUtVERLVFxcVERLVC1TUEEvc3JjXFxhcHBcXGhvaS1kb25nXFxob2ktZG9uZy1lZGl0XFxob2ktZG9uZy1lZGl0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQWU7RUFDZixrQkFBa0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvaS1kb25nL2hvaS1kb25nLWVkaXQvaG9pLWRvbmctZWRpdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNidG5UaGVtTmFtSG9je1xyXG4gICAgbWFyZ2luLXRvcDoyN3B4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IC0yMHB4O1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -5156,7 +5736,7 @@ var HoiDongListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">Danh sách hội đồng </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/home']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Hội đồng</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row mb-3\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <a class=\"btn btn-primary\" [routerLink]=\"['/hoi-dong/edit', 0]\"><i class=\"fas fa-plus-circle\"></i> Thành lập hội\n      đồng</a>\n  </div>\n</div>\n<ngx-spinner bdOpacity=0.9 bdColor=\"#333\" size=\"medium\" color=\"#fff\" type=\"ball-scale-multiple\" [fullScreen]=\"true\">\n  <p style=\"color: white\"> Vui lòng chờ... </p>\n</ngx-spinner>\n<div class=\"table-responsive\">\n  <table #dataTable class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>Mã hội đồng</th>\n        <th>Năm học</th>\n        <th>Số QĐ</th>\n        <th>Ngày kí</th>\n        <th>Trạng thái</th>\n        <th>Thời gian mở</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let hd of listhoidong; let idx = index\"\n        [ngClass]=\"{'chua-mo':hd?.trang_thai==0,'dang-mo':hd?.trang_thai==2,'da-dong':hd?.trang_thai==1}\">\n        <td>{{hd.ma_hoi_dong}}</td>\n        <td>{{hd.NamHoc.tu_ngay|generateSchoolYear}}</td>\n        <td>{{hd.so_quyet_dinh}}</td>\n        <td>{{hd.ngay_ky|date:\"dd/MM/yyyy\"}} </td>\n        <td>{{hd.trang_thai|trangThaiHoiDong}}</td>\n        <td>{{hd.thoi_gian_mo!==0?(hd.thoi_gian_mo|date:\"dd/MM/yyyy HH:mm:ss\"):'Chưa có'}}</td>\n        <td class=\"py-1\">\n          <button (click)=\"moHoiDong(hd.ma_hoi_dong)\" *ngIf=\"hd.trang_thai===0\" class=\"btn btn-sm btn-primary mr-1\"\n            placement=\"top\" ngbTooltip=\"Mở hội đồng\"><i class=\"fas fa-lock-open\"></i></button>\n          <a *ngIf=\"hd.trang_thai===0\" class=\"btn btn-sm btn-success mr-1\"\n            [routerLink]=\"['/quan-tri/can-bo/',hd.soqd]\"><i class=\"fas fa-edit\"></i></a>\n          <a *ngIf=\"hd.trang_thai===0\" class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\"><i\n              class=\"fas fa-trash-alt\"></i></a>\n          <a *ngIf=\"hd.trang_thai===2\" class=\"btn btn-sm btn-success mr-1\" placement=\"top\" [routerLink]=\"['/hoi-dong/admin']\" \n            ngbTooltip=\"Theo dõi hội đồng\"><i class=\" fas fa-eye\"></i></a>\n          <button (click)=\"dongHoiDong(hd.ma_hoi_dong)\" *ngIf=\"hd.trang_thai===2\" class=\"btn btn-sm btn-danger mr-1\"\n            placement=\"top\" ngbTooltip=\"Đóng hội đồng\"><i class=\"far fa-stop-circle\"></i></button>\n          <a class=\"btn btn-sm btn-primary\" placement=\"top\" ngbTooltip=\"In quyết định\"\n            [routerLink]=\"['/inqd-hoidong',hd.ma_hoi_dong]\"><i class=\"fas fa-print\"></i></a>\n          <swal #deleteSwal title=\"Xác nhận xoá\" text=\"Bạn muốn xoá hội đồng {{hd.soqd}}?\" type=\"question\"\n            [showCancelButton]=\"true\"></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\">Danh sách hội đồng </h2>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/home']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Hội đồng</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row mb-3\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <a *ngIf=\"isAdmin\" class=\"btn btn-primary\" [routerLink]=\"['/hoi-dong/edit', 0]\"><i class=\"fas fa-plus-circle\"></i> Thành lập hội\n      đồng</a>\n  </div>\n</div>\n<ngx-spinner bdOpacity=0.9 bdColor=\"#333\" size=\"medium\" color=\"#fff\" type=\"ball-scale-multiple\" [fullScreen]=\"true\">\n  <p style=\"color: white\"> Vui lòng chờ... </p>\n</ngx-spinner>\n<div class=\"table-responsive\">\n  <table #dataTable class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>Mã hội đồng</th>\n        <th>Năm học</th>\n        <th>Số QĐ</th>\n        <th>Ngày kí</th>\n        <th>Trạng thái</th>\n        <th>Thời gian mở</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let hd of listhoidong; let idx = index\"\n        [ngClass]=\"{'chua-mo':hd?.trang_thai==0,'dang-mo':hd?.trang_thai==2,'da-dong':hd?.trang_thai==1}\">\n        <td>{{hd.ma_hoi_dong}}</td>\n        <td>{{hd.NamHoc.tu_ngay|generateSchoolYear}}</td>\n        <td>{{hd.so_quyet_dinh}}</td>\n        <td>{{hd.ngay_ky|date:\"dd/MM/yyyy\"}} </td>\n        <td>{{hd.trang_thai|trangThaiHoiDong}}</td>\n        <td>{{hd.thoi_gian_mo!==0?(hd.thoi_gian_mo|date:\"dd/MM/yyyy HH:mm:ss\"):'Chưa có'}}</td>\n        <td class=\"py-1\">\n          <button (click)=\"moHoiDong(hd.ma_hoi_dong)\" *ngIf=\"hd.trang_thai===0 && isAdmin\" class=\"btn btn-sm btn-primary mr-1\"\n            placement=\"top\" ngbTooltip=\"Mở hội đồng\"><i class=\"fas fa-lock-open\"></i></button>\n          <a *ngIf=\"hd.trang_thai===2 && isAdmin\" class=\"btn btn-sm btn-success mr-1\" placement=\"top\" [routerLink]=\"['/hoi-dong/admin']\" \n            ngbTooltip=\"Theo dõi hội đồng\"><i class=\" fas fa-eye\"></i></a>\n          <button (click)=\"dongHoiDong(hd.ma_hoi_dong)\" *ngIf=\"hd.trang_thai===2 && isAdmin\" class=\"btn btn-sm btn-danger mr-1\"\n            placement=\"top\" ngbTooltip=\"Đóng hội đồng\"><i class=\"far fa-stop-circle\"></i></button>\n          <button *ngIf=\"isAdmin && hd.trang_thai !== 1\" (click)=\"showModalDiemDanh(hd.ma_hoi_dong)\" class=\"btn btn-sm btn-primary mr-1\" placement=\"top\" ngbTooltip=\"Điểm danh\"><i class=\"fas fa-clipboard-check\"></i></button> \n          <a class=\"btn btn-sm btn-primary mr-1\" placement=\"top\" ngbTooltip=\"In quyết định\"\n            [routerLink]=\"['/inqd-hoidong',hd.ma_hoi_dong]\"><i class=\"fas fa-print\"></i></a>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -5167,7 +5747,7 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".chua-mo {\n  background-color: yellow; }\n\n.dang-mo {\n  background-color: chartreuse; }\n\n.da-dong {\n  background-color: gray; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvRDpcXGhvYW5nXFxLTFxcVERLVC1TUEEvc3JjXFxhcHBcXGhvaS1kb25nXFxob2ktZG9uZy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHdCQUNKLEVBQUE7O0FBQ0E7RUFDSSw0QkFDSixFQUFBOztBQUNBO0VBQ0ksc0JBQ0osRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvaS1kb25nL2hvaS1kb25nLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNodWEtbW97XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB5ZWxsb3dcclxufVxyXG4uZGFuZy1tb3tcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGNoYXJ0cmV1c2VcclxufVxyXG4uZGEtZG9uZ3tcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGdyYXlcclxufSJdfQ== */"
+module.exports = ".chua-mo {\n  background-color: yellow; }\n\n.dang-mo {\n  background-color: chartreuse; }\n\n.da-dong {\n  background-color: gray; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvRDpcXGhvYW5nXFxLaG9hTHVhblxcRFFVLVRES1RcXFRES1QtU1BBL3NyY1xcYXBwXFxob2ktZG9uZ1xcaG9pLWRvbmcuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx3QkFDSixFQUFBOztBQUNBO0VBQ0ksNEJBQ0osRUFBQTs7QUFDQTtFQUNJLHNCQUNKLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9ob2ktZG9uZy9ob2ktZG9uZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jaHVhLW1ve1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogeWVsbG93XHJcbn1cclxuLmRhbmctbW97XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBjaGFydHJldXNlXHJcbn1cclxuLmRhLWRvbmd7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmF5XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -5188,6 +5768,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
 /* harmony import */ var _services_socket_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../_services/socket.service */ "./src/app/_services/socket.service.ts");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _modal_diemdanh_modal_diemdanh_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modal-diemdanh/modal-diemdanh.component */ "./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.ts");
+
+
+
 
 
 
@@ -5196,14 +5782,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var HoiDongComponent = /** @class */ (function () {
-    function HoiDongComponent(hoiDongService, alertify, spinner, socket) {
+    function HoiDongComponent(hoiDongService, alertify, spinner, socket, jwtHelper, modalService) {
         this.hoiDongService = hoiDongService;
         this.alertify = alertify;
         this.spinner = spinner;
         this.socket = socket;
+        this.jwtHelper = jwtHelper;
+        this.modalService = modalService;
         this.baseUrl = window.origin + '/inqd-hoidong/';
+        this.isAdmin = false;
     }
     HoiDongComponent.prototype.ngOnInit = function () {
+        this.isAdmin = this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ma_quyen === '2';
         this.spinner.show();
         this.GetListHoiDong();
     };
@@ -5223,13 +5813,12 @@ var HoiDongComponent = /** @class */ (function () {
         setTimeout(function () {
             // tslint:disable-next-line:object-literal-key-quotes
             _this.dataTable.DataTable({ language: src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].dataTableLanguage });
-        }, 3000);
+        }, 1000);
     };
     HoiDongComponent.prototype.moHoiDong = function (maHoiDong) {
         var _this = this;
         this.spinner.show();
         this.hoiDongService.moHoiDong(maHoiDong).subscribe(function (next) {
-            _this.alertify.success(next);
             _this.GetListHoiDong();
             _this.socket.send('Hội đồng ' + maHoiDong + ' đã mở');
         }, function (error) {
@@ -5243,11 +5832,17 @@ var HoiDongComponent = /** @class */ (function () {
         this.hoiDongService.dongHoiDong(maHoiDong).subscribe(function (next) {
             _this.alertify.success(next);
             _this.GetListHoiDong();
-            _this.socket.send('Hội đồng ' + maHoiDong + ' đã đóng');
         }, function (error) {
             _this.spinner.hide();
             _this.alertify.error('Đã xảy ra lỗi!');
         });
+    };
+    HoiDongComponent.prototype.showModalDiemDanh = function (maHoiDong) {
+        var modalRef = this.modalService.open(_modal_diemdanh_modal_diemdanh_component__WEBPACK_IMPORTED_MODULE_9__["ModalDiemdanhComponent"], {
+            windowClass: 'modal-holder',
+            centered: true
+        });
+        modalRef.componentInstance.maHoiDong = maHoiDong;
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('dataTable'),
@@ -5262,9 +5857,112 @@ var HoiDongComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_2__["HoiDongService"],
             _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__["AlertifyService"],
             ngx_spinner__WEBPACK_IMPORTED_MODULE_5__["NgxSpinnerService"],
-            _services_socket_service__WEBPACK_IMPORTED_MODULE_6__["SocketService"]])
+            _services_socket_service__WEBPACK_IMPORTED_MODULE_6__["SocketService"],
+            _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_7__["JwtHelperService"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_8__["NgbModal"]])
     ], HoiDongComponent);
     return HoiDongComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Danh sách thành viên hội đồng</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <div class=\"table-responsive\">\n    <ngx-spinner dOpacity=0 bdColor=\"rgba(255,255,255,0)\" size=\"medium\" color=\"#092bee\" type=\"ball-scale-multiple\"\n      [fullScreen]=\"false\">\n      <p style=\"color: white\"> Vui lòng chờ... </p>\n    </ngx-spinner>\n    <table #dataTable class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>STT</th>\n          <th>Họ tên</th>\n          <th>Chức vụ</th>\n          <th>Chức danh</th>\n          <th>Có mặt</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of listThanhVien; let idx = index\" [ngClass]=\"item.co_mat?'':'khong-co-mat'\">\n          <td>{{idx+1}}</td>\n          <td>{{item?.CanBo?.ho_ten}}</td>\n          <td>{{item?.CanBo?.ChucVu?.ten_chuc_vu}}</td>\n          <td>{{item?.ChucDanh?.ten_chuc_danh}}</td>\n          <td>\n            <label class=\"custom-control custom-checkbox ml-2\">\n              <input type=\"checkbox\" [(ngModel)]=\"item.co_mat\" class=\"custom-control-input\">\n              <span class=\"custom-control-label\"></span>\n            </label></td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-primary mr-1\" (click)=\"CapNhatDiemDanh()\">Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.scss ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".khong-co-mat {\n  background-color: red;\n  color: white; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvbW9kYWwtZGllbWRhbmgvRDpcXGhvYW5nXFxLaG9hTHVhblxcRFFVLVRES1RcXFRES1QtU1BBL3NyY1xcYXBwXFxob2ktZG9uZ1xcbW9kYWwtZGllbWRhbmhcXG1vZGFsLWRpZW1kYW5oLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQXFCO0VBQ3JCLFlBQVksRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvaS1kb25nL21vZGFsLWRpZW1kYW5oL21vZGFsLWRpZW1kYW5oLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmtob25nLWNvLW1hdHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJlZDtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxufSJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: ModalDiemdanhComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalDiemdanhComponent", function() { return ModalDiemdanhComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var src_app_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/_services/hoi-dong.service */ "./src/app/_services/hoi-dong.service.ts");
+/* harmony import */ var src_app_services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/_services/ultisService/alertify.service */ "./src/app/_services/ultisService/alertify.service.ts");
+
+
+
+
+
+
+var ModalDiemdanhComponent = /** @class */ (function () {
+    function ModalDiemdanhComponent(activeModal, spinner, hoiDongService, alertify) {
+        this.activeModal = activeModal;
+        this.spinner = spinner;
+        this.hoiDongService = hoiDongService;
+        this.alertify = alertify;
+    }
+    ModalDiemdanhComponent.prototype.ngOnInit = function () {
+        this.getListThanhVien();
+    };
+    ModalDiemdanhComponent.prototype.getListThanhVien = function () {
+        var _this = this;
+        this.spinner.show();
+        this.hoiDongService.getListThanhVienByHoiDong(this.maHoiDong).subscribe(function (listthanhvien) {
+            console.log(listthanhvien);
+            _this.listThanhVien = listthanhvien;
+            _this.spinner.hide();
+        }, function (error) {
+            _this.spinner.hide();
+            _this.alertify.error('Đã xảy ra lỗi khi nạp danh sách thành viên!');
+            console.log(error);
+        });
+    };
+    ModalDiemdanhComponent.prototype.CapNhatDiemDanh = function () {
+        var _this = this;
+        this.listDiemDanh = [];
+        this.listThanhVien.forEach(function (element) {
+            var obj = {
+                ma_thanh_phan: element.ma_thanh_phan,
+                co_mat: element.co_mat
+            };
+            _this.listDiemDanh.push(obj);
+        });
+        this.hoiDongService.CapNhatDiemDanh(this.listDiemDanh).subscribe(function (next) { _this.alertify.success(next); }, function (error) { _this.alertify.error('Đã xảy ra lỗi!'); });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], ModalDiemdanhComponent.prototype, "maHoiDong", void 0);
+    ModalDiemdanhComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-modal-diemdanh',
+            template: __webpack_require__(/*! ./modal-diemdanh.component.html */ "./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.html"),
+            styles: [__webpack_require__(/*! ./modal-diemdanh.component.scss */ "./src/app/hoi-dong/modal-diemdanh/modal-diemdanh.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbActiveModal"],
+            ngx_spinner__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"],
+            src_app_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_4__["HoiDongService"],
+            src_app_services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_5__["AlertifyService"]])
+    ], ModalDiemdanhComponent);
+    return ModalDiemdanhComponent;
 }());
 
 
@@ -5289,7 +5987,7 @@ module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Danh
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ul {\n  list-style-type: none; }\n\n.active-icon {\n  color: #6CA94C; }\n\n.inactive-icon {\n  color: #AAAAAA; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvbW9kYWwtdGhhbmh2aWVuL0Q6XFxob2FuZ1xcS0xcXFRES1QtU1BBL3NyY1xcYXBwXFxob2ktZG9uZ1xcbW9kYWwtdGhhbmh2aWVuXFxtb2RhbC10aGFuaHZpZW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQkFBcUIsRUFBQTs7QUFFekI7RUFDSSxjQUFjLEVBQUE7O0FBRWxCO0VBQ0ksY0FBYyxFQUFBIiwiZmlsZSI6InNyYy9hcHAvaG9pLWRvbmcvbW9kYWwtdGhhbmh2aWVuL21vZGFsLXRoYW5odmllbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInVse1xyXG4gICAgbGlzdC1zdHlsZS10eXBlOiBub25lO1xyXG59XHJcbi5hY3RpdmUtaWNvbntcclxuICAgIGNvbG9yOiAjNkNBOTRDO1xyXG59XHJcbi5pbmFjdGl2ZS1pY29ue1xyXG4gICAgY29sb3I6ICNBQUFBQUE7XHJcbn0iXX0= */"
+module.exports = "ul {\n  list-style-type: none; }\n\n.active-icon {\n  color: #6CA94C; }\n\n.inactive-icon {\n  color: #AAAAAA; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvbW9kYWwtdGhhbmh2aWVuL0Q6XFxob2FuZ1xcS2hvYUx1YW5cXERRVS1UREtUXFxUREtULVNQQS9zcmNcXGFwcFxcaG9pLWRvbmdcXG1vZGFsLXRoYW5odmllblxcbW9kYWwtdGhhbmh2aWVuLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQXFCLEVBQUE7O0FBRXpCO0VBQ0ksY0FBYyxFQUFBOztBQUVsQjtFQUNJLGNBQWMsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2hvaS1kb25nL21vZGFsLXRoYW5odmllbi9tb2RhbC10aGFuaHZpZW4uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ1bHtcclxuICAgIGxpc3Qtc3R5bGUtdHlwZTogbm9uZTtcclxufVxyXG4uYWN0aXZlLWljb257XHJcbiAgICBjb2xvcjogIzZDQTk0QztcclxufVxyXG4uaW5hY3RpdmUtaWNvbntcclxuICAgIGNvbG9yOiAjQUFBQUFBO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -5331,7 +6029,6 @@ var ModalThanhvienComponent = /** @class */ (function () {
         this.spinner.show();
         this.hoiDongService.getListThanhVienByHoiDong(this.maHoiDong).subscribe(function (listthanhvien) {
             _this.listThanhVien = listthanhvien;
-            console.log(listthanhvien);
             _this.spinner.hide();
         }, function (error) {
             _this.spinner.hide();
@@ -5368,7 +6065,7 @@ var ModalThanhvienComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  modal-theo-doi-bau-chon works!\n</p>\n"
+module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title text-uppercase text-center\">Thông tin bầu chọn danh hiệu thi đua {{tenDanhHieu}} ngày {{today|date:'dd/MM/yyyy'}}</h4>\r\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <ngx-spinner dOpacity=0 bdColor=\"rgba(255,255,255,0)\" size=\"medium\" color=\"#092bee\" type=\"ball-scale-multiple\"\r\n    [fullScreen]=\"true\">\r\n    <p style=\"color: white\"> Vui lòng chờ... </p>\r\n  </ngx-spinner>\r\n  <h2 *ngIf=\"!ketThuc\" class=\"pageheader-title text-center\">\r\n    Thời gian mở: {{thoiGianMo|date:'dd/MM/yyyy hh:mm:ss'}} - Thời gian còn lại: <countdown [config]=\"{ stopTime: (thoiGianMo + soPhut*60000), template: '$!h!:$!m!:$!s!' }\"></countdown>\r\n  </h2>\r\n  <h3>Tổng số thành viên hội đồng: {{TongTVHD}} - Số thành viên có mặt: {{SoTVCoMat}} - Số vắng mặt: {{TongTVHD - SoTVCoMat}} - Số thành viên đang bầu chọn: {{SoTVDangBauChon}} - Số thành viên đã bầu chọn: {{SoTVDaBauChon}}</h3>\r\n  <div class=\"card\">\r\n    <h5 class=\"card-header\"><i class=\"fas fa-hand-point-right\"></i> Thông tin kết quả bầu chọn hiện tại</h5>\r\n    <div class=\"card-body\">\r\n      <ul class=\"list-group\">\r\n        <li *ngFor=\"let item of listXetBauChon\" class=\"list-group-item\">\r\n            {{item?.don_vi?.loai_don_vi}} {{item?.don_vi?.ten_don_vi}} - Tỉ lệ đạt {{item?.danh_hieu?.ti_le_dat}}% : <span class=\"badge badge-light\">{{item?.BauChonThiDuaTapThe|numOfBauChon}}/{{SoTVCoMat}}</span> <span *ngIf=\"item?.dat_yeu_cau === true\"> - Đạt yêu cầu</span> <span *ngIf=\"item?.dat_yeu_cau === false\"> - Không đạt yêu cầu</span>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\r\n</div>"
 
 /***/ }),
 
@@ -5379,7 +6076,7 @@ module.exports = "<p>\n  modal-theo-doi-bau-chon works!\n</p>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvaS1kb25nL21vZGFsLXRoZW8tZG9pLWJhdS1jaG9uL21vZGFsLXRoZW8tZG9pLWJhdS1jaG9uLmNvbXBvbmVudC5zY3NzIn0= */"
+module.exports = ".list-group-item {\n  font-weight: 600;\n  color: blue;\n  font-size: 17px; }\n\n.badge.badge-light {\n  font-size: 22px;\n  font-weight: 600; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9pLWRvbmcvbW9kYWwtdGhlby1kb2ktYmF1LWNob24vRDpcXGhvYW5nXFxLaG9hTHVhblxcRFFVLVRES1RcXFRES1QtU1BBL3NyY1xcYXBwXFxob2ktZG9uZ1xcbW9kYWwtdGhlby1kb2ktYmF1LWNob25cXG1vZGFsLXRoZW8tZG9pLWJhdS1jaG9uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQWdCO0VBQ2hCLFdBQVc7RUFDWCxlQUFlLEVBQUE7O0FBRW5CO0VBQ0ksZUFBZTtFQUNmLGdCQUFnQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvaG9pLWRvbmcvbW9kYWwtdGhlby1kb2ktYmF1LWNob24vbW9kYWwtdGhlby1kb2ktYmF1LWNob24uY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubGlzdC1ncm91cC1pdGVte1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIGNvbG9yOiBibHVlO1xyXG4gICAgZm9udC1zaXplOiAxN3B4O1xyXG59XHJcbi5iYWRnZS5iYWRnZS1saWdodHtcclxuICAgIGZvbnQtc2l6ZTogMjJweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -5395,22 +6092,192 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalTheoDoiBauChonComponent", function() { return ModalTheoDoiBauChonComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/_services/ultisService/alertify.service */ "./src/app/_services/ultisService/alertify.service.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var src_app_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/_services/hoi-dong.service */ "./src/app/_services/hoi-dong.service.ts");
+/* harmony import */ var src_app_services_bau_chon_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/_services/bau-chon.service */ "./src/app/_services/bau-chon.service.ts");
+/* harmony import */ var src_app_services_socket_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/_services/socket.service */ "./src/app/_services/socket.service.ts");
+
+
+
+
+
+
 
 
 var ModalTheoDoiBauChonComponent = /** @class */ (function () {
-    function ModalTheoDoiBauChonComponent() {
+    function ModalTheoDoiBauChonComponent(activeModal, alertify, spinner, hoiDongService, socket, bauChonService) {
+        this.activeModal = activeModal;
+        this.alertify = alertify;
+        this.spinner = spinner;
+        this.hoiDongService = hoiDongService;
+        this.socket = socket;
+        this.bauChonService = bauChonService;
+        this.today = Date.now();
     }
     ModalTheoDoiBauChonComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.spinner.show();
+        this.getListObjTTByDanhHieu(this.maDanhHieu);
+        this.socket.getEventListener().subscribe(function (event) {
+            if (event.type === 'message') {
+                var data = event.data.content;
+                var pbc = data + ''.indexOf('đã bầu chọn xong');
+                if (pbc !== -1) {
+                    _this.getListObjTTByDanhHieu(_this.maDanhHieu);
+                }
+            }
+        });
     };
+    ModalTheoDoiBauChonComponent.prototype.getListThanhVien = function () {
+        var _this = this;
+        this.hoiDongService
+            .getListThanhVienByHoiDong(this.hoiDong.ma_hoi_dong)
+            .subscribe(function (listthanhvien) {
+            listthanhvien = listthanhvien.filter(function (rs) { return rs.ChucDanh.tham_gia_bo_phieu; });
+            _this.TongTVHD = listthanhvien.length;
+            _this.SoTVCoMat = listthanhvien
+                .filter(function (rs) { return rs.co_mat; }).length;
+            _this.SoTVDangBauChon = listthanhvien
+                .filter(function (rs) { return rs.co_mat && rs.CanBo.trang_thai && !rs.bau_chon; }).length;
+            _this.SoTVDaBauChon = listthanhvien.filter(function (rs) { return rs.co_mat && rs.bau_chon; }).length;
+            _this.spinner.hide();
+        }, function (error) {
+            _this.alertify.error('Đã xảy ra lỗi khi nạp thông tin thành viên!');
+            console.log(error);
+        });
+    };
+    ModalTheoDoiBauChonComponent.prototype.getListObjTTByDanhHieu = function (maDanhHieu) {
+        var _this = this;
+        var a = {
+            maDanhHieu: maDanhHieu,
+            maHoiDong: this.hoiDong.ma_hoi_dong,
+        };
+        this.bauChonService.getListObjTTByDanhHieu(a).subscribe(function (res) {
+            _this.listXetBauChon = res;
+            _this.getListThanhVien();
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], ModalTheoDoiBauChonComponent.prototype, "tenDanhHieu", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], ModalTheoDoiBauChonComponent.prototype, "maDanhHieu", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], ModalTheoDoiBauChonComponent.prototype, "thoiGianMo", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], ModalTheoDoiBauChonComponent.prototype, "soPhut", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], ModalTheoDoiBauChonComponent.prototype, "hoiDong", void 0);
     ModalTheoDoiBauChonComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-modal-theo-doi-bau-chon',
             template: __webpack_require__(/*! ./modal-theo-doi-bau-chon.component.html */ "./src/app/hoi-dong/modal-theo-doi-bau-chon/modal-theo-doi-bau-chon.component.html"),
             styles: [__webpack_require__(/*! ./modal-theo-doi-bau-chon.component.scss */ "./src/app/hoi-dong/modal-theo-doi-bau-chon/modal-theo-doi-bau-chon.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbActiveModal"],
+            src_app_services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_2__["AlertifyService"],
+            ngx_spinner__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"],
+            src_app_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_5__["HoiDongService"],
+            src_app_services_socket_service__WEBPACK_IMPORTED_MODULE_7__["SocketService"],
+            src_app_services_bau_chon_service__WEBPACK_IMPORTED_MODULE_6__["BauChonService"]])
     ], ModalTheoDoiBauChonComponent);
     return ModalTheoDoiBauChonComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Đặt thời gian cho phiên bầu chọn</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <div class=\"form-group\">\n    <label for=\"input-select\">Số phút: </label>\n    <input type=\"number\" [(ngModel)]=\"thoiGian\" class=\"form-control\" />\n  </div>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-primary mr-1\" (click)=\"CapNhatThoiGian()\">Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.scss":
+/*!*******************************************************************************!*\
+  !*** ./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.scss ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvaS1kb25nL25nbW9kYWwtdGhvaWdpYW5tby9uZ21vZGFsLXRob2lnaWFubW8uY29tcG9uZW50LnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: NgmodalThoigianmoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NgmodalThoigianmoComponent", function() { return NgmodalThoigianmoComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var src_app_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/_services/hoi-dong.service */ "./src/app/_services/hoi-dong.service.ts");
+
+
+
+
+var NgmodalThoigianmoComponent = /** @class */ (function () {
+    function NgmodalThoigianmoComponent(activeModal, hoiDongService) {
+        this.activeModal = activeModal;
+        this.hoiDongService = hoiDongService;
+        this.updateTime = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    NgmodalThoigianmoComponent.prototype.ngOnInit = function () {
+        console.log(this.maDanhHieu);
+    };
+    NgmodalThoigianmoComponent.prototype.CapNhatThoiGian = function () {
+        var _this = this;
+        var req = {
+            ma_danh_hieu: this.maDanhHieu,
+            so_phut: this.thoiGian
+        };
+        this.hoiDongService.CapNhatThoiGianBauChon(req).subscribe(function (next) {
+            if (next === true) {
+                _this.updateTime.emit(_this.thoiGian);
+            }
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], NgmodalThoigianmoComponent.prototype, "maDanhHieu", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], NgmodalThoigianmoComponent.prototype, "updateTime", void 0);
+    NgmodalThoigianmoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-ngmodal-thoigianmo',
+            template: __webpack_require__(/*! ./ngmodal-thoigianmo.component.html */ "./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.html"),
+            styles: [__webpack_require__(/*! ./ngmodal-thoigianmo.component.scss */ "./src/app/hoi-dong/ngmodal-thoigianmo/ngmodal-thoigianmo.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbActiveModal"],
+            src_app_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_3__["HoiDongService"]])
+    ], NgmodalThoigianmoComponent);
+    return NgmodalThoigianmoComponent;
 }());
 
 
@@ -5528,8 +6395,13 @@ var ThanhPhanComponent = /** @class */ (function () {
         this.IdCanBo = this.myForm.get('can_bo').value[0].ma_can_bo;
         this.IdChucDanh = this.myForm.get('chuc_danh').value[0].ma_chuc_danh;
         this.hoiDongService.updateThanhVienHoiDong(this.idHoiDong, this.IdCanBo, this.IdChucDanh).subscribe(function (data) {
-            _this.alertify.success(data);
-            _this.getListThanhVienHoiDong();
+            if (data) {
+                _this.alertify.success('Đã cập nhật thành viên hội đồng!');
+                _this.getListThanhVienHoiDong();
+            }
+            else {
+                _this.alertify.error('Chức danh này đã tồn tại!');
+            }
         }, function (error) {
             _this.alertify.error('Đã xảy ra lỗi!');
         });
@@ -5968,7 +6840,7 @@ module.exports = "<button class=\"btn btn-brand float-left mt-2 ml-2\" id=\"goBa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#print-content {\n  font-family: \"Times New Roman\" !important;\n  color: black !important; }\n\n.font-9 {\n  font-size: 13pt; }\n\n.font-10 {\n  font-size: 14pt; }\n\n.font-11 {\n  font-size: 15pt; }\n\n.font-13 {\n  font-size: 17pt; }\n\n.font-12 {\n  font-size: 15pt; }\n\n.canhdeu {\n  text-align: justify; }\n\n.indam {\n  font-weight: bold; }\n\n.innghieng {\n  font-style: oblique; }\n\n.pageBreak {\n  page-break-before: always; }\n\n.font-18 {\n  font-size: 22pt;\n  text-align: center; }\n\n.canhgiua {\n  text-align: center; }\n\n.under-line {\n  border-bottom: 1px solid;\n  margin-left: 26%;\n  margin-right: 22%; }\n\n.col3 {\n  width: 40%;\n  float: left; }\n\n.col7 {\n  width: 60%;\n  float: left; }\n\n.container {\n  width: 900px; }\n\np {\n  margin: 0px; }\n\nb {\n  font-size: 17pt; }\n\n.font-spec {\n  font-size: 16pt; }\n\n.gachngan {\n  display: inline-block;\n  position: relative; }\n\n.gachngan:before {\n  content: \"\";\n  position: absolute;\n  width: 32%;\n  height: 1px;\n  bottom: 0;\n  left: 36%;\n  border-bottom: 1px solid black; }\n\n#PrintThisPage {\n  float: right;\n  width: 120px;\n  margin-right: 28px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW4tcWQtaG9pLWRvbmcvRDpcXGhvYW5nXFxLTFxcVERLVC1TUEEvc3JjXFxhcHBcXGluLXFkLWhvaS1kb25nXFxpbi1xZC1ob2ktZG9uZy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHlDQUF3QztFQUN4Qyx1QkFBc0IsRUFBQTs7QUFFMUI7RUFDSSxlQUFlLEVBQUE7O0FBRW5CO0VBQ0ksZUFBZSxFQUFBOztBQUduQjtFQUNJLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxlQUFlLEVBQUE7O0FBR25CO0VBQ0ksZUFBZSxFQUFBOztBQUVuQjtFQUNJLG1CQUFrQixFQUFBOztBQUV0QjtFQUNJLGlCQUFpQixFQUFBOztBQUdyQjtFQUNJLG1CQUFtQixFQUFBOztBQUd2QjtFQUNJLHlCQUF5QixFQUFBOztBQUc3QjtFQUNJLGVBQWU7RUFDZixrQkFBa0IsRUFBQTs7QUFHdEI7RUFDSSxrQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSx3QkFBd0I7RUFDeEIsZ0JBQWdCO0VBQ2hCLGlCQUFpQixFQUFBOztBQUdyQjtFQUNJLFVBQVU7RUFDVixXQUFXLEVBQUE7O0FBR2Y7RUFDSSxVQUFVO0VBQ1YsV0FBVyxFQUFBOztBQUdmO0VBQ0ksWUFDSixFQUFBOztBQUVBO0VBQ0ksV0FDSixFQUFBOztBQUVBO0VBQ0ksZUFBZSxFQUFBOztBQUVuQjtFQUNJLGVBQWMsRUFBQTs7QUFFbEI7RUFDSSxxQkFBcUI7RUFDckIsa0JBQWtCLEVBQUE7O0FBRXRCO0VBQ0ksV0FBVztFQUNYLGtCQUFrQjtFQUNsQixVQUFVO0VBQ1YsV0FBVztFQUNYLFNBQVM7RUFDVCxTQUFTO0VBQ1QsOEJBQThCLEVBQUE7O0FBRWxDO0VBQ0ksWUFBVztFQUNYLFlBQVc7RUFDWCxrQkFBaUIsRUFBQSIsImZpbGUiOiJzcmMvYXBwL2luLXFkLWhvaS1kb25nL2luLXFkLWhvaS1kb25nLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI3ByaW50LWNvbnRlbnQge1xyXG4gICAgZm9udC1mYW1pbHk6ICdUaW1lcyBOZXcgUm9tYW4nIWltcG9ydGFudDtcclxuICAgIGNvbG9yOiBibGFjayFpbXBvcnRhbnQ7XHJcbn1cclxuLmZvbnQtOSB7XHJcbiAgICBmb250LXNpemU6IDEzcHQ7XHJcbn1cclxuLmZvbnQtMTAge1xyXG4gICAgZm9udC1zaXplOiAxNHB0O1xyXG59XHJcblxyXG4uZm9udC0xMSB7XHJcbiAgICBmb250LXNpemU6IDE1cHQ7XHJcbn1cclxuXHJcbi5mb250LTEzIHtcclxuICAgIGZvbnQtc2l6ZTogMTdwdDtcclxufVxyXG5cclxuLmZvbnQtMTIge1xyXG4gICAgZm9udC1zaXplOiAxNXB0O1xyXG59XHJcbi5jYW5oZGV1e1xyXG4gICAgdGV4dC1hbGlnbjpqdXN0aWZ5O1xyXG59XHJcbi5pbmRhbSB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuLmlubmdoaWVuZyB7XHJcbiAgICBmb250LXN0eWxlOiBvYmxpcXVlO1xyXG59XHJcblxyXG4ucGFnZUJyZWFrIHtcclxuICAgIHBhZ2UtYnJlYWstYmVmb3JlOiBhbHdheXM7XHJcbn1cclxuXHJcbi5mb250LTE4IHtcclxuICAgIGZvbnQtc2l6ZTogMjJwdDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLmNhbmhnaXVhIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG4udW5kZXItbGluZSB7XHJcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQ7XHJcbiAgICBtYXJnaW4tbGVmdDogMjYlO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiAyMiU7XHJcbn1cclxuXHJcbi5jb2wzIHtcclxuICAgIHdpZHRoOiA0MCU7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLmNvbDcge1xyXG4gICAgd2lkdGg6IDYwJTtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4uY29udGFpbmVyIHtcclxuICAgIHdpZHRoOiA5MDBweFxyXG59XHJcblxyXG5wIHtcclxuICAgIG1hcmdpbjogMHB4XHJcbn1cclxuXHJcbmIge1xyXG4gICAgZm9udC1zaXplOiAxN3B0O1xyXG59XHJcbi5mb250LXNwZWN7XHJcbiAgICBmb250LXNpemU6MTZwdDtcclxufVxyXG4uZ2FjaG5nYW4ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG59XHJcbi5nYWNobmdhbjpiZWZvcmUge1xyXG4gICAgY29udGVudDogXCJcIjtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHdpZHRoOiAzMiU7XHJcbiAgICBoZWlnaHQ6IDFweDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIGxlZnQ6IDM2JTtcclxuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBibGFjaztcclxufVxyXG4jUHJpbnRUaGlzUGFnZXtcclxuICAgIGZsb2F0OnJpZ2h0O1xyXG4gICAgd2lkdGg6MTIwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6MjhweDtcclxufSJdfQ== */"
+module.exports = "#print-content {\n  font-family: \"Times New Roman\" !important;\n  color: black !important; }\n\n.font-9 {\n  font-size: 13pt; }\n\n.font-10 {\n  font-size: 14pt; }\n\n.font-11 {\n  font-size: 15pt; }\n\n.font-13 {\n  font-size: 17pt; }\n\n.font-12 {\n  font-size: 15pt; }\n\n.canhdeu {\n  text-align: justify; }\n\n.indam {\n  font-weight: bold; }\n\n.innghieng {\n  font-style: oblique; }\n\n.pageBreak {\n  page-break-before: always; }\n\n.font-18 {\n  font-size: 22pt;\n  text-align: center; }\n\n.canhgiua {\n  text-align: center; }\n\n.under-line {\n  border-bottom: 1px solid;\n  margin-left: 26%;\n  margin-right: 22%; }\n\n.col3 {\n  width: 40%;\n  float: left; }\n\n.col7 {\n  width: 60%;\n  float: left; }\n\n.container {\n  width: 900px; }\n\np {\n  margin: 0px; }\n\nb {\n  font-size: 17pt; }\n\n.font-spec {\n  font-size: 16pt; }\n\n.gachngan {\n  display: inline-block;\n  position: relative; }\n\n.gachngan:before {\n  content: \"\";\n  position: absolute;\n  width: 32%;\n  height: 1px;\n  bottom: 0;\n  left: 36%;\n  border-bottom: 1px solid black; }\n\n#PrintThisPage {\n  float: right;\n  width: 120px;\n  margin-right: 28px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW4tcWQtaG9pLWRvbmcvRDpcXGhvYW5nXFxLaG9hTHVhblxcRFFVLVRES1RcXFRES1QtU1BBL3NyY1xcYXBwXFxpbi1xZC1ob2ktZG9uZ1xcaW4tcWQtaG9pLWRvbmcuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx5Q0FBd0M7RUFDeEMsdUJBQXNCLEVBQUE7O0FBRTFCO0VBQ0ksZUFBZSxFQUFBOztBQUVuQjtFQUNJLGVBQWUsRUFBQTs7QUFHbkI7RUFDSSxlQUFlLEVBQUE7O0FBR25CO0VBQ0ksZUFBZSxFQUFBOztBQUduQjtFQUNJLGVBQWUsRUFBQTs7QUFFbkI7RUFDSSxtQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSxpQkFBaUIsRUFBQTs7QUFHckI7RUFDSSxtQkFBbUIsRUFBQTs7QUFHdkI7RUFDSSx5QkFBeUIsRUFBQTs7QUFHN0I7RUFDSSxlQUFlO0VBQ2Ysa0JBQWtCLEVBQUE7O0FBR3RCO0VBQ0ksa0JBQWtCLEVBQUE7O0FBRXRCO0VBQ0ksd0JBQXdCO0VBQ3hCLGdCQUFnQjtFQUNoQixpQkFBaUIsRUFBQTs7QUFHckI7RUFDSSxVQUFVO0VBQ1YsV0FBVyxFQUFBOztBQUdmO0VBQ0ksVUFBVTtFQUNWLFdBQVcsRUFBQTs7QUFHZjtFQUNJLFlBQ0osRUFBQTs7QUFFQTtFQUNJLFdBQ0osRUFBQTs7QUFFQTtFQUNJLGVBQWUsRUFBQTs7QUFFbkI7RUFDSSxlQUFjLEVBQUE7O0FBRWxCO0VBQ0kscUJBQXFCO0VBQ3JCLGtCQUFrQixFQUFBOztBQUV0QjtFQUNJLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsVUFBVTtFQUNWLFdBQVc7RUFDWCxTQUFTO0VBQ1QsU0FBUztFQUNULDhCQUE4QixFQUFBOztBQUVsQztFQUNJLFlBQVc7RUFDWCxZQUFXO0VBQ1gsa0JBQWlCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9pbi1xZC1ob2ktZG9uZy9pbi1xZC1ob2ktZG9uZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNwcmludC1jb250ZW50IHtcclxuICAgIGZvbnQtZmFtaWx5OiAnVGltZXMgTmV3IFJvbWFuJyFpbXBvcnRhbnQ7XHJcbiAgICBjb2xvcjogYmxhY2shaW1wb3J0YW50O1xyXG59XHJcbi5mb250LTkge1xyXG4gICAgZm9udC1zaXplOiAxM3B0O1xyXG59XHJcbi5mb250LTEwIHtcclxuICAgIGZvbnQtc2l6ZTogMTRwdDtcclxufVxyXG5cclxuLmZvbnQtMTEge1xyXG4gICAgZm9udC1zaXplOiAxNXB0O1xyXG59XHJcblxyXG4uZm9udC0xMyB7XHJcbiAgICBmb250LXNpemU6IDE3cHQ7XHJcbn1cclxuXHJcbi5mb250LTEyIHtcclxuICAgIGZvbnQtc2l6ZTogMTVwdDtcclxufVxyXG4uY2FuaGRldXtcclxuICAgIHRleHQtYWxpZ246anVzdGlmeTtcclxufVxyXG4uaW5kYW0ge1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxuXHJcbi5pbm5naGllbmcge1xyXG4gICAgZm9udC1zdHlsZTogb2JsaXF1ZTtcclxufVxyXG5cclxuLnBhZ2VCcmVhayB7XHJcbiAgICBwYWdlLWJyZWFrLWJlZm9yZTogYWx3YXlzO1xyXG59XHJcblxyXG4uZm9udC0xOCB7XHJcbiAgICBmb250LXNpemU6IDIycHQ7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5jYW5oZ2l1YSB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuLnVuZGVyLWxpbmUge1xyXG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkO1xyXG4gICAgbWFyZ2luLWxlZnQ6IDI2JTtcclxuICAgIG1hcmdpbi1yaWdodDogMjIlO1xyXG59XHJcblxyXG4uY29sMyB7XHJcbiAgICB3aWR0aDogNDAlO1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbn1cclxuXHJcbi5jb2w3IHtcclxuICAgIHdpZHRoOiA2MCU7XHJcbiAgICBmbG9hdDogbGVmdDtcclxufVxyXG5cclxuLmNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogOTAwcHhcclxufVxyXG5cclxucCB7XHJcbiAgICBtYXJnaW46IDBweFxyXG59XHJcblxyXG5iIHtcclxuICAgIGZvbnQtc2l6ZTogMTdwdDtcclxufVxyXG4uZm9udC1zcGVje1xyXG4gICAgZm9udC1zaXplOjE2cHQ7XHJcbn1cclxuLmdhY2huZ2FuIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxufVxyXG4uZ2FjaG5nYW46YmVmb3JlIHtcclxuICAgIGNvbnRlbnQ6IFwiXCI7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB3aWR0aDogMzIlO1xyXG4gICAgaGVpZ2h0OiAxcHg7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICBsZWZ0OiAzNiU7XHJcbiAgICBib3JkZXItYm90dG9tOiAxcHggc29saWQgYmxhY2s7XHJcbn1cclxuI1ByaW50VGhpc1BhZ2V7XHJcbiAgICBmbG9hdDpyaWdodDtcclxuICAgIHdpZHRoOjEyMHB4O1xyXG4gICAgbWFyZ2luLXJpZ2h0OjI4cHg7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -6073,7 +6945,7 @@ var InQDHoiDongComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"nav-left-sidebar sidebar-dark\">\n    <div class=\"menu-list\">\n        <nav class=\"navbar navbar-expand-lg navbar-light\">\n            <a class=\"d-xl-none d-lg-none\" href=\"#\">Dashboard</a>\n            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\"\n                aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n                <ul class=\"navbar-nav flex-column\">\n                    <li class=\"nav-divider\">Menu</li>\n                    <li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#submenu-dhtd\" aria-controls=\"submenu-3\">\n                            <i class=\"fas fa-boxes\"></i>Danh hiệu thi đua\n                        </a>\n                        <div id=\"submenu-dhtd\" class=\"collapse submenu\">\n                            <ul class=\"nav flex-column\">\n                                <li class=\"nav-item\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/danh-hieu-thi-dua/tap-the']\"><i class=\"fas fa-users\"></i> Tập thể</a>\n                                </li>\n                                <li class=\"nav-item\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/danh-hieu-thi-dua/ca-nhan']\" routerLinkActive=\"router-link-active\" ><i class=\"fas fa-user\"></i> Cá nhân</a>\n                                </li>\n                            </ul>\n                        </div>\n                    </li>\n                    <li class=\"nav-item \">\n                            <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#submenu-htkt\" aria-controls=\"submenu-3\">\n                                <i class=\"far fa-list-alt\"></i>Hình thức khen thưởng\n                            </a>\n                            <div id=\"submenu-htkt\" class=\"collapse submenu\">\n                                <ul class=\"nav flex-column\">\n                                    <li class=\"nav-item\">\n                                        <a class=\"nav-link\" href=\"pages/chart-c3.html\"><i class=\"fas fa-users\"></i> Tập thể</a>\n                                    </li>\n                                    <li class=\"nav-item\">\n                                        <a class=\"nav-link\" href=\"pages/chart-chartist.html\"><i class=\"fas fa-user\"></i> Cá nhân</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#submenu-3\" aria-controls=\"submenu-3\">\n                            <i class=\"fa fa-fw fa-chart-pie\"></i>Bầu chọn\n                        </a>\n                        <div id=\"submenu-3\" class=\"collapse submenu\">\n                            <ul class=\"nav flex-column\">\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/hoi-dong']\" ><i class=\"fas fa-warehouse\"></i> Hội đồng TĐ-KT</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/hoi-dong/xet-thi-dua']\"><i class=\"fas fa-list-alt\"></i> Danh sách xét TĐ</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/hoi-dong/xet-khen-thuong']\" ><i class=\"fas fa-list-alt\"></i> Danh sách xét KT</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/bo-phieu/check']\"><i class=\" fas fa-hand-lizard\"></i> Bỏ phiếu</a>\n                                </li>\n                                <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"pages/chart-sparkline.html\"><i class=\" fab fa-autoprefixer\"></i> Kết quả</a>\n                                </li>\n                            </ul>\n                        </div>\n                    </li>\n                    <li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\"\n                            data-target=\"#submenu-4\" aria-controls=\"submenu-4\"><i class=\"far fa-sun\"></i>Quản\n                            trị</a>\n                        <div id=\"submenu-4\" class=\"collapse submenu\">\n                            <ul class=\"nav flex-column\">\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/don-vi']\">Danh sách Đơn vị</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/chuc-vu']\">Danh sách Chức vụ</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/can-bo']\">Danh sách Cán bộ</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/danh-hieu-thi-dua']\">Danh hiệu thi\n                                        đua</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong']\">Hình thức\n                                        khen thưởng</a>\n                                </li>\n                                <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"pages/bootstrap-select.html\">Năm học</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/can-cu']\">Căn cứ</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                        <a class=\"nav-link\" [routerLink]=\"['/quan-tri/chuc-danh']\">Chức danh</a>\n                                    </li>\n                                <!-- <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\"\n                                        data-target=\"#submenu-4-1\">Hệ thống</a>\n                                    <div id=\"submenu-4-1\" class=\"collapse submenu\">\n                                        <ul class=\"nav flex-column\">\n                                            <li class=\"nav-item\" routerLinkActive=\"active\">\n                                                <a class=\"nav-link\" [routerLink]=\"['/quan-tri/nguoi-dung']\">Người\n                                                    dùng</a>\n                                            </li>\n                                            <li class=\"nav-item\" routerLinkActive=\"active\">\n                                                <a class=\"nav-link\" [routerLink]=\"['/quan-tri/phan-quyen']\">Phân\n                                                    quyền</a>\n                                            </li>\n                                        </ul>\n                                    </div>\n                                </li> -->\n                            </ul>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n        </nav>\n    </div>\n</div>"
+module.exports = "<div class=\"nav-left-sidebar sidebar-dark\">\n    <div class=\"menu-list\">\n        <nav class=\"navbar navbar-expand-lg navbar-light\">\n            <a class=\"d-xl-none d-lg-none\" href=\"#\">Dashboard</a>\n            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\"\n                aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n                <span class=\"navbar-toggler-icon\"></span>\n            </button>\n            <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n                <ul class=\"navbar-nav flex-column\">\n                    <li class=\"nav-divider\">Menu</li>\n                    <li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#submenu-dhtd\" aria-controls=\"submenu-3\">\n                            <i class=\"fas fa-boxes\"></i>Danh hiệu thi đua\n                        </a>\n                        <div id=\"submenu-dhtd\" class=\"collapse submenu\">\n                            <ul class=\"nav flex-column\">\n                                <li class=\"nav-item\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/danh-hieu-thi-dua/tap-the']\"><i class=\"fas fa-users\"></i> Tập thể</a>\n                                </li>\n                                <li class=\"nav-item\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/danh-hieu-thi-dua/ca-nhan']\" routerLinkActive=\"router-link-active\" ><i class=\"fas fa-user\"></i> Cá nhân</a>\n                                </li>\n                            </ul>\n                        </div>\n                    </li>\n                    <li class=\"nav-item \">\n                            <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#submenu-htkt\" aria-controls=\"submenu-3\">\n                                <i class=\"far fa-list-alt\"></i>Hình thức khen thưởng\n                            </a>\n                            <div id=\"submenu-htkt\" class=\"collapse submenu\">\n                                <ul class=\"nav flex-column\">\n                                    <li class=\"nav-item\">\n                                        <a class=\"nav-link\" [routerLink]=\"['/hinh-thuc-khen-thuong/tap-the']\"><i class=\"fas fa-users\"></i> Tập thể</a>\n                                    </li>\n                                    <li class=\"nav-item\">\n                                        <a class=\"nav-link\" [routerLink]=\"['/hinh-thuc-khen-thuong/ca-nhan']\"><i class=\"fas fa-user\"></i> Cá nhân</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\" data-target=\"#submenu-3\" aria-controls=\"submenu-3\">\n                            <i class=\"fa fa-fw fa-chart-pie\"></i>Bầu chọn\n                        </a>\n                        <div id=\"submenu-3\" class=\"collapse submenu\">\n                            <ul class=\"nav flex-column\">\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/hoi-dong']\" ><i class=\"fas fa-warehouse\"></i> Hội đồng TĐ-KT</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/hoi-dong/xet-thi-dua']\"><i class=\"fas fa-list-alt\"></i> Danh sách xét TĐ</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/hoi-dong/xet-khen-thuong']\" ><i class=\"fas fa-list-alt\"></i> Danh sách xét KT</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/bo-phieu/check']\"><i class=\" fas fa-hand-lizard\"></i> Bỏ phiếu</a>\n                                </li>\n                                <li class=\"nav-item\">\n                                    <a class=\"nav-link\" href=\"pages/chart-sparkline.html\"><i class=\" fab fa-autoprefixer\"></i> Kết quả</a>\n                                </li>\n                            </ul>\n                        </div>\n                    </li>\n                    <li class=\"nav-item \" *ngIf=\"isAdmin\">\n                        <a class=\"nav-link\" href=\"#\" data-toggle=\"collapse\" aria-expanded=\"false\"\n                            data-target=\"#submenu-4\" aria-controls=\"submenu-4\"><i class=\"far fa-sun\"></i>Quản\n                            trị</a>\n                        <div id=\"submenu-4\" class=\"collapse submenu\">\n                            <ul class=\"nav flex-column\">\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/don-vi']\">Danh sách Đơn vị</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/chuc-vu']\">Danh sách Chức vụ</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/can-bo']\">Danh sách Cán bộ</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/danh-hieu-thi-dua']\">Danh hiệu thi\n                                        đua</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/hinh-thuc-khen-thuong']\">Hình thức\n                                        khen thưởng</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                    <a class=\"nav-link\" [routerLink]=\"['/quan-tri/can-cu']\">Căn cứ</a>\n                                </li>\n                                <li class=\"nav-item\" routerLinkActive=\"router-link-active\">\n                                        <a class=\"nav-link\" [routerLink]=\"['/quan-tri/chuc-danh']\">Chức danh</a>\n                                    </li>\n                            </ul>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n        </nav>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -6100,12 +6972,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeftNavComponent", function() { return LeftNavComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+
 
 
 var LeftNavComponent = /** @class */ (function () {
-    function LeftNavComponent() {
+    function LeftNavComponent(jwtHelper) {
+        this.jwtHelper = jwtHelper;
+        this.isAdmin = false;
     }
     LeftNavComponent.prototype.ngOnInit = function () {
+        this.isAdmin = this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ma_quyen === '2';
     };
     LeftNavComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6113,7 +6990,7 @@ var LeftNavComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./left-nav.component.html */ "./src/app/layout/left-nav/left-nav.component.html"),
             styles: [__webpack_require__(/*! ./left-nav.component.scss */ "./src/app/layout/left-nav/left-nav.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_2__["JwtHelperService"]])
     ], LeftNavComponent);
     return LeftNavComponent;
 }());
@@ -6304,7 +7181,7 @@ var LoginComponent = /** @class */ (function () {
     }
     LoginComponent.prototype.ngOnInit = function () {
         if (this.authService.loggedIn()) {
-            this.router.navigate(['']);
+            this.router.navigate(['/home']);
         }
         else {
             this.titleService.setTitle('Đăng nhập hệ thống');
@@ -6320,7 +7197,12 @@ var LoginComponent = /** @class */ (function () {
             }
             else {
                 _this.alertify.success('Đăng nhập thành công!');
-                _this.router.navigate(['/home']);
+                if (_this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ma_quyen === '3') {
+                    _this.router.navigate(['/bo-phieu/check']);
+                }
+                else {
+                    _this.router.navigate(['/home']);
+                }
                 _this.spinner.hide();
             }
         }, function (err) {
@@ -6346,6 +7228,147 @@ var LoginComponent = /** @class */ (function () {
             _services_socket_service__WEBPACK_IMPORTED_MODULE_8__["SocketService"]])
     ], LoginComponent);
     return LoginComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.html":
+/*!************************************************************************************!*\
+  !*** ./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.html ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title text-uppercase text-center\">Kết quả bầu chọn danh hiệu thi đua {{tenDanhHieu}} ngày {{today|date:'dd/MM/yyyy'}}</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <ngx-spinner dOpacity=0 bdColor=\"rgba(255,255,255,0)\" size=\"medium\" color=\"#092bee\" type=\"ball-scale-multiple\"\n    [fullScreen]=\"true\">\n    <p style=\"color: white\"> Vui lòng chờ... </p>\n  </ngx-spinner>\n  <h2 class=\"pageheader-title text-center\">\n    Thời gian mở: {{thoiGianMo|date:'dd/MM/yyyy hh:mm:ss'}}\n  </h2>\n  <h3 class=\"text-center\">Tổng số thành viên hội đồng: {{TongTVHD}} - Số thành viên có mặt: {{SoTVCoMat}} - Số vắng mặt: {{TongTVHD - SoTVCoMat}} - Số thành viên đã bầu chọn: {{SoTVDaBauChon}}</h3>\n  <div class=\"card\">\n    <h5 class=\"card-header\"><i class=\"fas fa-hand-point-right\"></i> Thông tin kết quả bầu chọn</h5>\n    <div class=\"card-body\">\n      <div class=\"table-responsive\">\n        <table class=\"table table-bordered\">\n          <thead>\n            <tr>\n              <th>STT</th>\n              <th>Họ tên/Tên đơn vị</th>\n              <th>Số phiếu đồng ý</th>\n              <th>Số phiếu không đồng ý</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let item of listXetBauChon; let idx = index\" [ngClass]=\"item.dat_yeu_cau?'dat-yeu-cau':'khong-dat'\">\n              <td>{{idx+1}}</td>\n              <td>{{item?.don_vi?.loai_don_vi}} {{item?.don_vi?.ten_don_vi}}</td>\n              <td>{{item?.dongy}} ({{item?.tile_dy}}%)</td>\n              <td>{{item?.khongdongy}} ({{item?.tile_kdy}}%)</td>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"modal-footer\">\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.scss":
+/*!************************************************************************************!*\
+  !*** ./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.scss ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".dat-yeu-cau {\n  background-color: #007ACC;\n  color: white; }\n\n.khong-dat {\n  background-color: #7B7979;\n  color: white; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kYWwta2V0LXF1YS1iYXUtY2hvbi10ZC9EOlxcaG9hbmdcXEtob2FMdWFuXFxEUVUtVERLVFxcVERLVC1TUEEvc3JjXFxhcHBcXG1vZGFsLWtldC1xdWEtYmF1LWNob24tdGRcXG1vZGFsLWtldC1xdWEtYmF1LWNob24tdGQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSx5QkFBeUI7RUFDekIsWUFBWSxFQUFBOztBQUVoQjtFQUNJLHlCQUF5QjtFQUN6QixZQUFZLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9tb2RhbC1rZXQtcXVhLWJhdS1jaG9uLXRkL21vZGFsLWtldC1xdWEtYmF1LWNob24tdGQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGF0LXlldS1jYXV7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDA3QUNDO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59XHJcbi5raG9uZy1kYXR7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjN0I3OTc5O1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.ts ***!
+  \**********************************************************************************/
+/*! exports provided: ModalKetQuaBauChonTdComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalKetQuaBauChonTdComponent", function() { return ModalKetQuaBauChonTdComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services/ultisService/alertify.service */ "./src/app/_services/ultisService/alertify.service.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_services/hoi-dong.service */ "./src/app/_services/hoi-dong.service.ts");
+/* harmony import */ var _services_socket_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../_services/socket.service */ "./src/app/_services/socket.service.ts");
+/* harmony import */ var _services_bau_chon_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../_services/bau-chon.service */ "./src/app/_services/bau-chon.service.ts");
+
+
+
+
+
+
+
+
+var ModalKetQuaBauChonTdComponent = /** @class */ (function () {
+    function ModalKetQuaBauChonTdComponent(activeModal, alertify, spinner, hoiDongService, socket, bauChonService) {
+        this.activeModal = activeModal;
+        this.alertify = alertify;
+        this.spinner = spinner;
+        this.hoiDongService = hoiDongService;
+        this.socket = socket;
+        this.bauChonService = bauChonService;
+        this.today = Date.now();
+    }
+    ModalKetQuaBauChonTdComponent.prototype.ngOnInit = function () {
+        this.getListThanhVien();
+    };
+    ModalKetQuaBauChonTdComponent.prototype.getListThanhVien = function () {
+        var _this = this;
+        this.hoiDongService
+            .getListThanhVienByHoiDong(this.hoiDong.ma_hoi_dong)
+            .subscribe(function (listthanhvien) {
+            listthanhvien = listthanhvien.filter(function (rs) { return rs.ChucDanh.tham_gia_bo_phieu; });
+            _this.TongTVHD = listthanhvien.length;
+            _this.SoTVCoMat = listthanhvien
+                .filter(function (rs) { return rs.co_mat; }).length;
+            _this.SoTVDaBauChon = listthanhvien.filter(function (rs) { return rs.co_mat && rs.bau_chon; }).length;
+            _this.spinner.hide();
+            _this.getListObjTTByDanhHieu(_this.maDanhHieu);
+        }, function (error) {
+            _this.alertify.error('Đã xảy ra lỗi khi nạp thông tin thành viên!');
+            console.log(error);
+        });
+    };
+    ModalKetQuaBauChonTdComponent.prototype.getListObjTTByDanhHieu = function (maDanhHieu) {
+        var _this = this;
+        var a = {
+            maDanhHieu: maDanhHieu,
+            maHoiDong: this.hoiDong.ma_hoi_dong,
+        };
+        this.bauChonService.getListObjTTByDanhHieu(a).subscribe(function (res) {
+            console.log(res);
+            _this.listXetBauChon = res;
+            _this.listXetBauChon.forEach(function (elem) {
+                var numOfBC = elem.BauChonThiDuaTapThe.filter(function (rs) { return rs.trang_thai_bau_chon; }).length;
+                var numOfKBC = elem.BauChonThiDuaTapThe.filter(function (rs) { return !rs.trang_thai_bau_chon; }).length;
+                elem.dongy = numOfBC;
+                elem.tile_dy = (+numOfBC / _this.SoTVCoMat) * 100;
+                console.log(_this.SoTVCoMat);
+                elem.khongdongy = numOfKBC;
+                elem.tile_kdy = (+numOfKBC / _this.SoTVCoMat) * 100;
+                if ((+numOfBC / _this.SoTVCoMat * 100) >= elem.danh_hieu.ti_le_dat) {
+                    elem.dat_yeu_cau = true;
+                }
+                else {
+                    elem.dat_yeu_cau = false;
+                }
+            });
+            console.log(_this.listXetBauChon);
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], ModalKetQuaBauChonTdComponent.prototype, "tenDanhHieu", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], ModalKetQuaBauChonTdComponent.prototype, "maDanhHieu", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], ModalKetQuaBauChonTdComponent.prototype, "thoiGianMo", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], ModalKetQuaBauChonTdComponent.prototype, "hoiDong", void 0);
+    ModalKetQuaBauChonTdComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-modal-ket-qua-bau-chon-td',
+            template: __webpack_require__(/*! ./modal-ket-qua-bau-chon-td.component.html */ "./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.html"),
+            styles: [__webpack_require__(/*! ./modal-ket-qua-bau-chon-td.component.scss */ "./src/app/modal-ket-qua-bau-chon-td/modal-ket-qua-bau-chon-td.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbActiveModal"],
+            _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__["AlertifyService"],
+            ngx_spinner__WEBPACK_IMPORTED_MODULE_4__["NgxSpinnerService"],
+            _services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_5__["HoiDongService"],
+            _services_socket_service__WEBPACK_IMPORTED_MODULE_6__["SocketService"],
+            _services_bau_chon_service__WEBPACK_IMPORTED_MODULE_7__["BauChonService"]])
+    ], ModalKetQuaBauChonTdComponent);
+    return ModalKetQuaBauChonTdComponent;
 }());
 
 
@@ -6390,6 +7413,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _xet_khen_thuong_xet_khen_thuong_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./xet-khen-thuong/xet-khen-thuong.component */ "./src/app/xet-khen-thuong/xet-khen-thuong.component.ts");
 /* harmony import */ var _bo_phieu_info_bo_phieu_info_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./bo-phieu-info/bo-phieu-info.component */ "./src/app/bo-phieu-info/bo-phieu-info.component.ts");
 /* harmony import */ var _hoi_dong_hoi_dong_admin_hoi_dong_admin_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./hoi-dong/hoi-dong-admin/hoi-dong-admin.component */ "./src/app/hoi-dong/hoi-dong-admin/hoi-dong-admin.component.ts");
+/* harmony import */ var _UserUI_danh_hieu_thi_dua_ca_nhan_list_danh_hieu_thi_dua_ca_nhan_list_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component */ "./src/app/UserUI/danh-hieu-thi-dua-ca-nhan-list/danh-hieu-thi-dua-ca-nhan-list.component.ts");
+/* harmony import */ var _UserUI_hinh_thuc_khen_thuong_tap_the_list_hinh_thuc_khen_thuong_tap_the_list_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component */ "./src/app/UserUI/hinh-thuc-khen-thuong-tap-the-list/hinh-thuc-khen-thuong-tap-the-list.component.ts");
+/* harmony import */ var _UserUI_hinh_thuc_khen_thuong_ca_nhan_list_hinh_thuc_khen_thuong_ca_nhan_list_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component */ "./src/app/UserUI/hinh-thuc-khen-thuong-ca-nhan-list/hinh-thuc-khen-thuong-ca-nhan-list.component.ts");
+
+
+
 
 
 
@@ -6475,6 +7504,21 @@ var appRoutes = [
                 path: 'danh-hieu-thi-dua/tap-the',
                 canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]],
                 component: _UserUI_danh_hieu_thi_dua_tap_the_list_danh_hieu_thi_dua_tap_the_list_component__WEBPACK_IMPORTED_MODULE_15__["DanhHieuThiDuaTapTheListComponent"]
+            },
+            {
+                path: 'danh-hieu-thi-dua/ca-nhan',
+                canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]],
+                component: _UserUI_danh_hieu_thi_dua_ca_nhan_list_danh_hieu_thi_dua_ca_nhan_list_component__WEBPACK_IMPORTED_MODULE_28__["DanhHieuThiDuaCaNhanListComponent"]
+            },
+            {
+                path: 'hinh-thuc-khen-thuong/tap-the',
+                canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]],
+                component: _UserUI_hinh_thuc_khen_thuong_tap_the_list_hinh_thuc_khen_thuong_tap_the_list_component__WEBPACK_IMPORTED_MODULE_29__["HinhThucKhenThuongTapTheListComponent"]
+            },
+            {
+                path: 'hinh-thuc-khen-thuong/ca-nhan',
+                canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]],
+                component: _UserUI_hinh_thuc_khen_thuong_ca_nhan_list_hinh_thuc_khen_thuong_ca_nhan_list_component__WEBPACK_IMPORTED_MODULE_30__["HinhThucKhenThuongCaNhanListComponent"]
             },
             {
                 path: 'hoi-dong',
@@ -6791,7 +7835,7 @@ var UserListComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\" *ngIf=\"haveHoiDong; then HaveHoiDong else NonHoiDong\">Thành lập hội đồng</h2>\n      <ng-template #NonHoiDong>\n        <h2 class=\"pageheader-title\">Không có hội đồng nào đang sẵn sàng! </h2>\n      </ng-template>\n      <ng-template #HaveHoiDong>\n        <h2 class=\"pageheader-title\">Danh sách xét khen thưởng năm học\n          {{hoidong?.NamHoc?.tu_ngay|generateSchoolYear}} - mã hội đồng: {{hoidong?.ma_hoi_dong}}</h2>\n      </ng-template>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/home']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Xét khen thưởng</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\" *ngIf=\"!haveHoiDong\">\n  <p>\n    <ngb-alert [dismissible]=\"false\">\n      <strong>Hiện tại chưa có hội đồng nào sẵn sàng!</strong> Vui lòng <a [routerLink]=\"['/hoi-dong/edit/0']\">thành lập\n        hội đồng</a> trước khi truy cập vào đây.\n    </ngb-alert>\n  </p>\n</div>\n<div class=\"row\" *ngIf=\"haveHoiDong\">\n  <div class=\"col-md-12\">\n    <ngb-tabset>\n      <ngb-tab title=\"Tập thể\">\n        <ng-template ngbTabContent>\n          <app-xet-kt-tap-the [maHoiDong]=\"hoidong?.ma_hoi_dong\"></app-xet-kt-tap-the>\n        </ng-template>\n      </ngb-tab>\n      <ngb-tab title=\"Cá nhân\">\n        <ng-template ngbTabContent>\n          <app-xet-kt-ca-nhan [maHoiDong]=\"hoidong?.ma_hoi_dong\"></app-xet-kt-ca-nhan>\n        </ng-template>\n      </ngb-tab>\n    </ngb-tabset>\n  </div>\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\" *ngIf=\"haveHoiDong; then HaveHoiDong else NonHoiDong\">Thành lập hội đồng</h2>\n      <ng-template #NonHoiDong>\n        <h2 class=\"pageheader-title\">Không có hội đồng nào đang sẵn sàng! </h2>\n      </ng-template>\n      <ng-template #HaveHoiDong>\n        <h2 class=\"pageheader-title\">Danh sách xét khen thưởng năm học\n          {{hoidong?.NamHoc?.tu_ngay|generateSchoolYear}} - mã hội đồng: {{hoidong?.ma_hoi_dong}}</h2>\n      </ng-template>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/home']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Xét khen thưởng</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\" *ngIf=\"!haveHoiDong && isAdmin\">\n  <p>\n    <ngb-alert [dismissible]=\"false\">\n      <strong>Hiện tại chưa có hội đồng nào sẵn sàng!</strong> Vui lòng <a [routerLink]=\"['/hoi-dong/edit/0']\">thành lập\n        hội đồng</a> trước khi truy cập vào đây.\n    </ngb-alert>\n  </p>\n</div>\n<div class=\"row\" *ngIf=\"!isAdmin\">\n    <p>\n      <ngb-alert [dismissible]=\"false\">\n        <strong>Bạn không có quyền truy cập ở trang này!</strong>\n      </ngb-alert>\n    </p>\n  </div>\n<div class=\"row\" *ngIf=\"haveHoiDong && isAdmin\">\n  <div class=\"col-md-12\">\n    <ngb-tabset>\n      <ngb-tab title=\"Tập thể\">\n        <ng-template ngbTabContent>\n          <app-xet-kt-tap-the [maHoiDong]=\"hoidong?.ma_hoi_dong\"></app-xet-kt-tap-the>\n        </ng-template>\n      </ngb-tab>\n      <ngb-tab title=\"Cá nhân\">\n        <ng-template ngbTabContent>\n          <app-xet-kt-ca-nhan [maHoiDong]=\"hoidong?.ma_hoi_dong\"></app-xet-kt-ca-nhan>\n        </ng-template>\n      </ngb-tab>\n    </ngb-tabset>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -6820,16 +7864,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_services/hoi-dong.service */ "./src/app/_services/hoi-dong.service.ts");
 /* harmony import */ var _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services/ultisService/alertify.service */ "./src/app/_services/ultisService/alertify.service.ts");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+
 
 
 
 
 var XetKhenThuongComponent = /** @class */ (function () {
-    function XetKhenThuongComponent(hoiDongService, alertify) {
+    function XetKhenThuongComponent(hoiDongService, alertify, jwtHelper) {
         this.hoiDongService = hoiDongService;
         this.alertify = alertify;
+        this.jwtHelper = jwtHelper;
+        this.isAdmin = false;
     }
     XetKhenThuongComponent.prototype.ngOnInit = function () {
+        this.isAdmin = this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ma_quyen === '2';
         this.haveHoiDong = false;
         this.getHoiDong();
     };
@@ -6851,7 +7900,8 @@ var XetKhenThuongComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./xet-khen-thuong.component.scss */ "./src/app/xet-khen-thuong/xet-khen-thuong.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_2__["HoiDongService"],
-            _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__["AlertifyService"]])
+            _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__["AlertifyService"],
+            _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_4__["JwtHelperService"]])
     ], XetKhenThuongComponent);
     return XetKhenThuongComponent;
 }());
@@ -6867,7 +7917,7 @@ var XetKhenThuongComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row my-2\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <button class=\"btn btn-primary\" (click)=\"open(0)\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</button>\n  </div>\n</div>\n<div class=\"table-responsive mt-2\">\n  <table #dataTable class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>STT</th>\n        <th>Cán bộ</th>\n        <th>Đơn vị</th>\n        <th>Hình thức KT</th>\n        <th>Nội dung KT</th>\n        <th>Tỉ lệ đạt</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n        <ngx-spinner\n        bdOpacity = 0.9\n        bdColor = \"#333\"\n        size = \"medium\"\n        color = \"#fff\"\n        type = \"ball-scale-multiple\"\n        [fullScreen] = \"true\"\n        >\n        <p style=\"color: white\" > Vui lòng chờ... </p>\n        </ngx-spinner>\n      <tr *ngFor=\"let item of listXetKTCN; let idx = index\">\n        <td>{{idx+1}}</td>\n        <td>{{item.can_bo.ho_ten}}</td>\n        <td>{{item.can_bo.DonVi.ten_don_vi}}</td>\n        <td>{{item.hinh_thuc.ten_hinh_thuc}}</td>\n        <td>{{item.noi_dung}}</td>\n        <td>{{item.ti_le_dat}} %</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" (click)=\"open(item.id)\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\" (confirm)=\"deleteObj(item.id, idx)\"><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá bản ghi này?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"row my-2\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <button class=\"btn btn-primary\" (click)=\"open(0)\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</button>\n  </div>\n</div>\n<div class=\"table-responsive mt-2\">\n  <table #dataTable class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>STT</th>\n        <th>Cán bộ</th>\n        <th>Đơn vị</th>\n        <th>Hình thức KT</th>\n        <th>Nội dung KT</th>\n        <th>Tỉ lệ đạt</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n        <ngx-spinner\n        bdOpacity = 0.9\n        bdColor = \"#333\"\n        size = \"medium\"\n        color = \"#fff\"\n        type = \"ball-scale-multiple\"\n        [fullScreen] = \"true\"\n        >\n        <p style=\"color: white\" > Vui lòng chờ... </p>\n        </ngx-spinner>\n      <tr *ngFor=\"let item of listXetKTCN; let idx = index\">\n        <td>{{idx+1}}</td>\n        <td>{{item.can_bo.ho_ten}}</td>\n        <td>{{item.can_bo.DonVi.ten_don_vi}}</td>\n        <td>{{item.hinh_thuc.ten_hinh_thuc}}</td>\n        <td>{{item.noi_dung}}</td>\n        <td>{{item.hinh_thuc.ti_le_dat}} %</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" (click)=\"open(item.id)\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\" (confirm)=\"deleteObj(item.id, idx)\"><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá bản ghi này?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -6996,7 +8046,7 @@ var XetKtCaNhanComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row my-2\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <button class=\"btn btn-primary\" (click)=\"open(0)\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</button>\n  </div>\n</div>\n<div class=\"table-responsive mt-2\">\n  <table #dataTable class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>STT</th>\n        <th>Đơn vị</th>\n        <th>Hình thức KT</th>\n        <th>Nội dung KT</th>\n        <th>Tỉ lệ đạt</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n        <ngx-spinner\n        bdOpacity = 0.9\n        bdColor = \"#333\"\n        size = \"medium\"\n        color = \"#fff\"\n        type = \"ball-scale-multiple\"\n        [fullScreen] = \"true\"\n        >\n        <p style=\"color: white\" > Vui lòng chờ... </p>\n        </ngx-spinner>\n      <tr *ngFor=\"let item of listXetKTTT; let idx = index\">\n        <td>{{idx+1}}</td>\n        <td>{{item.don_vi.ten_don_vi}}</td>\n        <td>{{item.hinh_thuc.ten_hinh_thuc}}</td>\n        <td>{{item.noi_dung}}</td>\n        <td>{{item.ti_le_dat}} %</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" (click)=\"open(item.id)\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\" (confirm)=\"deleteObj(item.id, idx)\"><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá bản ghi này?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"row my-2\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <button class=\"btn btn-primary\" (click)=\"open(0)\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</button>\n  </div>\n</div>\n<div class=\"table-responsive mt-2\">\n  <table #dataTable class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>STT</th>\n        <th>Đơn vị</th>\n        <th>Hình thức KT</th>\n        <th>Nội dung KT</th>\n        <th>Tỉ lệ đạt</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n        <ngx-spinner\n        bdOpacity = 0.9\n        bdColor = \"#333\"\n        size = \"medium\"\n        color = \"#fff\"\n        type = \"ball-scale-multiple\"\n        [fullScreen] = \"true\"\n        >\n        <p style=\"color: white\" > Vui lòng chờ... </p>\n        </ngx-spinner>\n      <tr *ngFor=\"let item of listXetKTTT; let idx = index\">\n        <td>{{idx+1}}</td>\n        <td>{{item.don_vi.ten_don_vi}}</td>\n        <td>{{item.hinh_thuc.ten_hinh_thuc}}</td>\n        <td>{{item.noi_dung}}</td>\n        <td>{{item.hinh_thuc.ti_le_dat}} %</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" (click)=\"open(item.id)\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\" (confirm)=\"deleteObj(item.id, idx)\"><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá bản ghi này?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -7125,7 +8175,7 @@ var XetKtTapTheComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Cập nhật xét khen thưởng cá nhân</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <form [formGroup]=\"myForm\">\n    <div class=\"row\">\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Cán bộ</label>\n          <angular2-multiselect  name=\"canbo\" [data]=\"listCanBo\" formControlName=\"can_bo\"\n            [settings]=\"canBoSetings\" [(ngModel)]=\"selectedItemsCanBo\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Hình thức khen thưởng</label>\n          <angular2-multiselect  name=\"hinhthuc\" [data]=\"listHinhThuc\" formControlName=\"hinh_thuc\" [(ngModel)]=\"selectedItemsHinhThuc\"\n            [settings]=\"hinhThucSettings\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-2\">\n          <div class=\"form-group\">\n            <label for=\"input-select\">Tỉ lệ đạt (%)</label>\n            <input type=\"number\" formControlName=\"ti_le_dat\" class=\"form-control\" />\n          </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Nội dung</label>\n          <input type=\"text\" formControlName=\"noi_dung\" class=\"form-control\" />\n        </div>\n      </div>\n    </div>\n  </form>\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" (click)=\"capNhat()\"><i class=\"fas fa-edit\"></i> Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Cập nhật xét khen thưởng cá nhân</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <form [formGroup]=\"myForm\">\n    <div class=\"row\">\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Cán bộ</label>\n          <angular2-multiselect  name=\"canbo\" [data]=\"listCanBo\" formControlName=\"can_bo\"\n            [settings]=\"canBoSetings\" [(ngModel)]=\"selectedItemsCanBo\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Hình thức khen thưởng</label>\n          <angular2-multiselect  name=\"hinhthuc\" [data]=\"listHinhThuc\" formControlName=\"hinh_thuc\" [(ngModel)]=\"selectedItemsHinhThuc\"\n            [settings]=\"hinhThucSettings\">\n          </angular2-multiselect>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Nội dung</label>\n          <input type=\"text\" formControlName=\"noi_dung\" class=\"form-control\" />\n        </div>\n      </div>\n    </div>\n  </form>\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" (click)=\"capNhat()\"><i class=\"fas fa-edit\"></i> Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
 
 /***/ }),
 
@@ -7187,7 +8237,6 @@ var NgModalXktcnComponent = /** @class */ (function () {
         this.myForm = this.formBuilder.group({
             can_bo: [''],
             hinh_thuc: [''],
-            ti_le_dat: [0],
             noi_dung: ['']
         });
         this.canBoSetings = {
@@ -7211,7 +8260,6 @@ var NgModalXktcnComponent = /** @class */ (function () {
             console.log(data);
             _this.selectedItemsCanBo = [data.can_bo];
             _this.selectedItemsHinhThuc = [data.hinh_thuc];
-            _this.myForm.get('ti_le_dat').setValue(data.ti_le_dat);
             _this.myForm.get('noi_dung').setValue(data.noi_dung);
         }, function (error) {
             _this.alertify.error('Đã xảy ra lỗi khi nạp dữ liệu!');
@@ -7241,7 +8289,6 @@ var NgModalXktcnComponent = /** @class */ (function () {
         this.reqData.ma_hoi_dong = this.maHoiDong;
         this.reqData.ma_can_bo = rawData.can_bo[0].ma_can_bo;
         this.reqData.ma_hinh_thuc = rawData.hinh_thuc[0].ma_hinh_thuc;
-        this.reqData.ti_le_dat = rawData.ti_le_dat;
         this.reqData.noi_dung = rawData.noi_dung;
         this.xetKhenThuong.capNhatCaNhan(this.reqData).subscribe(function (next) {
             _this.alertify.success(next);
@@ -7290,7 +8337,7 @@ var NgModalXktcnComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Cập nhật tập thể xét khen thưởng</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <form [formGroup]=\"myForm\">\n    <div class=\"row\">\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Đơn vị</label>\n          <angular2-multiselect  name=\"donvi\" [data]=\"listDonVi\" formControlName=\"don_vi\"\n            [settings]=\"donViSetings\" [(ngModel)]=\"selectedItemsDonVi\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Hình thức khen thưởng</label>\n          <angular2-multiselect  name=\"hinhthuc\" [data]=\"listHinhThuc\" formControlName=\"hinh_thuc\" [(ngModel)]=\"selectedItemsHinhThuc\"\n            [settings]=\"hinhThucSettings\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-2\">\n          <div class=\"form-group\">\n            <label for=\"input-select\">Tỉ lệ đạt (%)</label>\n            <input type=\"number\" formControlName=\"ti_le_dat\" class=\"form-control\" />\n          </div>\n        </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Nội dung</label>\n          <input type=\"text\" formControlName=\"noi_dung\" class=\"form-control\" />\n        </div>\n      </div>\n    </div>\n  </form>\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" (click)=\"capNhat()\"><i class=\"fas fa-edit\"></i> Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Cập nhật tập thể xét khen thưởng</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <form [formGroup]=\"myForm\">\n    <div class=\"row\">\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Đơn vị</label>\n          <angular2-multiselect  name=\"donvi\" [data]=\"listDonVi\" formControlName=\"don_vi\"\n            [settings]=\"donViSetings\" [(ngModel)]=\"selectedItemsDonVi\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Hình thức khen thưởng</label>\n          <angular2-multiselect  name=\"hinhthuc\" [data]=\"listHinhThuc\" formControlName=\"hinh_thuc\" [(ngModel)]=\"selectedItemsHinhThuc\"\n            [settings]=\"hinhThucSettings\">\n          </angular2-multiselect>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Nội dung</label>\n          <input type=\"text\" formControlName=\"noi_dung\" class=\"form-control\" />\n        </div>\n      </div>\n    </div>\n  </form>\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" (click)=\"capNhat()\"><i class=\"fas fa-edit\"></i> Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
 
 /***/ }),
 
@@ -7352,7 +8399,6 @@ var NgModalXktttComponent = /** @class */ (function () {
         this.myForm = this.formBuilder.group({
             don_vi: [''],
             hinh_thuc: [''],
-            ti_le_dat: [0],
             noi_dung: ['']
         });
         this.donViSetings = {
@@ -7375,7 +8421,6 @@ var NgModalXktttComponent = /** @class */ (function () {
         this.xetKhenThuong.getXetKTTTById(this.id).subscribe(function (data) {
             _this.selectedItemsDonVi = [data.don_vi];
             _this.selectedItemsHinhThuc = [data.hinh_thuc];
-            _this.myForm.get('ti_le_dat').setValue(data.ti_le_dat);
             _this.myForm.get('noi_dung').setValue(data.noi_dung);
         }, function (error) {
             _this.alertify.error('Đã xảy ra lỗi khi nạp dữ liệu!');
@@ -7406,7 +8451,6 @@ var NgModalXktttComponent = /** @class */ (function () {
         this.reqData.ma_hoi_dong = this.maHoiDong;
         this.reqData.ma_don_vi = rawData.don_vi[0].ma_don_vi;
         this.reqData.ma_hinh_thuc = rawData.hinh_thuc[0].ma_hinh_thuc;
-        this.reqData.ti_le_dat = rawData.ti_le_dat;
         this.reqData.noi_dung = rawData.noi_dung;
         this.xetKhenThuong.capNhatTapThe(this.reqData).subscribe(function (next) {
             _this.alertify.success(next);
@@ -7455,7 +8499,7 @@ var NgModalXktttComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Cập nhật xét thi đua cá nhân</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <form [formGroup]=\"myForm\">\n    <div class=\"row\">\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Cán bộ</label>\n          <angular2-multiselect  name=\"canbo\" [data]=\"listCanBo\" formControlName=\"can_bo\"\n            [settings]=\"canBoSetings\"  [(ngModel)]=\"selectedItemsCanBo\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Danh hiệu đăng ký</label>\n          <angular2-multiselect  name=\"danhhieu\" [data]=\"listDanhHieu\" formControlName=\"danh_hieu\" [(ngModel)]=\"selectedItemsDanhHieu\"\n            [settings]=\"danhHieuSettings\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-2\">\n          <div class=\"form-group\">\n            <label for=\"input-select\">Tỉ lệ đạt (%)</label>\n            <input type=\"number\" formControlName=\"ti_le_dat\" class=\"form-control\" />\n          </div>\n        </div>\n    </div>\n  </form>\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" (click)=\"capNhat()\"><i class=\"fas fa-edit\"></i> Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Cập nhật xét thi đua cá nhân</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <form [formGroup]=\"myForm\">\n    <div class=\"row\">\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Cán bộ</label>\n          <angular2-multiselect  name=\"canbo\" [data]=\"listCanBo\" formControlName=\"can_bo\"\n            [settings]=\"canBoSetings\"  [(ngModel)]=\"selectedItemsCanBo\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Danh hiệu đăng ký</label>\n          <angular2-multiselect  name=\"danhhieu\" [data]=\"listDanhHieu\" formControlName=\"danh_hieu\" [(ngModel)]=\"selectedItemsDanhHieu\"\n            [settings]=\"danhHieuSettings\">\n          </angular2-multiselect>\n        </div>\n      </div>\n    </div>\n  </form>\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" (click)=\"capNhat()\"><i class=\"fas fa-edit\"></i> Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
 
 /***/ }),
 
@@ -7517,7 +8561,6 @@ var NgModalXtdcnComponent = /** @class */ (function () {
         this.myForm = this.formBuilder.group({
             can_bo: [''],
             danh_hieu: [''],
-            ti_le_dat: [0]
         });
         this.canBoSetings = {
             singleSelection: true,
@@ -7539,7 +8582,6 @@ var NgModalXtdcnComponent = /** @class */ (function () {
         this.xetThiDua.getXetTDCNById(this.id).subscribe(function (data) {
             _this.selectedItemsCanBo = [data.can_bo];
             _this.selectedItemsDanhHieu = [data.danh_hieu];
-            _this.myForm.get('ti_le_dat').setValue(data.ti_le_dat);
         }, function (error) {
             _this.alertify.error('Đã xảy ra lỗi khi nạp dữ liệu!');
         });
@@ -7572,7 +8614,6 @@ var NgModalXtdcnComponent = /** @class */ (function () {
         this.reqData.ma_hoi_dong = this.maHoiDong;
         this.reqData.ma_can_bo = rawData.can_bo[0].ma_can_bo;
         this.reqData.ma_danh_hieu = rawData.danh_hieu[0].ma_danh_hieu;
-        this.reqData.ti_le_dat = rawData.ti_le_dat;
         this.xetThiDua.capNhatCaNhan(this.reqData).subscribe(function (next) {
             _this.alertify.success(next);
             _this.closeEvent();
@@ -7620,7 +8661,7 @@ var NgModalXtdcnComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Cập nhật tập thể xét thi đua</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <form [formGroup]=\"myForm\">\n    <div class=\"row\">\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Đơn vị</label>\n          <angular2-multiselect  name=\"donvi\" [data]=\"listDonVi\" formControlName=\"don_vi\"\n            [settings]=\"donViSetings\"  (onSelect)=\"onItemSelect($event)\" [(ngModel)]=\"selectedItemsDonVi\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Danh hiệu đăng ký</label>\n          <angular2-multiselect  name=\"danhhieu\" [data]=\"listDanhHieu\" formControlName=\"danh_hieu\" [(ngModel)]=\"selectedItemsDanhHieu\"\n            [settings]=\"danhHieuSettings\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-2\">\n          <div class=\"form-group\">\n            <label for=\"input-select\">Tỉ lệ đạt (%)</label>\n            <input type=\"number\" formControlName=\"ti_le_dat\" class=\"form-control\" />\n          </div>\n        </div>\n    </div>\n  </form>\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" (click)=\"capNhat()\"><i class=\"fas fa-edit\"></i> Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
+module.exports = "<div class=\"modal-header\">\n  <h4 class=\"modal-title\">Cập nhật tập thể xét thi đua</h4>\n  <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"activeModal.dismiss('Cross click')\">\n    <span aria-hidden=\"true\">&times;</span>\n  </button>\n</div>\n<div class=\"modal-body\">\n  <form [formGroup]=\"myForm\">\n    <div class=\"row\">\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Đơn vị</label>\n          <angular2-multiselect  name=\"donvi\" [data]=\"listDonVi\" formControlName=\"don_vi\"\n            [settings]=\"donViSetings\"  (onSelect)=\"onItemSelect($event)\" [(ngModel)]=\"selectedItemsDonVi\">\n          </angular2-multiselect>\n        </div>\n      </div>\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          <label for=\"input-select\">Danh hiệu đăng ký</label>\n          <angular2-multiselect  name=\"danhhieu\" [data]=\"listDanhHieu\" formControlName=\"danh_hieu\" [(ngModel)]=\"selectedItemsDanhHieu\"\n            [settings]=\"danhHieuSettings\">\n          </angular2-multiselect>\n        </div>\n      </div>\n    </div>\n  </form>\n</div>\n<div class=\"modal-footer\">\n  <button class=\"btn btn-primary\" (click)=\"capNhat()\"><i class=\"fas fa-edit\"></i> Cập nhật</button>\n  <button type=\"button\" class=\"btn btn-outline-dark\" (click)=\"activeModal.close('Close click')\">Đóng</button>\n</div>"
 
 /***/ }),
 
@@ -7681,8 +8722,7 @@ var NgModalXtdttComponent = /** @class */ (function () {
         }
         this.myForm = this.formBuilder.group({
             don_vi: [''],
-            danh_hieu: [''],
-            ti_le_dat: [0]
+            danh_hieu: ['']
         });
         this.donViSetings = {
             singleSelection: true,
@@ -7707,7 +8747,6 @@ var NgModalXtdttComponent = /** @class */ (function () {
         this.xetThiDua.getXetTDTTById(this.id).subscribe(function (data) {
             _this.selectedItemsDonVi = [data.don_vi];
             _this.selectedItemsDanhHieu = [data.danh_hieu];
-            _this.myForm.get('ti_le_dat').setValue(data.ti_le_dat);
         }, function (error) {
             _this.alertify.error('Đã xảy ra lỗi khi nạp dữ liệu!');
         });
@@ -7741,7 +8780,6 @@ var NgModalXtdttComponent = /** @class */ (function () {
         this.reqData.ma_hoi_dong = this.maHoiDong;
         this.reqData.ma_don_vi = rawData.don_vi[0].ma_don_vi;
         this.reqData.ma_danh_hieu = rawData.danh_hieu[0].ma_danh_hieu;
-        this.reqData.ti_le_dat = rawData.ti_le_dat;
         this.xetThiDua.capNhatTapThe(this.reqData).subscribe(function (next) {
             _this.alertify.success(next);
             _this.closeEvent();
@@ -7789,7 +8827,7 @@ var NgModalXtdttComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row my-2\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <button class=\"btn btn-primary\" (click)=\"open(0)\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</button>\n  </div>\n</div>\n<div class=\"table-responsive mt-2\">\n  <table #dataTable class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>STT</th>\n        <th>Cán bộ</th>\n        <th>Đơn vị</th>\n        <th>Danh hiệu đăng ký</th>\n        <th>Tỉ lệ đạt</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n        <ngx-spinner\n        bdOpacity = 0.9\n        bdColor = \"#333\"\n        size = \"medium\"\n        color = \"#fff\"\n        type = \"ball-scale-multiple\"\n        [fullScreen] = \"true\"\n        >\n        <p style=\"color: white\" > Vui lòng chờ... </p>\n        </ngx-spinner>\n      <tr *ngFor=\"let item of listXetTDCN; let idx = index\">\n        <td>{{idx+1}}</td>\n        <td>{{item.can_bo.ho_ten}}</td>\n        <td>{{item.can_bo.DonVi.ten_don_vi}}</td>\n        <td>{{item.danh_hieu.ten_danh_hieu}}</td>\n        <td>{{item.ti_le_dat}} %</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" (click)=\"open(item.id)\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\" (confirm)=\"deleteObj(item.id, idx)\"><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá bản ghi này?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div class=\"row my-2\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <button class=\"btn btn-primary\" (click)=\"open(0)\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</button>\n  </div>\n</div>\n<div class=\"table-responsive mt-2\">\n  <table #dataTable class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>STT</th>\n        <th>Cán bộ</th>\n        <th>Đơn vị</th>\n        <th>Danh hiệu đăng ký</th>\n        <th>Tỉ lệ đạt</th>\n        <th>#</th>\n      </tr>\n    </thead>\n    <tbody>\n        <ngx-spinner\n        bdOpacity = 0.9\n        bdColor = \"#333\"\n        size = \"medium\"\n        color = \"#fff\"\n        type = \"ball-scale-multiple\"\n        [fullScreen] = \"true\"\n        >\n        <p style=\"color: white\" > Vui lòng chờ... </p>\n        </ngx-spinner>\n      <tr *ngFor=\"let item of listXetTDCN; let idx = index\">\n        <td>{{idx+1}}</td>\n        <td>{{item.can_bo.ho_ten}}</td>\n        <td>{{item.can_bo.DonVi.ten_don_vi}}</td>\n        <td>{{item.danh_hieu.ten_danh_hieu}}</td>\n        <td>{{item.danh_hieu.ti_le_dat}} %</td>\n        <td class=\"py-1\">\n          <a class=\"btn btn-sm btn-success mr-1\" (click)=\"open(item.id)\"><i class=\"fas fa-edit\"></i></a>\n          <a class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\" (confirm)=\"deleteObj(item.id, idx)\"><i class=\"fas fa-trash-alt\"></i></a>\n          <swal #deleteSwal \n          title=\"Xác nhận xoá\" \n          text=\"Bạn muốn xoá bản ghi này?\" \n          type=\"question\" \n          [showCancelButton]=\"true\" ></swal>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -7918,7 +8956,7 @@ var XetTdCaNhanComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row my-2\">\n    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n      <button class=\"btn btn-primary\" (click)=\"open(0)\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</button>\n    </div>\n  </div>\n<div class=\"table-responsive mt-2\">\n    <table #dataTable class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>STT</th>\n          <th>Đơn vị</th>\n          <th>Danh hiệu đăng ký</th>\n          <th>Tỉ lệ đạt</th>\n          <th>#</th>\n        </tr>\n      </thead>\n      <tbody>\n          <ngx-spinner\n          bdOpacity = 0.9\n          bdColor = \"#333\"\n          size = \"medium\"\n          color = \"#fff\"\n          type = \"ball-scale-multiple\"\n          [fullScreen] = \"true\"\n          >\n          <p style=\"color: white\" > Vui lòng chờ... </p>\n          </ngx-spinner>\n        <tr *ngFor=\"let item of listXetTDTT; let idx = index\">\n          <td>{{idx+1}}</td>\n          <td>{{item.don_vi.ten_don_vi}}</td>\n          <td>{{item.danh_hieu.ten_danh_hieu}}</td>\n          <td>{{item.ti_le_dat}} %</td>\n          <td class=\"py-1\">\n            <a class=\"btn btn-sm btn-success mr-1\" (click)=\"open(item.id)\"><i class=\"fas fa-edit\"></i></a>\n            <a class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\" (confirm)=\"deleteObj(item.id, idx)\"><i class=\"fas fa-trash-alt\"></i></a>\n            <swal #deleteSwal \n            title=\"Xác nhận xoá\" \n            text=\"Bạn muốn xoá bản ghi này?\" \n            type=\"question\" \n            [showCancelButton]=\"true\" ></swal>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>"
+module.exports = "<div class=\"row my-2\">\n    <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n      <button class=\"btn btn-primary\" (click)=\"open(0)\"><i class=\"fas fa-plus-circle\"></i> Thêm mới</button>\n    </div>\n  </div>\n<div class=\"table-responsive mt-2\">\n    <table #dataTable class=\"table table-bordered\">\n      <thead>\n        <tr>\n          <th>STT</th>\n          <th>Đơn vị</th>\n          <th>Danh hiệu đăng ký</th>\n          <th>Tỉ lệ đạt</th>\n          <th>#</th>\n        </tr>\n      </thead>\n      <tbody>\n          <ngx-spinner\n          bdOpacity = 0.9\n          bdColor = \"#333\"\n          size = \"medium\"\n          color = \"#fff\"\n          type = \"ball-scale-multiple\"\n          [fullScreen] = \"true\"\n          >\n          <p style=\"color: white\" > Vui lòng chờ... </p>\n          </ngx-spinner>\n        <tr *ngFor=\"let item of listXetTDTT; let idx = index\">\n          <td>{{idx+1}}</td>\n          <td>{{item.don_vi.ten_don_vi}}</td>\n          <td>{{item.danh_hieu.ten_danh_hieu}}</td>\n          <td>{{item.danh_hieu.ti_le_dat}} %</td>\n          <td class=\"py-1\">\n            <a class=\"btn btn-sm btn-success mr-1\" (click)=\"open(item.id)\"><i class=\"fas fa-edit\"></i></a>\n            <a class=\"btn btn-sm btn-danger mr-1\" [swal]=\"deleteSwal\" (confirm)=\"deleteObj(item.id, idx)\"><i class=\"fas fa-trash-alt\"></i></a>\n            <swal #deleteSwal \n            title=\"Xác nhận xoá\" \n            text=\"Bạn muốn xoá bản ghi này?\" \n            type=\"question\" \n            [showCancelButton]=\"true\" ></swal>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>"
 
 /***/ }),
 
@@ -8054,7 +9092,7 @@ var XetTdTapTheComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\" *ngIf=\"haveHoiDong; then HaveHoiDong else NonHoiDong\">Thành lập hội đồng</h2>\n      <ng-template #NonHoiDong>\n        <h2 class=\"pageheader-title\">Không có hội đồng nào đang sẵn sàng! </h2>\n      </ng-template>\n      <ng-template #HaveHoiDong>\n        <h2 class=\"pageheader-title\">Danh sách xét danh hiệu thi đua năm học\n          {{hoidong?.NamHoc?.tu_ngay|generateSchoolYear}} - mã hội đồng: {{hoidong?.ma_hoi_dong}}</h2>\n      </ng-template>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/home']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Xét danh hiệu thi đua</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\" *ngIf=\"!haveHoiDong\">\n  <p>\n    <ngb-alert [dismissible]=\"false\">\n      <strong>Hiện tại chưa có hội đồng nào sẵn sàng!</strong> Vui lòng <a [routerLink]=\"['/hoi-dong/edit/0']\">thành lập\n        hội đồng</a> trước khi truy cập vào đây.\n    </ngb-alert>\n  </p>\n</div>\n<div class=\"row\" *ngIf=\"haveHoiDong\">\n  <div class=\"col-md-12\">\n    <ngb-tabset>\n      <ngb-tab title=\"Tập thể\">\n        <ng-template ngbTabContent>\n          <app-xet-td-tap-the [maHoiDong]=\"hoidong?.ma_hoi_dong\"></app-xet-td-tap-the>\n        </ng-template>\n      </ngb-tab>\n      <ngb-tab title=\"Cá nhân\">\n        <ng-template ngbTabContent>\n          <app-xet-td-ca-nhan [maHoiDong]=\"hoidong?.ma_hoi_dong\"></app-xet-td-ca-nhan>\n        </ng-template>\n      </ngb-tab>\n    </ngb-tabset>\n  </div>\n</div>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">\n    <div class=\"page-header\">\n      <h2 class=\"pageheader-title\" *ngIf=\"haveHoiDong; then HaveHoiDong else NonHoiDong\">Thành lập hội đồng</h2>\n      <ng-template #NonHoiDong>\n        <h2 class=\"pageheader-title\">Không có hội đồng nào đang sẵn sàng! </h2>\n      </ng-template>\n      <ng-template #HaveHoiDong>\n        <h2 class=\"pageheader-title\">Danh sách xét danh hiệu thi đua năm học\n          {{hoidong?.NamHoc?.tu_ngay|generateSchoolYear}} - mã hội đồng: {{hoidong?.ma_hoi_dong}}</h2>\n      </ng-template>\n      <div class=\"page-breadcrumb\">\n        <nav aria-label=\"breadcrumb\">\n          <ol class=\"breadcrumb\">\n            <li class=\"breadcrumb-item\"><a [routerLink]=\"['/home']\" class=\"breadcrumb-link\">Trang chủ</a></li>\n            <li class=\"breadcrumb-item active\" aria-current=\"page\">Xét danh hiệu thi đua</li>\n          </ol>\n        </nav>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\" *ngIf=\"!haveHoiDong && isAdmin\">\n  <p>\n    <ngb-alert [dismissible]=\"false\">\n      <strong>Hiện tại chưa có hội đồng nào sẵn sàng!</strong> Vui lòng <a [routerLink]=\"['/hoi-dong/edit/0']\">thành lập\n        hội đồng</a> trước khi truy cập vào đây.\n    </ngb-alert>\n  </p>\n</div>\n<div class=\"row\" *ngIf=\"!isAdmin\">\n  <p>\n    <ngb-alert [dismissible]=\"false\">\n      <strong>Bạn không có quyền truy cập ở trang này!</strong>\n    </ngb-alert>\n  </p>\n</div>\n<div class=\"row\" *ngIf=\"haveHoiDong && isAdmin\">\n  <div class=\"col-md-12\">\n    <ngb-tabset>\n      <ngb-tab title=\"Tập thể\">\n        <ng-template ngbTabContent>\n          <app-xet-td-tap-the [maHoiDong]=\"hoidong?.ma_hoi_dong\"></app-xet-td-tap-the>\n        </ng-template>\n      </ngb-tab>\n      <ngb-tab title=\"Cá nhân\">\n        <ng-template ngbTabContent>\n          <app-xet-td-ca-nhan [maHoiDong]=\"hoidong?.ma_hoi_dong\"></app-xet-td-ca-nhan>\n        </ng-template>\n      </ngb-tab>\n    </ngb-tabset>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -8083,16 +9121,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_services/hoi-dong.service */ "./src/app/_services/hoi-dong.service.ts");
 /* harmony import */ var _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_services/ultisService/alertify.service */ "./src/app/_services/ultisService/alertify.service.ts");
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
+
 
 
 
 
 var XetThiDuaComponent = /** @class */ (function () {
-    function XetThiDuaComponent(hoiDongService, alertify) {
+    function XetThiDuaComponent(hoiDongService, alertify, jwtHelper) {
         this.hoiDongService = hoiDongService;
         this.alertify = alertify;
+        this.jwtHelper = jwtHelper;
+        this.isAdmin = false;
     }
     XetThiDuaComponent.prototype.ngOnInit = function () {
+        this.isAdmin = this.jwtHelper.decodeToken(localStorage.getItem('token')).info.ma_quyen === '2';
         this.haveHoiDong = false;
         this.getHoiDong();
     };
@@ -8114,11 +9157,56 @@ var XetThiDuaComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./xet-thi-dua.component.scss */ "./src/app/xet-thi-dua/xet-thi-dua.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_hoi_dong_service__WEBPACK_IMPORTED_MODULE_2__["HoiDongService"],
-            _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__["AlertifyService"]])
+            _services_ultisService_alertify_service__WEBPACK_IMPORTED_MODULE_3__["AlertifyService"],
+            _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_4__["JwtHelperService"]])
     ], XetThiDuaComponent);
     return XetThiDuaComponent;
 }());
 
+
+
+/***/ }),
+
+/***/ "./src/environments/environment.prod.ts":
+/*!**********************************************!*\
+  !*** ./src/environments/environment.prod.ts ***!
+  \**********************************************/
+/*! exports provided: environment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+var environment = {
+    production: true,
+    ApiOriginUrl: 'localhost:3000',
+    apiUrl: 'http://localhost:3000/api/',
+    AppName: 'HỆ THỐNG QUẢN LÍ THI ĐUA KHEN THƯỞNG TRƯỜNG ĐẠI HỌC QUẢNG NAM',
+    dataTableLanguage: {
+        'sProcessing': 'Đang tải...',
+        'sLengthMenu': 'Hiển thị _MENU_ bản ghi trên 1 trang',
+        'sZeroRecords': 'Không có dữ liệu',
+        'sEmptyTable': 'Không có dữ liệu',
+        'sInfo': 'Dữ liệu hiển thị từ _START_ đến _END_ trong tổng số _TOTAL_ bản ghi',
+        'sInfoEmpty': 'Dữ liệu hiển thị từ 0 đến 0 trong tổng số 0 bản ghi',
+        'sInfoFiltered': '(Dữ liệu lọc trong tổng số _MAX_ bản ghi)',
+        'sInfoPostFix': '',
+        'sSearch': 'Tìm kiếm:',
+        'sUrl': '',
+        'sInfoThousands': ',',
+        'sLoadingRecords': 'Đang tải...',
+        'oPaginate': {
+            'sFirst': 'Đầu',
+            'sLast': 'Cuối',
+            'sNext': 'Tiếp',
+            'sPrevious': 'Trước'
+        },
+        'oAria': {
+            'sSortAscending': ': Đang chọn lọc dữ liệu xuôi',
+            'sSortDescending': ': Đang chọn lọc dữ liệu ngược'
+        }
+    }
+};
 
 
 /***/ }),
@@ -8138,8 +9226,8 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    ApiOriginUrl: '192.168.0.100:3000',
-    apiUrl: 'http://192.168.0.100:3000/api/',
+    ApiOriginUrl: 'localhost:3000',
+    apiUrl: 'http://localhost:3000/api/',
     AppName: 'HỆ THỐNG QUẢN LÍ THI ĐUA KHEN THƯỞNG TRƯỜNG ĐẠI HỌC QUẢNG NAM',
     dataTableLanguage: {
         'sProcessing': 'Đang tải...',
@@ -8211,7 +9299,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\hoang\KL\TDKT-SPA\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\hoang\KhoaLuan\DQU-TDKT\TDKT-SPA\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -6805,3 +6805,10 @@ Media Query
   .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
       border-top: 3px solid #2D42FF;
   }
+  .modal-fullsize .modal-dialog {
+    max-width: 100%!important;
+    max-height: 100%!important;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;
+  }

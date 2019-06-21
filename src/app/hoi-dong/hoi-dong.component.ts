@@ -72,7 +72,6 @@ export class HoiDongComponent implements OnInit, AfterViewInit {
       next => {
         this.alertify.success(next);
         this.GetListHoiDong();
-        this.socket.send('Hội đồng ' + maHoiDong + ' đã đóng');
       },
       error => {
         this.spinner.hide();

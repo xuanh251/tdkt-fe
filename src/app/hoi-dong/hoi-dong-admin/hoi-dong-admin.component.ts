@@ -66,7 +66,7 @@ export class HoiDongAdminComponent implements OnInit, OnDestroy {
         this.getListThanhVien();
       },
       error => {
-        this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+        // this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
         console.log(error);
       }
     );
@@ -93,7 +93,7 @@ export class HoiDongAdminComponent implements OnInit, OnDestroy {
           this.getlistDanhHieuByHoiDong();
         },
         error => {
-          this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+          // this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
           console.log(error);
         }
       );
@@ -115,7 +115,7 @@ export class HoiDongAdminComponent implements OnInit, OnDestroy {
           this.listDanhHieuByHoiDong.sort((a, b) => (a.ten_danh_hieu < b.ten_danh_hieu) ? 1 : -1);
         },
         error => {
-          this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
+          // this.alertify.error('Đã xảy ra lỗi khi nạp thông tin hội đồng!');
           console.log(error);
         }
       );
@@ -150,7 +150,7 @@ export class HoiDongAdminComponent implements OnInit, OnDestroy {
         this.openModalTheoDoi(maDanhHieu, tenDanhHieu, next.thoi_gian_mo, soPhut);
       },
       error => {
-        this.alertify.error('Đã xảy ra lỗi!');
+        // this.alertify.error('Đã xảy ra lỗi!');
       }
     );
   }
@@ -180,7 +180,7 @@ export class HoiDongAdminComponent implements OnInit, OnDestroy {
         this.PushListBauChonTDTT(maDanhHieu);
       },
       error => {
-        this.alertify.error('Đã xảy ra lỗi!');
+        // this.alertify.error('Đã xảy ra lỗi!');
       }
     );
   }
